@@ -25,6 +25,8 @@ body::before {
   top: 0;
   height: 100vh;
 }
+.box1 { margin-bottom: 150px; }
+.box2 { bottom-top: 100px; }
 
 @media (min-width: 1024px) {
   body::before {
