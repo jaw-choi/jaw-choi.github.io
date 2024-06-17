@@ -42,7 +42,30 @@
     gtag('config', 'UA-169007209-3');
   </script>
 
+<script>
+  function toggleLanguage(language) {
+      // 모든 요소를 선택
+      const elements = document.querySelectorAll('[data-lang-en]');
 
+      elements.forEach(element => {
+          // 선택한 언어에 따라 내용을 변경
+          if (language === 'ko') {
+              element.textContent = element.getAttribute('data-lang-ko');
+          } else if (language === 'en') {
+              element.textContent = element.getAttribute('data-lang-en');
+          }
+      });
+  }
+  // function toggleLanguageResume(language) {
+  //   var url;
+  //   if (lang === 'ko') {
+  //       url = "https://resume.creddle.io/resume/e94zbhqhc0l";
+  //   } else if (lang === 'en') {
+  //       url = "https://drive.google.com/file/d/1m6kveZcuY_sjoaY-dLG4fmuOGRdwe9oZ/view?usp=drive_link";
+  //   }
+  //   window.open(url, "_blank");
+  // }
+</script>
 
   <!-- =======================================================
   * Template Name: Personal - v2.1.0
@@ -63,20 +86,25 @@
 
     <div class="container">
 
-      <h1><a href="index.html">Jaewoo Choi</a></h1>
+      <h1><a href="index.html" data-lang-en="Jaewoo Choi" data-lang-ko="최재우">Jaewoo Choi</a></h1>
       <h2 style="color:#fff">I'm <span class="typing" style="color:#12D640"></span></h2>
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="#header"> <span>Home</span></a></li>
-          <li><a href="#about"><span>About</span></a></li>
-          <li><a href="#education"> <span>Education</span></a></li>
-          <li><a href="#experience"> <span>Experience</span></a></li>
-<!--          <li><a href="#projects"> <span>Projects</span></a></li>-->
-          <li><a href="#portfolio"> <span>Projects</span></a></li>
-          <li><a href="#skills"> <span>Skills</span></a></li>
-          <li><a href="https://resume.creddle.io/resume/e94zbhqhc0l" target="_blank"> <span>Resume</span></a></li>
-          <!-- <li><a href="#links"> <span>Resume & Links</span></a></li> -->
-          <li><a href="#contacts"> <span>Contact</span></a></li>
+          <li class="active"><a href="#header"> <span data-lang-en="Home" data-lang-ko="홈">Home</span></a></li>
+          <li><a href="#about"><span data-lang-en="About" data-lang-ko="소개">About</span></a></li>
+          <li><a href="#education"><span data-lang-en="Education" data-lang-ko="학력">Education</span></a></li>
+          <li><a href="#experience"><span data-lang-en="Experience" data-lang-ko="경력">Experience</span></a></li>
+          <li><a href="#portfolio"><span data-lang-en="Projects" data-lang-ko="프로젝트">Projects</span></a></li>
+          <li><a href="#skills"><span data-lang-en="Skills" data-lang-ko="기술">Skills</span></a></li>
+          <li><a href="https://resume.creddle.io/resume/e94zbhqhc0l" target="_blank"><span data-lang-en="Resume" data-lang-ko="이력서">Resume</span></a></li>
+          <li><a href="#contacts"><span data-lang-en="Contact" data-lang-ko="연락처">Contact</span></a></li>
+          <li>
+            <a href="#language"><span data-lang-en="Language" data-lang-ko="언어">Language</span></a>
+            <ul class="dropdown">
+                <li><a href="#" onclick="toggleLanguage('ko')"><span data-lang-en="Korean" data-lang-ko="한글">Korean</span></a></li>
+                <li><a href="#" onclick="toggleLanguage('en')"><span data-lang-en="English" data-lang-ko="영어">English</span></a></li>
+            </ul>
+        </li>
 
         </ul>
       </nav><!-- .nav-menu -->
@@ -85,8 +113,9 @@
           <a href="https://www.linkedin.com/in/jaw-choi" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
           <a href="https://www.github.com/jaw-choi" target="_blank" class="github"><i class="bx bxl-github"></i></a>
           <a href="mailto:wod6983@gmail.com" target="_blank" class="google"><i class="bx bxl-google"></i></a>
-
       </div>
+
+
 
     </div>
   </header><!-- End Header -->
@@ -98,7 +127,7 @@
     <div class="about-me container">
 
       <div class="section-title">
-        <h2>About</h2>
+        <h2 data-lang-en="About" data-lang-ko="소개">About</h2>
       </div>
 
       <div class="row">
@@ -110,25 +139,53 @@
           <div class="row">
             <div class="col-lg-6">
               <ul>
-                <li><i class="icofont-rounded-right"></i> <strong>Birthday:</strong> 29 July 1998</li>
-                <li><i class="icofont-rounded-right"></i> <strong>Phone:</strong> +1 206-228-3400</li>
+                <li><i class="icofont-rounded-right"></i>
+                   <strong data-lang-en="Birthday:" data-lang-ko="생일:">Birthday:</strong>
+                   <span data-lang-en="29 July 1998" data-lang-ko="1998년 7월 29일">29 July 1998</span>
+                  </li>
+                <li>
+                  <i class="icofont-rounded-right"></i>
+                  <strong data-lang-en="Phone:" data-lang-ko="전화번호:">Phone:</strong>
+                  <span data-lang-en="+1 206-228-3400" data-lang-ko="010-2776-2295">+1 206-228-3400</span>
+                  </li>
 
               </ul>
             </div>
             <div class="col-lg-6">
               <ul>
-                <li><i class="icofont-rounded-right"></i> <strong>City:</strong> Redmond, WA</li>
-                <li><i class="icofont-rounded-right"></i> <strong>Email:</strong> wod6983@gmail.com</li>
-
+                <li>
+                  <i class="icofont-rounded-right"></i>
+                  <strong data-lang-en="City:" data-lang-ko="주소:">City:</strong>
+                  <span data-lang-en="Redmond, WA" data-lang-ko="대구광역시 달성군">Redmond, WA</span>
+                  </li>
+                  <li>
+                    <i class="icofont-rounded-right"></i>
+                    <strong data-lang-en="Email" data-lang-ko="이메일:">Phone:</strong>
+                    <span data-lang-en="wod6983@gmail.com" data-lang-ko="wod6983@gmail.com">wod6983@gmail.com</span>
+                    </li>
               </ul>
             </div>
           </div>
-          <p>"I prioritize learning and experience over money.
+          <p data-lang-en="I prioritize learning and experience over money.
+           I am willing to work for 50% of the minimum wage
+            as I value the opportunity to showcase my abilities and strive for personal growth.
+             The experiences and lessons gained here would be invaluable to me.
+              Moreover, I seek to find true value in my work,
+               prioritizing personal growth over limitations in my current skill set."
+
+                data-lang-ko="C++, OpenGL, Unity, Unreal Engine 등을 이용한 게임 프로그래밍과
+                 컴퓨터 그래픽 프로그래밍을 전공한 개발자로서, 창의적이고 도전적인 프로젝트에 참여하고 싶습니다.
+                  팀들과의 소통, 코드의 최적화와 효율성,
+                   개발 목표 등 다양한 도전적인 부분에서 끊임없이 더 나은 솔루션을 찾는 것을 목표로 하고 있습니다.
+                    한 곳에 정체되어 있지 않고 항상 새로운 것을 배워나가는 개발자입니다.">
+            "I prioritize learning and experience over money.
             I am willing to work for 50% of the minimum wage as I value the opportunity
             to showcase my abilities and strive for personal growth.
             The experiences and lessons gained here would be invaluable to me.
-            Moreover, I seek to find true value in my work, prioritizing personal growth over limitations in my current skill set."
+            Moreover, I seek to find true value in my work,
+             prioritizing personal growth over limitations in my current skill set."
           </p>
+          
         </div>
       </div>
 
@@ -138,7 +195,8 @@
     <div class="interests container">
 
       <div class="section-title">
-        <h2>Interests</h2>
+        <h2 data-lang-en="Interests" data-lang-ko="관심사">Interests</h2>
+
       </div>
 
       <div class="row">
@@ -201,42 +259,44 @@
   <section id="education" class="services">
     <div class="container">
       <div class="section-title">
-        <h2>Education</h2>
+        <h2 data-lang-en="Education" data-lang-ko="학력">Education</h2>
+
       </div>
       <div class="row">
         <div class="col-lg-12" data-aos="fade-up" style="display: inline-block;">
 
 
-            <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
-              <img src="assets/img/education/dig.jpg" class="img-fluid" alt="">
-              <!-- <h4 style="text-align:left;"><a href="https://www.digipen.edu/" target="_blank" style="color:#12d640">Arizona State University</a><br> </h4> -->
-              <p style="text-align:left;color:#fff;padding: 5px 10px;"><em>BSCS RTIS</em></p>
-              <h5 style="text-align:left;padding: 0px 10px;">Janurary 2022 - Present</h5>
-              <h6 style="text-align:left;color:#fff;padding: 0px 10px;">Relevant Coursework</h6>
-              <ul style="text-align:left;color:#fff;">
-                <li>Parallel Programming</li>
-                <li>Ray Tracing</li>
-                <li>Real-Time Rendering</li>
-                <li>Portable Game System</li>
-              </ul>
-            </div>
-            <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
-              <img src="assets/img/education/kLogo.jpg" class="img-fluid" alt="">
-              <!-- <h4 style="text-align:left;"><a href="https://ahduni.edu.in/" target="_blank" style="color:#12d640">Ahmedabad University</a><br> </h4> -->
-              <p style="text-align:left;color:#fff;padding: 5px 10px;"><em>BSCS RTIS</em></p>
-              <h5 style="text-align:left;padding: 0px 10px;">March 2018 - June 2022</h5>
-              <h6 style="text-align:left;color:#fff;padding: 0px 10px;">Relevant Coursework</h6>
-              <ul style="text-align:left;color:#fff;">
-                <!-- <li>Data Structures &amp; Algorithms</li> -->
-                <li>Data Structures</li>
-                <!-- <li>Operating Systems</li> -->
-                <li>Computer Graphics</li>
-                <li>Operating System</li>
-                <li>Algorithm Analysis</li>
-                <!-- <li>Computer Vision</li> -->
-              </ul>
-            </div>
+          <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
+            <img src="assets/img/education/dig.jpg" class="img-fluid" alt="">
+            
+            <p style="text-align:left;color:#fff;padding: 5px 10px;"><em data-lang-en="BSCS RTIS" data-lang-ko="Bachelor's Degree in Computer Science in Real Time Interactive Simulation">Bachelor's Degree in Computer Science in Real Time Interactive Simulation</em></p>
+            <h5 style="text-align:left;padding: 0px 10px;" data-lang-en="August 2022 - April 2024" data-lang-ko="2022년 8월 - 2024년 4월">August 2022 - April 2024</h5>
+            <h6 style="text-align:left;color:#fff;padding: 0px 10px;" data-lang-en="Relevant Coursework" data-lang-ko="관련 과정">Relevant Coursework</h6>
+            <ul style="text-align:left;color:#fff;">
+                <li data-lang-en="Parallel Programming" data-lang-ko="Parallel Programming">Parallel Programming</li>
+                <li data-lang-en="Ray Tracing" data-lang-ko="Ray Tracing">Ray Tracing</li>
+                <li data-lang-en="Real-Time Rendering" data-lang-ko="Real-Time Rendering">Real-Time Rendering</li>
+                <li data-lang-en="Portable Game System" data-lang-ko="Portable Game System">Portable Game System</li>
+            </ul>
           </div>
+          <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
+              <img src="assets/img/education/kLogo.jpg" class="img-fluid" alt="">
+              <!-- <h4 style="text-align:left;"><a href="https://ahduni.edu.in/" target="_blank" style="color:#12d640" data-lang-en="Ahmedabad University" data-lang-ko="아메다바드 대학교">Ahmedabad University</a><br> </h4> -->
+              <p style="text-align:left;color:#fff;padding: 5px 10px;" data-lang-en="BSCS RTIS" data-lang-ko="디지펜게임공학과"><em>BSCS RTIS</em></p>
+              <h5 style="text-align:left;padding: 0px 10px;" data-lang-en="March 2018 - June 2022" data-lang-ko="2018년 3월 - 2022년 6월">March 2018 - June 2022</h5>
+              <h6 style="text-align:left;color:#fff;padding: 0px 10px;" data-lang-en="Relevant Coursework" data-lang-ko="관련 과정">Relevant Coursework</h6>
+              <ul style="text-align:left;color:#fff;">
+                  <!-- <li>Data Structures &amp; Algorithms</li> -->
+                  <li data-lang-en="Data Structures" data-lang-ko="자료 구조">Data Structures</li>
+                  <!-- <li>Operating Systems</li> -->
+                  <li data-lang-en="Computer Graphics" data-lang-ko="컴퓨터 그래픽스">Computer Graphics</li>
+                  <li data-lang-en="Operating System" data-lang-ko="운영 체제">Operating System</li>
+                  <li data-lang-en="Algorithm Analysis" data-lang-ko="알고리즘 분석">Algorithm Analysis</li>
+                  <!-- <li>Computer Vision</li> -->
+              </ul>
+          </div>
+          </div>
+          
         </div>
       </div>
 
@@ -336,7 +396,8 @@
   <section id="experience" class="services">
     <div class="container">
       <div class="section-title">
-        <h2>Experience</h2> 
+        <h2 data-lang-en="Experience" data-lang-ko="경력">Experience</h2>
+
       <!--  </div>
       <div class="row">
           <div class="col-lg-12" data-aos="fade-up">
@@ -351,31 +412,32 @@
                 </ul>
               </div> -->
               <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-                <h4 style="text-align:left;"><a href="https://www.augmenify.com/" style="color:#12d640">Software Engineer Intern</a><br> </h4>
-                <h5 style="text-align:left;">January 2024 - Current</h5>
-                <p style="text-align:left;color:#fff"><em>A Round Entertainment, New York</em></p>
+                <h4 style="text-align:left;"><a href="https://www.augmenify.com/" style="color:#12d640" data-lang-en="Software Engineer Intern" data-lang-ko="소프트웨어 엔지니어 인턴">Software Engineer Intern</a><br> </h4>
+                <h5 style="text-align:left;" data-lang-en="January 2024 - April 2024" data-lang-ko="2024년 1월 - 2024년 4월">January 2024 - April 2024</h5>
+                <p style="text-align:left;color:#fff"><em data-lang-en="A Round Entertainment, Jersey City, NJ" data-lang-ko="A Round Entertainment, Jersey City, NJ">A Round Entertainment, Jersey City, NJ</em></p>
                 <ul style="text-align:left;">
-                  <li>Developed a dating app using React Native and utilized Firebase for efficient database management.</li>
-                  <li>Developed and maintained web applications using HTML, CSS, React-Native and JavaScript and collaborated with the development/UI team.</li>
+                    <li data-lang-en="Developed a dating app using React Native and utilized Firebase for efficient database management." data-lang-ko="React Native를 사용하여 데이팅 앱을 개발하고 Firebase를 활용하여 효율적인 데이터베이스 관리를 수행했습니다.">Developed a dating app using React Native and utilized Firebase for efficient database management.</li>
+                    <li data-lang-en="Developed and maintained web applications using HTML, CSS, React-Native and JavaScript and collaborated with the development/UI team." data-lang-ko="HTML, CSS, React-Native, JavaScript를 사용하여 웹 애플리케이션을 개발 및 유지 보수하고 UI/UX 팀과 협력했습니다.">Developed and maintained web applications using HTML, CSS, React-Native and JavaScript and collaborated with the development/UI team.</li>
                 </ul>
-              </div>
-              <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-                <h4 style="text-align:left;"><a href="https://www.augmenify.com/" style="color:#12d640">Teaching Assistant</a><br> </h4>
-                <h5 style="text-align:left;">August 2019 - August 2019</h5>
-                <p style="text-align:left;color:#fff"><em>ProjectFun K-12 program in Digipen</em></p>
+            </div>
+            <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
+                <h4 style="text-align:left;"><a href="https://www.augmenify.com/" style="color:#12d640" data-lang-en="Teaching Assistant" data-lang-ko="조교">Teaching Assistant</a><br> </h4>
+                <h5 style="text-align:left;" data-lang-en="August 2019 - August 2019" data-lang-ko="2019년 8월 - 2019년 8월">August 2019 - August 2019</h5>
+                <p style="text-align:left;color:#fff"><em data-lang-en="ProjectFun K-12 program in Digipen" data-lang-ko="디지펜 ProjectFun K-12 프로그램">ProjectFun K-12 program in Digipen</em></p>
                 <ul style="text-align:left;">
-                  <li>Assist 10 students in the game project class and held office hours every day</li>
-                  <li>Made a sample project with a custom engine and showed it to the students for the professor to use it as a presentation</li>
+                    <li data-lang-en="Assist 10 students in the game project class and held office hours every day" data-lang-ko="연세대 캠퍼스에서 개최된 게임 프로젝트 수업에서 교수님과 함께 10명의 학생을 돕고 Digipen 자체 엔진인 Zero Engine을 공부하고 활용하는 시간을 가졌습니다.">Assist 10 students in the game project class and held office hours every day</li>
+                    <li data-lang-en="Made a sample project with a custom engine and showed it to the students for the professor to use it as a presentation" data-lang-ko="커스텀 엔진을 사용하여 샘플 프로젝트를 만들고 교수님이 발표 자료로 사용할 수 있도록 학생들에게 보여주었습니다.">Made a sample project with a custom engine and showed it to the students for the professor to use it as a presentation</li>
                 </ul>
-              </div>
-              <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-                <h4 style="text-align:left;"><a href="https://www.epitomesolutions.in/" style="color:#12d640">Military service</a><br> </h4>
-                <h5 style="text-align:left;">Aug 2019  - Mar 2021</h5>
-                <p style="text-align:left;color:#fff"><em>Republic of Korea</em></p>
+            </div>
+            <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
+                <h4 style="text-align:left;"><a href="https://www.epitomesolutions.in/" style="color:#12d640" data-lang-en="Military service" data-lang-ko="군 복무">Military service</a><br> </h4>
+                <h5 style="text-align:left;" data-lang-en="Aug 2019 - April 2021" data-lang-ko="2019년 8월 - 2021년 4월">Aug 2019 - April 2021</h5>
+                <p style="text-align:left;color:#fff"><em data-lang-en="Republic of Korea" data-lang-ko="대한민국">Republic of Korea</em></p>
                 <ul style="text-align:left;">
-                  <li>Discipline the recruit in Army Recruit Training Center and was discharged as a sergeant </li>
+                    <li data-lang-en="Discipline the recruit in Army Recruit Training Center and was discharged as a sergeant" data-lang-ko="육군 훈련소에서 조교로서 신병 훈련을 지도하고 병장으로 전역했습니다.">Discipline the recruit in Army Recruit Training Center and was discharged as a sergeant</li>
                 </ul>
-              </div>
+            </div>
+            
               <!-- <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
                 <h4 style="text-align:left;"><a href="https://www.meditab.com/" target="_blank" style="color:#12d640">Meditab Software Pvt. Ltd.</a><br> </h4>
                 <h5 style="text-align:left;">May 2018 - June 2018</h5>
@@ -405,153 +467,209 @@
 
 
 
-  <!-- Start Project Section -->
-  <section id="portfolio" class="portfolio">
-    <div class="container">
-      <style>
-        p {
-          text-align: center; /* 예시: 가운데 정렬 */
-          
-        }
-      </style>
-       <div class="section-title">
-        <h2>Projects</h2>
-        <div class="col-lg-160 col-md-600 portfolio-item filter-project">
-      <div class="box1">  
-        <br>
-        
-        <p class="discription" style="font-size:calc(50px + 1vw)">Game Project</p><br><br>
-        <p class="discription" style="font-size:calc(20px + 0.3vw)">-&nbsp; Bit_Saver(Team of 4)</p><br>         
-        <p class="discription" style="font-size:calc(20px + 0.3vw)">-&nbsp; Custom Engine</p><br>                         
-        <p class="discription" style="font-size:calc(20px + 0.5vw)">
-            <video width="400" height="300" controls="">
-                <source src="assets/video/Bit_Saver.mp4" type="video/mp4">
-            </video>
-          </p><br>
-          <p class="discription" style="font-size:calc(20px + 0.5vw)"><a href="assets/pdfs/Press_kit_KINGAME.pdf" target="_blank">Press_Kit</a></p>
-      </div>
-      <div class="box1">  
-        <br>
-        <p class="discription" style="font-size:calc(20px + 0.5vw)">-&nbsp; BEAR(Team of 6)</p><br>           
-        <p class="discription" style="font-size:calc(20px + 0.5vw)">-&nbsp; Unreal Engine</p><br>                      
-        <p class="discription" style="font-size:calc(20px + 0.5vw)">
-            <video width="400" height="300" controls="">
-                <source src="assets/video/BEAR Gameplay Video.mp4" type="video/mp4">
-            </video>
-      </div>
-      <div class="box1">  
-        <br>
-        <p class="discription" style="font-size:calc(20px + 0.3vw)">-&nbsp; PAPARAZZI(Team of 6)</p><br>    
-        <p class="discription" style="font-size:calc(20px + 0.3vw)">-&nbsp; Unity Engine</p><br>                          
-        <p class="discription" style="font-size:calc(20px + 0.5vw)">
-            <video width="400" height="300" controls="">
-                <source src="assets/video/GAM400_paparazzi.mp4" type="video/mp4">
-            </video>
-            <p class="discription" style="font-size:calc(20px + 0.5vw)"><a href="https://github.com/wjm9932/GAM400" target="_blank">View Source Code</a></p>  
-      </div>
-      <div class="box1">  
-        <br>
-        <p class="discription" style="font-size:calc(20px + 0.3vw)">-&nbsp; Enter The G157(Team of 4)</p><br>    
-        <p class="discription" style="font-size:calc(20px + 0.3vw)">-&nbsp; Unity Engine & Nintendo SDK</p><br>                          
-        <p class="discription" style="font-size:calc(20px + 0.5vw)">
-            <video width="400" height="300" controls="">
-                <source src="assets/video/CS388.mp4" type="video/mp4">
-            </video>
-            <p class="discription" style="font-size:calc(20px + 0.5vw)"><a href="assets/video/CS388Playing.mp4" target="_blank">Playing Video</a></p>  
-      </div>
-      <div class="box1">  
-        <br>
-        <p class="discription" style="font-size:calc(50px + 1vw)">Graphics Demo</p><br><br>
-        <p class="discription" style="font-size:calc(20px + 0.5vw)">-&nbsp; Ray Tracing</p><br>                            
-        <p class="discription" style="font-size:calc(20px + 0.5vw)">
-          <img src="assets/img/RayTracing.png" width="400" height="300" class="img-fluid" alt="">
-            <p class="discription" style="font-size:calc(20px + 0.5vw)"><a href="https://github.com/jaw-choi/RayTracing" target="_blank">View Source Code</a></p>  
-     </div>
-     <div class="box1">  
-      <br>
-      <p class="discription" style="font-size:calc(20px + 0.5vw)">-&nbsp; Toon Fog, Noise, Curve, Geometry, Tessellation, Shadow</p><br>                            
-      <p class="discription" style="font-size:calc(20px + 0.5vw)">
-          <video width="400" height="300" controls="">
-              <source src="assets/video/GraphicDemo.mp4" type="video/mp4">
-          </video>
-          <p class="discription" style="font-size:calc(20px + 0.5vw)"><a href="https://github.com/jaw-choi/GraphicDemo" target="_blank">View Source Code</a></p>  
-   </div>
-     <div class="box1">  
-       <br>
-       <p class="discription" style="font-size:calc(20px + 0.5vw)">-&nbsp; Phong Shading, Hybrid Rendering </p><br>                            
-       <p class="discription" style="font-size:calc(20px + 0.5vw)">
-           <video width="400" height="300" controls="">
-               <source src="assets/video/GraphicDemo2.mp4" type="video/mp4">
-           </video>
-           <p class="discription" style="font-size:calc(20px + 0.5vw)"><a href="https://github.com/jaw-choi/cs300_project" target="_blank">View Source Code</a></p>  
-      </div>
-      <div class="box1">  
-        <br>
-        <p class="discription" style="font-size:calc(20px + 0.5vw)">-&nbsp; Reflect, Refract</p><br>                            
-        <p class="discription" style="font-size:calc(20px + 0.5vw)">
-            <video width="400" height="300" controls="">
-                <source src="assets/video/GraphicDemo3.mp4" type="video/mp4">
-            </video>
-            <p class="discription" style="font-size:calc(20px + 0.5vw)"><a href="https://github.com/jaw-choi/cs350" target="_blank">View Source Code</a></p>  
-      </div>  
-      <div class="box1">  
-        <br>
-        <p class="discription" style="font-size:calc(20px + 0.5vw)">-&nbsp; Spatial Partitioning</p><br>                            
-        <p class="discription" style="font-size:calc(20px + 0.5vw)">
-            <video width="400" height="300" controls="">
-                <source src="assets/video/GraphicDemo4.mp4" type="video/mp4">
-            </video>
-            <p class="discription" style="font-size:calc(20px + 0.5vw)"><a href="https://github.com/jaw-choi/cs350" target="_blank">View Source Code</a></p>  
-      </div>
-      <div class="box1">  
-        <br>
-        <p class="discription" style="font-size:calc(50px + 1vw)">Unity Math Graphic Demo</p><br><br>
-        <p class="discription" style="font-size:calc(20px + 0.3vw)">-&nbsp;De Casteljau Algorithm for Polynomial Functions</p><br>                                
-        <p class="discription" style="font-size:calc(20px + 0.5vw)">
-            <video width="400" height="300" controls="">
-                <source src="assets/video/Unity_Project1.mp4" type="video/mp4">
-            </video>
-            <p class="discription" style="font-size:calc(20px + 0.5vw)"><a href="https://github.com/jaw-choi/UnityMathDemo/tree/main/Proj1" target="_blank">View Source Code</a></p>  
-      </div>
-      <div class="box1">  
-        <br>      
-        <p class="discription" style="font-size:calc(20px + 0.3vw)">-&nbsp;De Casteljau Algorithm for Bezier Curves</p><br>                         
-        <p class="discription" style="font-size:calc(20px + 0.5vw)">
-            <video width="400" height="300" controls="">
-                <source src="assets/video/Unity_Project2.mp4" type="video/mp4">
-            </video>
-            <p class="discription" style="font-size:calc(20px + 0.5vw)"><a href="https://github.com/jaw-choi/UnityMathDemo/tree/main/proj2" target="_blank">View Source Code</a></p>  
-      </div>
-      <div class="box1">  
-        <br>      
-        <p class="discription" style="font-size:calc(20px + 0.3vw)">-&nbsp;Interpolating Polynomials</p><br>                         
-        <p class="discription" style="font-size:calc(20px + 0.5vw)">
-            <video width="400" height="300" controls="">
-              <p class="discription" style="font-size:calc(20px + 0.5vw)"><a href="https://github.com/jaw-choi/UnityMathDemo/tree/main/proj3" target="_blank">View Source Code</a></p>  
-            </video>
-      </div>
-      <div class="box1">  
-        <br>      
-        <p class="discription" style="font-size:calc(20px + 0.3vw)">-&nbsp;Interpolating Cubic Splines
-        </p><br>                         
-        <p class="discription" style="font-size:calc(20px + 0.5vw)">
-            <video width="400" height="300" controls="">
-                <source src="assets/video/Unity_Project4.mp4" type="video/mp4">
-            </video>
-            <p class="discription" style="font-size:calc(20px + 0.5vw)"><a href="https://github.com/jaw-choi/UnityMathDemo/tree/main/proj4" target="_blank">View Source Code</a></p>  
-      </div>
-      <div class="box1">  
-        <br>      
-        <p class="discription" style="font-size:calc(20px + 0.3vw)">-&nbsp;De Boor Algorithm for B-Spline Curves</p><br>                         
-        <p class="discription" style="font-size:calc(20px + 0.5vw)">
-            <video width="400" height="300" controls="">
-                <source src="assets/video/Unity_Project5.mp4" type="video/mp4">
-            </video>
-            <p class="discription" style="font-size:calc(20px + 0.5vw)"><a href="https://github.com/jaw-choi/UnityMathDemo/tree/main/proj7/MAT300_jaewoo.choi_HW8" target="_blank">View Source Code</a></p>  
-      </div>
-  </section>
+<!-- Start Project Section -->
+<section id="portfolio" class="portfolio">
+  <div class="container">
 
-  <!-- End Project Section -->
+    <div class="section-title">
+      <h2>Projects</h2>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 d-flex justify-content-center">
+        <ul id="portfolio-flters">
+          <li data-filter="*" class="filter-active">All</li>
+          <li data-filter=".filter-game">Game Project</li>
+          <li data-filter=".filter-graphic">Graphic Project</li>
+          <li data-filter=".filter-Software">Software & Web</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row portfolio-container">
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-game">
+        <center>
+          <h4>BIT SAVER</h4>
+        </center>
+        <div class="portfolio-wrap">
+          <img src="assets/img/project/bitsaver.png" class="img-fluid" alt="">
+          <div class="portfolio-info">
+
+            <div class="portfolio-links">
+              <a href="projects/bitsaver.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe"
+                class="venobox" title="Project Details"> 자세히</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-graphic">
+        <center>
+          <h4>커스텀 그래픽 엔진</h4>
+        </center>
+        <div class="portfolio-wrap">
+          <img src="assets/img/project/GraphicsEngine.png" class="img-fluid" alt="">
+          <div class="portfolio-info">
+
+            <div class="portfolio-links">
+              <a href="projects/GraphicsEngine.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe"
+                class="venobox" title="Project Details"> 자세히</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-graphic">
+        <center>
+          <h4>3D 그래픽 기술 데모</h4>
+        </center>
+        <div class="portfolio-wrap">
+          <img src="assets/img/project/graphic_tech.png" class="img-fluid" alt="">
+          <div class="portfolio-info">
+            <div class="portfolio-links">
+              <a href="projects/graphictechdemo.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe"
+                class="venobox" title="Project Details"> 자세히</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-graphic">
+        <!-- <br> -->
+        <center>
+          <h4>Shading 프로젝트</h4>
+        </center>
+        <div class="portfolio-wrap">
+          <img src="assets/img/project/shading_model.png" class="img-fluid" alt="">
+          <div class="portfolio-info">
+            <div class="portfolio-links">
+              <a href="projects/shadingModel.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe"
+                class="venobox" title="Project Details"> 자세히</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-graphic">
+        <!-- <br> -->
+        <center>
+          <h4>레이 트레이싱</h4>
+        </center>
+        <div class="portfolio-wrap">
+          <img src="assets/img/project/raytracing.png" class="img-fluid" alt="">
+          <div class="portfolio-info">
+            <div class="portfolio-links">
+              <a href="projects/raytracing.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe"
+                class="venobox" title="Project Details"> 자세히</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-game">
+        <center>
+          <h4>BEAR</h4>
+        </center>
+        <div class="portfolio-wrap">
+          <img src="assets/img/project/bear.png" class="img-fluid" alt="">
+          <div class="portfolio-info">
+
+            <div class="portfolio-links">
+              <a href="projects/bear.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox"
+                title="Project Details"> 자세히</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-game">
+        <center>
+          <h4>Enter the G157</h4>
+        </center>
+        <div class="portfolio-wrap">
+          <img src="assets/img/project/enter_the_g157.png" class="img-fluid" alt="">
+          <div class="portfolio-info">
+
+            <div class="portfolio-links">
+              <a href="projects/treasure_hunter.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe"
+                class="venobox" title="Project Details"> 자세히</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-graphic">
+        <center>
+          <h4>곡선 프로젝트</h4>
+        </center>
+        <div class="portfolio-wrap">
+          <img src="assets/img/project/curves.png" class="img-fluid" alt="">
+          <div class="portfolio-info">
+
+            <div class="portfolio-links">
+              <a href="projects/curve.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox"
+                title="Project Details"> 자세히</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-game">
+        <center>
+          <h4>테트리스</h4>
+        </center>
+        <div class="portfolio-wrap">
+          <img src="assets/img/project/tetris.jpg" class="img-fluid" alt="">
+          <div class="portfolio-info">
+
+            <div class="portfolio-links">
+              <a href="projects/tetris.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox"
+                title="Project Details"> 자세히</a>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-game">
+        <center>
+          <h4>Paparazzi</h4>
+        </center>
+        <div class="portfolio-wrap">
+          <img src="assets/img/project/paparazzi.png" class="img-fluid" alt="">
+          <div class="portfolio-info">
+
+            <div class="portfolio-links">
+              <a href="projects/paparazzi.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe"
+                class="venobox" title="Project Details"> 자세히</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-Software">
+        <!-- <br> -->
+        <center>
+          <h4>데이팅 어플리케이션</h4>
+        </center>
+        <div class="portfolio-wrap">
+          <img src="assets/img/project/Dating.jpg" class="img-fluid" alt="">
+          <div class="portfolio-info">
+            <div class="portfolio-links">
+              <a href="projects/dating.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox"
+                title="Project Details"> 자세히</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 portfolio-item filter-Software">
+        
+    </div>
+</section>
+
+<!-- End Project Section -->
 
 <!-- </div>
 
@@ -704,12 +822,14 @@
   <section id="skills" class="services">
     <div class="container">
       <div class="section-title">
-        <h2>Skills</h2>
+        <h2 data-lang-en="Skills" data-lang-ko="기술">Skills</h2>
+
       </div>
       <div class="row">
         <div class="col-lg-12" data-aos="fade-up">
           <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="background:#fff">
-            <h4 style="text-align:left;color:#09203a">Languages and Databases</h4>
+            <h4 style="text-align:left;color:#09203a" data-lang-en="Languages and Databases" data-lang-ko="언어 및 데이터베이스">Languages and Databases</h4>
+
                 <p style="text-align:left;">
                   <img src="assets/Skill_image/ISO_C++_Logo.svg" alt="vectorlogo.zone" height="50" width="150">
                   <img src="assets/Skill_image/c-1.svg" alt="vectorlogo.zone" height="50" width="120">
@@ -721,7 +841,8 @@
                 </p>
             </div>
             <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="lefade-up" data-aos-delay="100" style="background:#fff">
-              <h4 style="text-align:left;color:#09203a">Engines</h4>
+              <h4 style="text-align:left;color:#09203a" data-lang-en="Engines" data-lang-ko="엔진">Engines</h4>
+
                 <p style="text-align:left;">
                   <img src="assets/Skill_image/unity-technologies-logo.svg" alt="vectorlogo.zone" height="100" width="120">
                   <img src="assets/Skill_image/unreal-engine-1.svg" alt="vectorlogo.zone" height="50" width="120">
@@ -729,7 +850,8 @@
 
           </div>
           <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="lefade-up" data-aos-delay="100" style="background:#fff">
-              <h4 style="text-align:left;color:#09203a">Tools</h4>
+            <h4 style="text-align:left;color:#09203a" data-lang-en="Tools" data-lang-ko="도구">Tools</h4>
+
                 <p style="text-align:left;">
                   <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-ar21.svg" alt="vectorlogo.zone">
                   <img src="assets/Skill_image/visual-studio.svg" alt="vectorlogo.zone" height="50" width="120">
@@ -764,11 +886,11 @@
           <h4 class="title"><a href="https://drive.google.com/file/d/1iHBNV2UkH5LkhAP-1hYRZ2Ez_BQ6g4S7/view?usp=sharing" target="_blank">Resume</a></h4>
           <p class="description" style="color:#fff;">The link contains downloadable resume</p>
         </div>
-        <div class="col-md-3 mt-4 mt-md-0 icon-box" data-aos="fade-up">
+        <!-- <div class="col-md-3 mt-4 mt-md-0 icon-box" data-aos="fade-up">
           <a href="https://github.com/rajaprerak/LeetCode_Problems" target="_blank"><div class="icon"><i class="icofont-link"></i></div></a>
           <h4 class="title"><a href="https://github.com/rajaprerak/LeetCode_Problems" target="_blank">LeetCode Repository</a></h4>
           <p class="description" style="color:#fff;"> The github repository contains leetcode problems solution in python.</p>
-        </div>
+        </div> -->
         <!-- <div class="col-md-3 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
           <a href="https://techingenious.herokuapp.com/" target="_blank"><div class="icon"><i class="icofont-page"></i></div></a>
           <h4 class="title"><a href="https://techingenious.herokuapp.com/" target="_blank">Blog</a></h4>
@@ -793,17 +915,19 @@
         <div class="col-md-6 d-flex align-items-stretch">
           <div class="info-box">
             <i class="bx bx-map"></i>
-            <h3>My Address</h3>
-            <p>15817 NE 90th st</p>
-            <p>Apt G157</p>
-            <p>Redmond, WA 98052</p>
+            <h3 data-lang-en="My Address" data-lang-ko="주소">My Address</h3>
+            <p data-lang-en="15817 NE 90th st" data-lang-ko="대구광역시 달성군 다사읍">15817 NE 90th st</p>
+            <p data-lang-en="Apt G157" data-lang-ko=" 대실역북로 26">Apt G157</p>
+            <p data-lang-en="Redmond, WA 98052" data-lang-ko="207동 605호">Redmond, WA 98052</p>
+            
           </div>
         </div>
 
         <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
           <div class="info-box">
             <i class="bx bx-share-alt"></i>
-            <h3>Social Profiles</h3>
+            <h3 data-lang-en="Social Profiles" data-lang-ko="소셜 프로필">Social Profiles</h3>
+
             <div class="social-links">
               <a href="https://www.linkedin.com/in/jaw-choi" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
               <a href="https://www.github.com/jaw-choi" target="_blank" class="github"><i class="bx bxl-github"></i></a>
@@ -816,16 +940,17 @@
         <div class="col-md-6 mt-4 d-flex align-items-stretch">
           <div class="info-box">
             <i class="bx bx-envelope"></i>
-            <h3>Email</h3>
-            <p>wod6983@gmail.com</p>
-            <p>jaewoo.choi@digipen.edu</p>
+            <h3 data-lang-en="Email" data-lang-ko="이메일">Email</h3>
+            <p data-lang-en="wod6983@gmail.com" data-lang-ko="wod6983@gmail.com">wod6983@gmail.com</p>
+            
           </div>
         </div>
         <div class="col-md-6 mt-4 d-flex align-items-stretch">
           <div class="info-box">
             <i class="bx bx-phone-call"></i>
-            <h3>Contact</h3>
-            <p>+1 206-228-3400</p>
+            <h3 data-lang-en="Contact" data-lang-ko="연락처">Contact</h3>
+            <p data-lang-en="+1 206-228-3400" data-lang-ko="010-2776-2295">+1 206-228-3400</p>
+            
           </div>
         </div>
       </div>
@@ -848,7 +973,7 @@
   <script src="assets/vendor/typed.js/typed.min.js"></script>
   <script type="text/javascript">
     var typed = new Typed('.typing',{
-      strings: ["Graphic programmer", "Programmer", "Software Engineer"],
+      strings: ["Game Developer", "Software Engineer"],
       loop: true,
       typeSpeed: 65,
       backSpeed: 65
