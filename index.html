@@ -43,7 +43,37 @@
   </script>
 
 <script>
+  
+  function toggleLanguage() {
+    const resumeLink = document.getElementById('resume-link');
+    const currentLanguage = resumeLink.getAttribute('data-current-lang');
+    const newLanguage = currentLanguage === 'ko' ? 'en' : 'ko'; // 언어 전환
+
+    // 언어에 따라 URL 설정
+    const url = newLanguage === 'ko' ? 'https://resume.creddle.io/resume/e94zbhqhc0l?lang=ko' : 'https://resume.creddle.io/resume/e94zbhqhc0l?lang=en';
+
+    // href 속성 변경
+    resumeLink.href = url;
+
+    // 언어 변경
+    resumeLink.setAttribute('data-current-lang', newLanguage);
+
+    // 언어 텍스트 변경
+    const languageText = newLanguage === 'ko' ? '이력서' : 'Resume';
+    resumeLink.querySelector('span').textContent = languageText;
+}
+
   function toggleLanguage(language) {
+
+    const resumeLink = document.getElementById('resume-link');
+    let currentLanguage = resumeLink.getAttribute('data-current-lang');
+    const newLanguage = currentLanguage === 'ko' ? 'en' : 'ko'; // 언어 전환
+    let url;
+    
+
+
+
+
       // 현재 언어를 LocalStorage에 저장
       localStorage.setItem('language', language);
 
@@ -54,10 +84,16 @@
           // 선택한 언어에 따라 내용을 변경
           if (language === 'ko') {
               element.textContent = element.getAttribute('data-lang-ko');
+              currentLanguage = resumeLink.getAttribute('data-lang-ko');
+              url = 'https://drive.google.com/file/d/1m6kveZcuY_sjoaY-dLG4fmuOGRdwe9oZ/view?usp=sharing';
           } else if (language === 'en') {
               element.textContent = element.getAttribute('data-lang-en');
+              currentLanguage = resumeLink.getAttribute('data-lang-en');
+              url = 'https://resume.creddle.io/resume/e94zbhqhc0l';
           }
       });
+      resumeLink.href = url;
+
   }
 
   // 페이지가 로드될 때 저장된 언어를 적용
@@ -65,6 +101,17 @@
       const savedLanguage = localStorage.getItem('language') || 'en';
       toggleLanguage(savedLanguage);
   });
+
+  function openResume(language) {
+    let url;
+    if (language === 'ko') {
+        url = 'https://www.google.com/';
+    } else {
+        url = 'https://resume.creddle.io/resume/e94zbhqhc0l';
+    }
+    window.open(url, '_blank');
+}
+
 </script>
 
   <!-- =======================================================
@@ -96,7 +143,10 @@
           <li><a href="#experience"><span data-lang-en="Experience" data-lang-ko="경력">Experience</span></a></li>
           <li><a href="#portfolio"><span data-lang-en="Projects" data-lang-ko="프로젝트">Projects</span></a></li>
           <li><a href="#skills"><span data-lang-en="Skills" data-lang-ko="기술">Skills</span></a></li>
-          <li><a href="https://resume.creddle.io/resume/e94zbhqhc0l" target="_blank"><span data-lang-en="Resume" data-lang-ko="이력서">Resume</span></a></li>
+          <!-- <li><a href="https://resume.creddle.io/resume/e94zbhqhc0l" target="_blank"><span data-lang-en="Resume" data-lang-ko="이력서">Resume</span></a></li> -->
+          <li><a id="resume-link" href="https://resume.creddle.io/resume/e94zbhqhc0l" target="_blank"><span data-lang-en="Resume" data-lang-ko="이력서">Resume</span></a></li>
+          <!-- <li><a href="https://resume.creddle.io/resume/e94zbhqhc0l" target="_blank"><span data-lang-en="Resume" data-lang-ko="이력서">Resume</span></a></li> -->
+         
           <li><a href="#contacts"><span data-lang-en="Contact" data-lang-ko="연락처">Contact</span></a></li>
           <li>
             <a href="#language"><span data-lang-en="언어" data-lang-ko="Language">언어</span></a>
@@ -478,10 +528,11 @@
     <div class="row">
       <div class="col-lg-12 d-flex justify-content-center">
         <ul id="portfolio-flters">
-          <li data-filter="*" class="filter-active">All</li>
-          <li data-filter=".filter-game">Game Project</li>
-          <li data-filter=".filter-graphic">Graphic Project</li>
-          <li data-filter=".filter-Software">Software & App</li>
+          <li data-filter="*" class="filter-active" data-lang-en="All" data-lang-ko="전체">전체</li>
+          <li data-filter=".filter-game" data-lang-en="Game Project" data-lang-ko="게임 프로젝트">게임 프로젝트</li>
+          <li data-filter=".filter-graphic" data-lang-en="Graphic Project" data-lang-ko="그래픽 프로젝트">그래픽 프로젝트</li>
+          <li data-filter=".filter-Software" data-lang-en="Software & App" data-lang-ko="소프트웨어 & 앱">소프트웨어 & 앱</li>
+          
         </ul>
       </div>
     </div>
@@ -498,7 +549,7 @@
 
             <div class="portfolio-links">
               <a href="projects/bitsaver.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe"
-                class="venobox" title="Project Details"> 자세히</a>
+              class="venobox" title="Project Details" data-lang-en="View" data-lang-ko="자세히">자세히</a>
             </div>
           </div>
         </div>
@@ -523,14 +574,15 @@
 
       <div class="col-lg-4 col-md-6 portfolio-item filter-graphic">
         <center>
-          <h4>3D 그래픽 기술 데모</h4>
+          <h4 data-lang-en="3D Graphics Tech Demo" data-lang-ko="3D 그래픽 기술 데모">3D 그래픽 기술 데모</h4>
+
         </center>
         <div class="portfolio-wrap">
           <img src="assets/img/project/graphic_tech.png" class="img-fluid" alt="">
           <div class="portfolio-info">
             <div class="portfolio-links">
               <a href="projects/graphictechdemo.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe"
-                class="venobox" title="Project Details"> 자세히</a>
+              class="venobox" title="Project Details" data-lang-en="View" data-lang-ko="자세히">자세히</a>
             </div>
           </div>
         </div>
@@ -540,14 +592,15 @@
       <div class="col-lg-4 col-md-6 portfolio-item filter-graphic">
         <!-- <br> -->
         <center>
-          <h4>Shading 프로젝트</h4>
+          <h4 data-lang-en="Shading Project" data-lang-ko="Shading 프로젝트">Shading 프로젝트</h4>
+
         </center>
         <div class="portfolio-wrap">
           <img src="assets/img/project/shading_model.png" class="img-fluid" alt="">
           <div class="portfolio-info">
             <div class="portfolio-links">
               <a href="projects/shadingModel.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe"
-                class="venobox" title="Project Details"> 자세히</a>
+              class="venobox" title="Project Details" data-lang-en="View" data-lang-ko="자세히">자세히</a>
             </div>
           </div>
         </div>
@@ -556,14 +609,15 @@
       <div class="col-lg-4 col-md-6 portfolio-item filter-graphic">
         <!-- <br> -->
         <center>
-          <h4>레이 트레이싱</h4>
+          <h4 data-lang-en="Ray Tracing" data-lang-ko="레이 트레이싱">레이 트레이싱</h4>
+
         </center>
         <div class="portfolio-wrap">
           <img src="assets/img/project/raytracing.png" class="img-fluid" alt="">
           <div class="portfolio-info">
             <div class="portfolio-links">
               <a href="projects/raytracing.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe"
-                class="venobox" title="Project Details"> 자세히</a>
+              class="venobox" title="Project Details" data-lang-en="View" data-lang-ko="자세히">자세히</a>
             </div>
           </div>
         </div>
@@ -579,7 +633,7 @@
 
             <div class="portfolio-links">
               <a href="projects/bear.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox"
-                title="Project Details"> 자세히</a>
+              title="Project Details" data-lang-en="View" data-lang-ko="자세히">자세히</a>
             </div>
           </div>
         </div>
@@ -595,7 +649,7 @@
 
             <div class="portfolio-links">
               <a href="projects/treasure_hunter.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe"
-                class="venobox" title="Project Details"> 자세히</a>
+              class="venobox" title="Project Details" data-lang-en="View" data-lang-ko="자세히">자세히</a>
             </div>
           </div>
         </div>
@@ -603,7 +657,8 @@
 
       <div class="col-lg-4 col-md-6 portfolio-item filter-graphic">
         <center>
-          <h4>곡선 프로젝트</h4>
+          <h4 data-lang-en="Curve Project" data-lang-ko="곡선 프로젝트">곡선 프로젝트</h4>
+
         </center>
         <div class="portfolio-wrap">
           <img src="assets/img/project/curves.png" class="img-fluid" alt="">
@@ -611,7 +666,7 @@
 
             <div class="portfolio-links">
               <a href="projects/curve.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox"
-                title="Project Details"> 자세히</a>
+              title="Project Details" data-lang-en="View" data-lang-ko="자세히">자세히</a>
             </div>
           </div>
         </div>
@@ -643,7 +698,7 @@
 
             <div class="portfolio-links">
               <a href="projects/paparazzi.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe"
-                class="venobox" title="Project Details"> 자세히</a>
+              class="venobox" title="Project Details" data-lang-en="View" data-lang-ko="자세히">자세히</a>
             </div>
           </div>
         </div>
@@ -652,14 +707,15 @@
       <div class="col-lg-4 col-md-6 portfolio-item filter-Software">
         <!-- <br> -->
         <center>
-          <h4>데이팅 어플리케이션</h4>
+          <h4 data-lang-en="Dating Application" data-lang-ko="데이팅 어플리케이션">데이팅 어플리케이션</h4>
+
         </center>
         <div class="portfolio-wrap">
           <img src="assets/img/project/Dating.jpg" class="img-fluid" alt="">
           <div class="portfolio-info">
             <div class="portfolio-links">
               <a href="projects/dating.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox"
-                title="Project Details"> 자세히</a>
+               title="Project Details" data-lang-en="View" data-lang-ko="자세히">자세히</a>
             </div>
           </div>
         </div>
