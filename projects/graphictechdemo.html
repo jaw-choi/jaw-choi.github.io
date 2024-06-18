@@ -43,6 +43,30 @@
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
+    <script>
+      function toggleLanguage(language) {
+        // 현재 언어를 LocalStorage에 저장
+        localStorage.setItem('language', language);
+
+        // 모든 요소를 선택
+        const elements = document.querySelectorAll('[data-lang-en]');
+
+        elements.forEach((element) => {
+          // 선택한 언어에 따라 내용을 변경
+          if (language === 'ko') {
+            element.textContent = element.getAttribute('data-lang-ko');
+          } else if (language === 'en') {
+            element.textContent = element.getAttribute('data-lang-en');
+          }
+        });
+      }
+
+      // 페이지가 로드될 때 저장된 언어를 적용
+      document.addEventListener('DOMContentLoaded', () => {
+        const savedLanguage = localStorage.getItem('language') || 'en';
+        toggleLanguage(savedLanguage);
+      });
+    </script>
   </head>
 
   <body data-gr-c-s-loaded="false">
@@ -56,9 +80,28 @@
               <h2 style="color: white">3D 그래픽 기술 데모</h2>
               <ul>
                 <li>
-                  <strong>프로젝트 설명</strong>: 3D 그래픽 기술 데모 / 2인팀
+                  <strong
+                    data-lang-en="Project Description"
+                    data-lang-ko="프로젝트 설명"
+                    >프로젝트 설명</strong
+                  >:
+                  <span
+                    data-lang-en="3D Graphic Technology Demo / Team of 2"
+                    data-lang-ko="3D 그래픽 기술 데모 / 2인팀"
+                    >3D 그래픽 기술 데모 / 2인팀</span
+                  >
                 </li>
-                <li><strong>기술 스택</strong>: C++, OpenGL, GLSL, ImGui</li>
+                <li>
+                  <strong data-lang-en="Tech Stack" data-lang-ko="기술 스택"
+                    >기술 스택</strong
+                  >:
+                  <span
+                    data-lang-en="C++, OpenGL, GLSL, ImGui"
+                    data-lang-ko="C++, OpenGL, GLSL, ImGui"
+                    >C++, OpenGL, GLSL, ImGui</span
+                  >
+                </li>
+
                 <li>
                   <strong>Github URL</strong>:
                   <a
@@ -69,38 +112,77 @@
                 </li>
               </ul>
               <p>
-                <li>
-                  <strong>
-                    C++과 OpenGL을 사용하여 다양한 3D 기술들을 직접 구현하며
-                    컴퓨터 그래픽 프로그래밍의 기반을 다졌습니다. 또한, 구현한
-                    기술들을 활용하여 다양한 예시 데모들을 만들었습니다.
-                  </strong>
+                <li
+                  data-lang-en="Implemented various 3D technologies using C++ and OpenGL, establishing the foundation of computer graphics programming. Also created various example demos using the implemented technologies."
+                  data-lang-ko="C++과 OpenGL을 사용하여 다양한 3D 기술들을 직접 구현하며 컴퓨터 그래픽 프로그래밍의 기반을 다졌습니다. 또한, 구현한 기술들을 활용하여 다양한 예시 데모들을 만들었습니다."
+                >
+                  C++과 OpenGL을 사용하여 다양한 3D 기술들을 직접 구현하며
+                  컴퓨터 그래픽 프로그래밍의 기반을 다졌습니다. 또한, 구현한
+                  기술들을 활용하여 다양한 예시 데모들을 만들었습니다.
                 </li>
               </p>
               <p>
-                <li>절차적 기하학 모델링</li>
+                <li
+                  data-lang-en="Procedural Geometry Modeling"
+                  data-lang-ko="절차적 기하학 모델링"
+                >
+                  절차적 기하학 모델링
+                </li>
               </p>
               <p>
-                <li>툰 쉐이딩, 안개 효과 구현</li>
+                <li
+                  data-lang-en="Toon Shading, Fog Effects Implementation"
+                  data-lang-ko="툰 쉐이딩, 안개 효과 구현"
+                >
+                  툰 쉐이딩, 안개 효과 구현
+                </li>
               </p>
               <p>
-                <li>값 노이즈(Value Noise)</li>
+                <li
+                  data-lang-en="Value Noise Implementation"
+                  data-lang-ko="값 노이즈(Value Noise)"
+                >
+                  값 노이즈(Value Noise)
+                </li>
               </p>
               <p>
-                <li>그라디언트 노이즈 / 퍼린 노이즈(Perlin Noise)</li>
+                <li
+                  data-lang-en="Gradient Noise / Perlin Noise"
+                  data-lang-ko="그라디언트 노이즈 / 퍼린 노이즈(Perlin Noise)"
+                >
+                  그라디언트 노이즈 / 퍼린 노이즈(Perlin Noise)
+                </li>
               </p>
               <p>
-                <li>허미트 곡선 / 카멜-롬 스플라인</li>
+                <li
+                  data-lang-en="Hermite Curves / Catmull-Rom Splines"
+                  data-lang-ko="허미트 곡선 / 카멜-롬 스플라인"
+                >
+                  허미트 곡선 / 카멜-롬 스플라인
+                </li>
               </p>
               <p>
-                <li>Geometry, Tessellation 쉐이더</li>
+                <li
+                  data-lang-en="Geometry, Tessellation Shaders"
+                  data-lang-ko="Geometry, Tessellation 쉐이더"
+                >
+                  Geometry, Tessellation 쉐이더
+                </li>
               </p>
               <p>
-                <li>쉐도우 맵핑</li>
+                <li data-lang-en="Shadow Mapping" data-lang-ko="쉐도우 맵핑">
+                  쉐도우 맵핑
+                </li>
               </p>
               <p>
-                <li>포인트 쉐도우 맵핑</li>
+                <li
+                  data-lang-en="Point Shadow Mapping"
+                  data-lang-ko="포인트 쉐도우 맵핑"
+                >
+                  포인트 쉐도우 맵핑
+                </li>
               </p>
+
               <p>
                 <video width="100%" height="auto" controls>
                   <source

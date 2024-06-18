@@ -43,6 +43,30 @@
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
+    <script>
+      function toggleLanguage(language) {
+        // 현재 언어를 LocalStorage에 저장
+        localStorage.setItem('language', language);
+
+        // 모든 요소를 선택
+        const elements = document.querySelectorAll('[data-lang-en]');
+
+        elements.forEach((element) => {
+          // 선택한 언어에 따라 내용을 변경
+          if (language === 'ko') {
+            element.textContent = element.getAttribute('data-lang-ko');
+          } else if (language === 'en') {
+            element.textContent = element.getAttribute('data-lang-en');
+          }
+        });
+      }
+
+      // 페이지가 로드될 때 저장된 언어를 적용
+      document.addEventListener('DOMContentLoaded', () => {
+        const savedLanguage = localStorage.getItem('language') || 'en';
+        toggleLanguage(savedLanguage);
+      });
+    </script>
   </head>
 
   <body data-gr-c-s-loaded="false">
@@ -56,10 +80,29 @@
               <h2 style="color: white">Enter The G157</h2>
               <ul>
                 <li>
-                  <strong>프로젝트 설명</strong>: 2D 탑다운 게임 - Tech 리드 /
-                  4인팀
+                  <strong
+                    data-lang-en="Project Description"
+                    data-lang-ko="프로젝트 설명"
+                    >프로젝트 설명</strong
+                  >:
+                  <span
+                    data-lang-en="2D Top-down Game - Tech Lead / Team of 4"
+                    data-lang-ko="2D 탑다운 게임 - Tech 리드 / 4인팀"
+                    >2D 탑다운 게임 - Tech 리드 / 4인팀</span
+                  >
                 </li>
-                <li><strong>기술 스택</strong>: C#, Unity, Nintendo SDK</li>
+
+                <li>
+                  <strong data-lang-en="Tech Stack" data-lang-ko="기술 스택"
+                    >기술 스택</strong
+                  >:
+                  <span
+                    data-lang-en="C#, Unity, Nintendo SDK"
+                    data-lang-ko="C#, Unity, Nintendo SDK"
+                    >C#, Unity, Nintendo SDK</span
+                  >
+                </li>
+
                 <!-- <li>
                   <strong>Nintendo Switch Play Video</strong>:
                   <a
@@ -70,34 +113,50 @@
                 </li> -->
               </ul>
               <p>
-                <li>
+                <li
+                  data-lang-en="Utilized C#, Unity Engine, and Nintendo SDK to develop the game."
+                  data-lang-ko="C#과 Unity Engine 및 Nintendo SDK를 활용해서 게임을 제작하였습니다."
+                >
                   C#과 Unity Engine 및 Nintendo SDK를 활용해서 게임을
                   제작하였습니다.
                 </li>
               </p>
               <p>
-                <li>
+                <li
+                  data-lang-en="Implemented Procedural Generation technique to automatically generate maps with random map generation."
+                  data-lang-ko="맵을 자동 생성되게 하기 위하여 Procedural Generation 기법을 응용하여 랜덤맵이 생성되게 구현했습니다."
+                >
                   맵을 자동 생성되게 하기 위하여 Procedural Generation 기법을
                   응용하여 랜덤맵이 생성되게 구현했습니다.
                 </li>
               </p>
               <p>
-                <li>
-                  게임의 안정성을 높이기 위해 디버깅과 버그 수정에 집중했습니다
+                <li
+                  data-lang-en="Focused on debugging and bug fixing to enhance game stability."
+                  data-lang-ko="게임의 안정성을 높이기 위해 디버깅과 버그 수정에 집중했습니다."
+                >
+                  게임의 안정성을 높이기 위해 디버깅과 버그 수정에 집중했습니다.
                 </li>
               </p>
               <p>
-                <li>
+                <li
+                  data-lang-en="Applied direction key control, sound effects, and vibration effects based on Nintendo SDK."
+                  data-lang-ko="Nintendo SDK에 기초하여 방향키 조정, 효과음과 진동효과를 적용했습니다."
+                >
                   Nintendo SDK에 기초하여 방향키 조정, 효과음과 진동효과를
                   적용했습니다.
                 </li>
               </p>
               <p>
-                <li>
+                <li
+                  data-lang-en="Implemented enemy AI, game logic, and other functionalities using C# and focused on performance optimization."
+                  data-lang-ko="C#를 사용하여 적 AI, 게임 로직 및 기타 기능을 구현하고 성능 최적화에 중점을 두었습니다."
+                >
                   C#를 사용하여 적 AI, 게임 로직 및 기타 기능을 구현하고 성능
                   최적화에 중점을 두었습니다.
                 </li>
               </p>
+
               <p>
                 <video width="100%" height="30%" controls>
                   <source

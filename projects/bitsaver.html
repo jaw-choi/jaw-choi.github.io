@@ -46,6 +46,9 @@
 
     <script>
       function toggleLanguage(language) {
+        // 현재 언어를 LocalStorage에 저장
+        localStorage.setItem('language', language);
+
         // 모든 요소를 선택
         const elements = document.querySelectorAll('[data-lang-en]');
 
@@ -58,15 +61,12 @@
           }
         });
       }
-      // function toggleLanguageResume(language) {
-      //   var url;
-      //   if (lang === 'ko') {
-      //       url = "https://resume.creddle.io/resume/e94zbhqhc0l";
-      //   } else if (lang === 'en') {
-      //       url = "https://drive.google.com/file/d/1m6kveZcuY_sjoaY-dLG4fmuOGRdwe9oZ/view?usp=drive_link";
-      //   }
-      //   window.open(url, "_blank");
-      // }
+
+      // 페이지가 로드될 때 저장된 언어를 적용
+      document.addEventListener('DOMContentLoaded', () => {
+        const savedLanguage = localStorage.getItem('language') || 'en';
+        toggleLanguage(savedLanguage);
+      });
     </script>
   </head>
 
@@ -80,15 +80,41 @@
               <br />
               <h2 style="color: white">BIT SAVER</h2>
               <ul>
-                <li><strong>기간</strong>: 2021.06 - 2022.09</li>
                 <li>
-                  <strong>프로젝트 설명</strong>: 2D 리듬 엑션 게임- Tech Lead /
-                  4인팀
+                  <strong data-lang-en="Duration" data-lang-ko="기간"
+                    >기간</strong
+                  >:
+                  <span
+                    data-lang-en="June 2021 - September 2022"
+                    data-lang-ko="2021.06 - 2022.09"
+                    >2021.06 - 2022.09</span
+                  >
                 </li>
+
                 <li>
-                  <strong>기술 스택</strong>: C++, OpenGL, Visual Studio,
-                  Arduino
+                  <strong
+                    data-lang-en="Project Description"
+                    data-lang-ko="프로젝트 설명"
+                    >프로젝트 설명</strong
+                  >:
+                  <span
+                    data-lang-en="2D Rhythm Action Game - Tech Lead / Team of 4"
+                    data-lang-ko="2D 리듬 엑션 게임 - Tech Lead / 4인팀"
+                    >2D 리듬 엑션 게임 - Tech Lead / 4인팀</span
+                  >
                 </li>
+
+                <li>
+                  <strong data-lang-en="Tech Stack" data-lang-ko="기술 스택"
+                    >기술 스택</strong
+                  >:
+                  <span
+                    data-lang-en="C++, OpenGL, Visual Studio, Arduino"
+                    data-lang-ko="C++, OpenGL, Visual Studio, Arduino"
+                    >C++, OpenGL, Visual Studio, Arduino</span
+                  >
+                </li>
+
                 <li>
                   <strong>Github URL</strong>:
                   <a
@@ -108,45 +134,64 @@
                 </li>
               </p>
               <p>
-                <li>
+                <li
+                  data-lang-en="Effectively applied graphic elements to the custom engine using OpenGL and GLSL, enhancing and optimizing the overall graphic experience."
+                  data-lang-ko="OpenGL과 GLSL을 사용하여 커스텀 엔진에 그래픽 요소를 효과적으로 적용하여 전반적인 그래픽 경험을 향상시키고 최적화했습니다."
+                >
                   OpenGL과 GLSL을 사용하여 커스텀 엔진에 그래픽 요소를
                   효과적으로 적용하여 전반적인 그래픽 경험을 향상시키고
                   최적화했습니다.
                 </li>
               </p>
               <p>
-                <li>
+                <li
+                  data-lang-en="Focused on debugging and fixing bugs to improve game stability, resulting in the development of a stable game."
+                  data-lang-ko="게임의 안정성을 향상시키기 위해 디버깅과 버그 수정에 집중하였고, 그 결과 안정적인 게임을 개발할 수 있었습니다."
+                >
                   게임의 안정성을 향상시키기 위해 디버깅과 버그 수정에
                   집중하였고, 그 결과 안정적인 게임을 개발할 수 있었습니다.
                 </li>
               </p>
               <p>
-                <li>
+                <li
+                  data-lang-en="Implemented animation systems and particle effects directly to make the game more realistic."
+                  data-lang-ko="애니메이션 시스템과 파티클 효과를 직접 구현하여 게임을 더욱 현실감 있게 만들었습니다."
+                >
                   애니메이션 시스템과 파티클 효과를 직접 구현하여 게임을 더욱
                   현실감 있게 만들었습니다.
                 </li>
               </p>
               <p>
-                <li>
+                <li
+                  data-lang-en="Documented and managed the game architecture by visualizing the current state and goals of the project to ensure smooth collaboration with producers, designers, and engineers."
+                  data-lang-ko="프로듀서, 디자이너, 엔지니어와의 원활한 협력을 위해 프로젝트의 현재 상태와 목표 방향을 시각화하여 게임 아키텍처를 문서화하고 관리했습니다."
+                >
                   프로듀서, 디자이너, 엔지니어와의 원활한 협력을 위해 프로젝트의
                   현재 상태와 목표 방향을 시각화하여 게임 아키텍처를 문서화하고
                   관리했습니다.
                 </li>
               </p>
               <p>
-                <li>
+                <li
+                  data-lang-en="Supported drum pad controllers using Arduino and implemented gameplay that provided a more realistic experience through pressure sensors."
+                  data-lang-ko="Arduino를 사용하여 드럼 패드 컨트롤러를 지원하고, 압력 센서를 통해 더욱 현실감 있는 경험을 제공하는 게임 플레이를 구현했습니다."
+                >
                   Arduino를 사용하여 드럼 패드 컨트롤러를 지원하고, 압력 센서를
                   통해 더욱 현실감 있는 경험을 제공하는 게임 플레이를
                   구현했습니다.
                 </li>
               </p>
               <p>
-                <li>
+                <li
+                  data-lang-en="Used the FMOD Library to analyze memory chunks of MIDI files, converting and storing the data to implement note generation and gameplay logic, which are key elements of rhythm games."
+                  data-lang-ko="FMOD Library를 사용하여 MIDI파일의 memory chunk를 분석해 데이터를 사용가능하게 변환하고 저장하여 리듬게임의 핵심적인 요소인 노드의 생성과 게임 플레이 로직을 구현하였습니다"
+                >
                   FMOD Library를 사용하여 MIDI파일의 memory chunk를 분석해
                   데이터를 사용가능하게 변환하고 저장하여 리듬게임의 핵심적인
-                  요소인 노드의 생성과 게임 플레이 로직을 구현하였습니다
+                  요소인 노드의 생성과 게임 플레이 로직을 구현하였습니다.
                 </li>
               </p>
+
               <p>
                 <video width="100%" height="auto" controls>
                   <source

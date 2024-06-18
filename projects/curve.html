@@ -43,6 +43,30 @@
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
+    <script>
+      function toggleLanguage(language) {
+        // 현재 언어를 LocalStorage에 저장
+        localStorage.setItem('language', language);
+
+        // 모든 요소를 선택
+        const elements = document.querySelectorAll('[data-lang-en]');
+
+        elements.forEach((element) => {
+          // 선택한 언어에 따라 내용을 변경
+          if (language === 'ko') {
+            element.textContent = element.getAttribute('data-lang-ko');
+          } else if (language === 'en') {
+            element.textContent = element.getAttribute('data-lang-en');
+          }
+        });
+      }
+
+      // 페이지가 로드될 때 저장된 언어를 적용
+      document.addEventListener('DOMContentLoaded', () => {
+        const savedLanguage = localStorage.getItem('language') || 'en';
+        toggleLanguage(savedLanguage);
+      });
+    </script>
   </head>
 
   <body data-gr-c-s-loaded="false">
@@ -56,13 +80,30 @@
               <h2 style="color: white">Curve</h2>
               <ul>
                 <li>
-                  <strong>프로젝트 설명</strong>: 컴퓨터 그래픽스 / 매개변수
-                  다항식 곡선 - 솔로 프로젝트
+                  <strong
+                    data-lang-en="Project Description"
+                    data-lang-ko="프로젝트 설명"
+                    >프로젝트 설명</strong
+                  >:
+                  <span
+                    data-lang-en="Computer Graphics / Parametric Polynomial Curves - Solo Project"
+                    data-lang-ko="컴퓨터 그래픽스 / 매개변수 다항식 곡선 - 솔로 프로젝트"
+                  >
+                    컴퓨터 그래픽스 / 매개변수 다항식 곡선 - 솔로 프로젝트
+                  </span>
                 </li>
                 <li>
-                  <strong>기술 스택</strong>: C++, OpenGL, Calculus, Linear
-                  Algebra, ImGui
+                  <strong data-lang-en="Tech Stack" data-lang-ko="기술 스택"
+                    >기술 스택</strong
+                  >:
+                  <span
+                    data-lang-en="C#, Unity, Calculus, Linear Algebra"
+                    data-lang-ko="C#, Unity, Calculus, Linear Algebra"
+                  >
+                    C#, Unity, Calculus, Linear Algebra
+                  </span>
                 </li>
+
                 <li>
                   <strong>Github URL</strong>:
                   <a
@@ -73,43 +114,80 @@
                 </li>
               </ul>
               <p>
-                <li>
+                <li
+                  data-lang-en="Resolved problems related to vector spaces of polynomials and spline functions using linear algebra, establishing knowledge in the process."
+                  data-lang-ko="선형 대수를 사용하여 다항식과 스플라인 함수의 벡터 공간과 관련된 문제를 해결하며 지식을 확립했습니다."
+                >
                   선형 대수를 사용하여 다항식과 스플라인 함수의 벡터 공간과
                   관련된 문제를 해결하며 지식을 확립했습니다.
                 </li>
               </p>
               <p>
-                <li>
-                  C++와 OpenGL을 사용하여 아래 알고리즘의 2D 곡선을 구현했습니다
+                <li
+                  data-lang-en="Implemented 2D curves of the following algorithms using C++ and OpenGL:"
+                  data-lang-ko="C++와 OpenGL을 사용하여 다음 알고리즘의 2D 곡선을 구현했습니다."
+                >
+                  C++와 OpenGL을 사용하여 다음 알고리즘의 2D 곡선을
+                  구현했습니다.
                 </li>
               </p>
               <p>
-                <li>다항식 함수용 De Casteljau 알고리즘</li>
+                <li
+                  data-lang-en="De Casteljau algorithm for polynomial functions"
+                  data-lang-ko="다항식 함수용 De Casteljau 알고리즘"
+                >
+                  다항식 함수용 De Casteljau 알고리즘
+                </li>
+              </p>
+              <p>
+                <li
+                  data-lang-en="De Casteljau algorithm for Bezier curves"
+                  data-lang-ko="베지어 곡선용 De Casteljau 알고리즘"
+                >
+                  베지어 곡선용 De Casteljau 알고리즘
+                </li>
+              </p>
+              <p>
+                <li
+                  data-lang-en="Polynomial interpolation"
+                  data-lang-ko="다항식 보간"
+                >
+                  다항식 보간
+                </li>
+              </p>
+              <p>
+                <li
+                  data-lang-en="Cubic spline interpolation"
+                  data-lang-ko="삼차 스플라인 보간"
+                >
+                  삼차 스플라인 보간
+                </li>
+              </p>
+              <p>
+                <li
+                  data-lang-en="De Boor algorithm for spline functions"
+                  data-lang-ko="스플라인 함수용 De Boor 알고리즘"
+                >
+                  스플라인 함수용 De Boor 알고리즘
+                </li>
+              </p>
+              <p>
+                <li
+                  data-lang-en="De Boor algorithm for polynomial curves"
+                  data-lang-ko="다항식 곡선용 De Boor 알고리즘"
+                >
+                  다항식 곡선용 De Boor 알고리즘
+                </li>
+              </p>
+              <p>
+                <li
+                  data-lang-en="De Boor algorithm for B-spline curves"
+                  data-lang-ko="B-스플라인 곡선용 De Boor 알고리즘"
+                >
+                  B-스플라인 곡선용 De Boor 알고리즘
+                </li>
               </p>
 
-              <p>
-                <li>베지어 곡선용 De Casteljau 알고리즘</li>
-              </p>
-
-              <p>
-                <li>다항식 보간</li>
-              </p>
-
-              <p>
-                <li>삼차 스플라인 보간</li>
-              </p>
-
-              <p>
-                <li>스플라인 함수용 De Boor 알고리즘</li>
-              </p>
-
-              <p>
-                <li>다항식 곡선용 De Boor 알고리즘</li>
-              </p>
-
-              <p>
-                <li>B-스플라인 곡선용 De Boor 알고리즘</li>
-              </p>
               <p>
                 <video width="100%" height="auto" controls>
                   <source src="../assets/video/curves.mp4" type="video/mp4" />

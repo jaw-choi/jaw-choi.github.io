@@ -43,6 +43,30 @@
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
+    <script>
+      function toggleLanguage(language) {
+        // 현재 언어를 LocalStorage에 저장
+        localStorage.setItem('language', language);
+
+        // 모든 요소를 선택
+        const elements = document.querySelectorAll('[data-lang-en]');
+
+        elements.forEach((element) => {
+          // 선택한 언어에 따라 내용을 변경
+          if (language === 'ko') {
+            element.textContent = element.getAttribute('data-lang-ko');
+          } else if (language === 'en') {
+            element.textContent = element.getAttribute('data-lang-en');
+          }
+        });
+      }
+
+      // 페이지가 로드될 때 저장된 언어를 적용
+      document.addEventListener('DOMContentLoaded', () => {
+        const savedLanguage = localStorage.getItem('language') || 'en';
+        toggleLanguage(savedLanguage);
+      });
+    </script>
   </head>
 
   <body data-gr-c-s-loaded="false">
@@ -53,40 +77,83 @@
           <div class="row">
             <div class="col-lg-12 portfolio-info">
               <br />
-              <h2 style="color: white">Shading 프로젝트</h2>
+              <h2
+                style="color: white"
+                data-lang-en="Shading Project"
+                data-lang-ko="Shading 프로젝트"
+              >
+                Shading 프로젝트
+              </h2>
               <ul>
-                <li>
-                  <strong>프로젝트 설명</strong>: 3D 그래픽 쉐이팅 프로젝트 /
-                  솔로 프로젝트
+                <li
+                  data-lang-en="Project Description: 3D Graphic Shading Project / Solo Project"
+                  data-lang-ko="프로젝트 설명: 3D 그래픽 쉐이팅 프로젝트 / 솔로 프로젝트"
+                >
+                  <strong
+                    data-lang-en="Project Description"
+                    data-lang-ko="프로젝트 설명"
+                    >프로젝트 설명</strong
+                  >:
+                  <span
+                    data-lang-en="3D Graphic Shading Project / Solo Project"
+                    data-lang-ko="3D 그래픽 쉐이팅 프로젝트 / 솔로 프로젝트"
+                    >3D 그래픽 쉐이팅 프로젝트 / 솔로 프로젝트</span
+                  >
                 </li>
-                <li><strong>기술 스택</strong>: C++, OpenGL, GLSL</li>
-                <li>
-                  <strong>Github URL</strong>:
+                <li
+                  data-lang-en="Tech Stack: C++, OpenGL, GLSL"
+                  data-lang-ko="기술 스택: C++, OpenGL, GLSL"
+                >
+                  <strong data-lang-en="Tech Stack" data-lang-ko="기술 스택"
+                    >기술 스택</strong
+                  >:
+                  <span
+                    data-lang-en="C++, OpenGL, GLSL"
+                    data-lang-ko="C++, OpenGL, GLSL"
+                    >C++, OpenGL, GLSL</span
+                  >
+                </li>
+                <li data-lang-en="Github URL: " data-lang-ko="Github URL: ">
+                  <strong data-lang-en="Github URL" data-lang-ko="Github URL"
+                    >Github URL</strong
+                  >:
                   <a
                     href="https://github.com/jaw-choi/cs300_project"
                     target="_blank"
+                    rel="noopener noreferrer"
                     >Project Link</a
                   >
                 </li>
               </ul>
+
               <p>
-                <li>
+                <li
+                  data-lang-en="Implemented shading algorithms on the GPU through shader programming."
+                  data-lang-ko="쉐이더 프로그래밍을 통해 GPU에서 셰이딩 알고리즘을 구현했습니다."
+                >
                   쉐이더 프로그래밍을 통해 GPU에서 셰이딩 알고리즘을
                   구현했습니다.
                 </li>
               </p>
               <p>
-                <li>
+                <li
+                  data-lang-en="Implemented a simple shading model including Phong lighting model and environment mapping (reflection and refraction)."
+                  data-lang-ko="Phong 조명 모델 및 환경 매핑(반사 및 굴절)을 포함한 간단한 셰이딩 모델을 구현했습니다."
+                >
                   Phong 조명 모델 및 환경 매핑(반사 및 굴절)을 포함한 간단한
                   셰이딩 모델을 구현했습니다.
                 </li>
               </p>
               <p>
-                <li>
+                <li
+                  data-lang-en="Implemented a 3D object loader for importing assets into the graphic pipeline."
+                  data-lang-ko="그래픽 파이프라인에 에셋을 가져오기 위한 3D 객체 로더를 구현했습니다."
+                >
                   그래픽 파이프라인에 에셋을 가져오기 위한 3D 객체 로더를
                   구현했습니다.
                 </li>
               </p>
+
               <p>
                 <video width="100%" height="auto" controls>
                   <source

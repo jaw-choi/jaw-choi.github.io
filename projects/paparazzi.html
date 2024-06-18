@@ -43,6 +43,30 @@
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
+    <script>
+      function toggleLanguage(language) {
+        // 현재 언어를 LocalStorage에 저장
+        localStorage.setItem('language', language);
+
+        // 모든 요소를 선택
+        const elements = document.querySelectorAll('[data-lang-en]');
+
+        elements.forEach((element) => {
+          // 선택한 언어에 따라 내용을 변경
+          if (language === 'ko') {
+            element.textContent = element.getAttribute('data-lang-ko');
+          } else if (language === 'en') {
+            element.textContent = element.getAttribute('data-lang-en');
+          }
+        });
+      }
+
+      // 페이지가 로드될 때 저장된 언어를 적용
+      document.addEventListener('DOMContentLoaded', () => {
+        const savedLanguage = localStorage.getItem('language') || 'en';
+        toggleLanguage(savedLanguage);
+      });
+    </script>
   </head>
 
   <body data-gr-c-s-loaded="false">

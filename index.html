@@ -44,6 +44,9 @@
 
 <script>
   function toggleLanguage(language) {
+      // 현재 언어를 LocalStorage에 저장
+      localStorage.setItem('language', language);
+
       // 모든 요소를 선택
       const elements = document.querySelectorAll('[data-lang-en]');
 
@@ -56,15 +59,12 @@
           }
       });
   }
-  // function toggleLanguageResume(language) {
-  //   var url;
-  //   if (lang === 'ko') {
-  //       url = "https://resume.creddle.io/resume/e94zbhqhc0l";
-  //   } else if (lang === 'en') {
-  //       url = "https://drive.google.com/file/d/1m6kveZcuY_sjoaY-dLG4fmuOGRdwe9oZ/view?usp=drive_link";
-  //   }
-  //   window.open(url, "_blank");
-  // }
+
+  // 페이지가 로드될 때 저장된 언어를 적용
+  document.addEventListener('DOMContentLoaded', () => {
+      const savedLanguage = localStorage.getItem('language') || 'en';
+      toggleLanguage(savedLanguage);
+  });
 </script>
 
   <!-- =======================================================
@@ -99,10 +99,10 @@
           <li><a href="https://resume.creddle.io/resume/e94zbhqhc0l" target="_blank"><span data-lang-en="Resume" data-lang-ko="이력서">Resume</span></a></li>
           <li><a href="#contacts"><span data-lang-en="Contact" data-lang-ko="연락처">Contact</span></a></li>
           <li>
-            <a href="#language"><span data-lang-en="Language" data-lang-ko="언어">Language</span></a>
+            <a href="#language"><span data-lang-en="언어" data-lang-ko="Language">언어</span></a>
             <ul class="dropdown">
-                <li><a href="#" onclick="toggleLanguage('ko')"><span data-lang-en="Korean" data-lang-ko="한글">Korean</span></a></li>
-                <li><a href="#" onclick="toggleLanguage('en')"><span data-lang-en="English" data-lang-ko="영어">English</span></a></li>
+                <li><a href="#" onclick="toggleLanguage('ko')"><span data-lang-en="한글" data-lang-ko="Korean">한글</span></a></li>
+                <li><a href="#" onclick="toggleLanguage('en')"><span data-lang-en="영어" data-lang-ko="English">영어</span></a></li>
             </ul>
         </li>
 

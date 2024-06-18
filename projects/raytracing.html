@@ -34,6 +34,30 @@
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
+    <script>
+      function toggleLanguage(language) {
+        // 현재 언어를 LocalStorage에 저장
+        localStorage.setItem('language', language);
+
+        // 모든 요소를 선택
+        const elements = document.querySelectorAll('[data-lang-en]');
+
+        elements.forEach((element) => {
+          // 선택한 언어에 따라 내용을 변경
+          if (language === 'ko') {
+            element.textContent = element.getAttribute('data-lang-ko');
+          } else if (language === 'en') {
+            element.textContent = element.getAttribute('data-lang-en');
+          }
+        });
+      }
+
+      // 페이지가 로드될 때 저장된 언어를 적용
+      document.addEventListener('DOMContentLoaded', () => {
+        const savedLanguage = localStorage.getItem('language') || 'en';
+        toggleLanguage(savedLanguage);
+      });
+    </script>
 </head>
 
 <body data-gr-c-s-loaded="false">
@@ -49,39 +73,53 @@
             <br>
             <h2 style="color:white">Ray Tracing</h2>
             <ul>
-              <li><strong>프로젝트 설명</strong>: 레이트레이싱 기술을 활용한 3D 그래픽 프로그램 / 솔로 프로젝트
-              </li>
-              <li><strong>기술 스택</strong>: C++, OpenGL
-              </li>
+              <li>
+                <strong data-lang-en="Project Description" data-lang-ko="프로젝트 설명">프로젝트 설명</strong>: 
+                <span data-lang-en="3D graphic program utilizing ray tracing technology / Solo project"
+                    data-lang-ko="레이트레이싱 기술을 활용한 3D 그래픽 프로그램 / 솔로 프로젝트">
+                    레이트레이싱 기술을 활용한 3D 그래픽 프로그램 / 솔로 프로젝트
+                </span>
+            </li>
+            <li>
+                <strong data-lang-en="Tech Stack" data-lang-ko="기술 스택">기술 스택</strong>: 
+                <span data-lang-en="C++, OpenGL" data-lang-ko="C++, OpenGL">C++, OpenGL</span>
+            </li>
+            
               <li><strong>Github URL</strong>: <a href="https://github.com/jaw-choi/RayTracing"
                   target="_blank">Project
                   Link</a></li>
             </ul>
             <p>
-              <li>
-                광선 추적 기술을 사용하여 사실적인 조명, 반사 및 그림자를 구현한 최첨단 그래픽 데모를 개발했습니다.
+              <li data-lang-en="Developed cutting-edge graphics demos implementing realistic lighting, reflection, and shadows using ray tracing technology."
+                  data-lang-ko="광선 추적 기술을 사용하여 사실적인 조명, 반사 및 그림자를 구현한 최첨단 그래픽 데모를 개발했습니다.">
+                  광선 추적 기술을 사용하여 사실적인 조명, 반사 및 그림자를 구현한 최첨단 그래픽 데모를 개발했습니다.
               </li>
-            </p>
-            <p>
-              <li>
-                2D 텍스처에 광선 투영(raycasting) 기법을 적용하여 모션 블러 효과를 구현했습니다.
+          </p>
+          <p>
+              <li data-lang-en="Implemented motion blur effects using ray casting technique on 2D textures."
+                  data-lang-ko="2D 텍스처에 광선 투영(raycasting) 기법을 적용하여 모션 블러 효과를 구현했습니다.">
+                  2D 텍스처에 광선 투영(raycasting) 기법을 적용하여 모션 블러 효과를 구현했습니다.
               </li>
-            </p>
-            <p>
-              <li>
-                명시적, 암시적, 절차적, 프랙탈 등 다양한 유형의 표면에 대한 광선-표면 교차를 계산했습니다.
+          </p>
+          <p>
+              <li data-lang-en="Computed ray-surface intersections for various types of surfaces including explicit, implicit, procedural, and fractal."
+                  data-lang-ko="명시적, 암시적, 절차적, 프랙탈 등 다양한 유형의 표면에 대한 광선-표면 교차를 계산했습니다.">
+                  명시적, 암시적, 절차적, 프랙탈 등 다양한 유형의 표면에 대한 광선-표면 교차를 계산했습니다.
               </li>
-            </p>
-            <p>
-              <li>
-                마이크로-패싯 BRDF를 사용하여 조명, 반사, 굴절 및 그림자를 계산했습니다.
+          </p>
+          <p>
+              <li data-lang-en="Calculated lighting, reflection, refraction, and shadows using micro-facet BRDF."
+                  data-lang-ko="마이크로-패싯 BRDF를 사용하여 조명, 반사, 굴절 및 그림자를 계산했습니다.">
+                  마이크로-패싯 BRDF를 사용하여 조명, 반사, 굴절 및 그림자를 계산했습니다.
               </li>
-            </p>
-            <p>
-              <li>
-                성능 문제를 해결하기 위해 광선 추적 코드를 최적화하여 효율적으로 실행되도록 했습니다.
+          </p>
+          <p>
+              <li data-lang-en="Optimized ray tracing code to efficiently address performance issues."
+                  data-lang-ko="성능 문제를 해결하기 위해 광선 추적 코드를 최적화하여 효율적으로 실행되도록 했습니다.">
+                  성능 문제를 해결하기 위해 광선 추적 코드를 최적화하여 효율적으로 실행되도록 했습니다.
               </li>
-            </p>
+          </p>
+          
             <p>
             <div class="col-md-6 p-0">
               <img src="../assets/img/project/raytracing_ex1.png" class="img-fluid" alt="" width="100%" height="auto">

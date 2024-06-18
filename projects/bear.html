@@ -43,6 +43,30 @@
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
+    <script>
+      function toggleLanguage(language) {
+        // 현재 언어를 LocalStorage에 저장
+        localStorage.setItem('language', language);
+
+        // 모든 요소를 선택
+        const elements = document.querySelectorAll('[data-lang-en]');
+
+        elements.forEach((element) => {
+          // 선택한 언어에 따라 내용을 변경
+          if (language === 'ko') {
+            element.textContent = element.getAttribute('data-lang-ko');
+          } else if (language === 'en') {
+            element.textContent = element.getAttribute('data-lang-en');
+          }
+        });
+      }
+
+      // 페이지가 로드될 때 저장된 언어를 적용
+      document.addEventListener('DOMContentLoaded', () => {
+        const savedLanguage = localStorage.getItem('language') || 'en';
+        toggleLanguage(savedLanguage);
+      });
+    </script>
   </head>
 
   <body data-gr-c-s-loaded="false">
@@ -56,10 +80,29 @@
               <h2 style="color: white">BEAR</h2>
               <ul>
                 <li>
-                  <strong>프로젝트 설명</strong>: 3D 플랫포머 게임 - Tech 리드 /
-                  6인팀
+                  <strong
+                    data-lang-en="Project Description"
+                    data-lang-ko="프로젝트 설명"
+                    >프로젝트 설명</strong
+                  >:
+                  <span
+                    data-lang-en="3D Platformer Game - Tech Lead / Team of 6"
+                    data-lang-ko="3D 플랫포머 게임 - Tech 리드 / 6인팀"
+                  >
+                    3D 플랫포머 게임 - Tech 리드 / 6인팀
+                  </span>
                 </li>
-                <li><strong>기술 스택</strong>: Unreal5, C++</li>
+                <li>
+                  <strong data-lang-en="Tech Stack" data-lang-ko="기술 스택"
+                    >기술 스택</strong
+                  >:
+                  <span
+                    data-lang-en="Unreal Engine 5, C++"
+                    data-lang-ko="Unreal5, C++"
+                    >Unreal5, C++</span
+                  >
+                </li>
+
                 <li>
                   <strong>Github URL</strong>:
                   <a
@@ -70,23 +113,33 @@
                 </li>
               </ul>
               <p>
-                <li>
+                <li
+                  data-lang-en="Implemented ragdoll, ledge hang, and slide mechanics to apply realistic physics and enhance the overall realism of the game."
+                  data-lang-ko="주요 메커니즘인 래그돌, ledge hang, 슬라이드를 구현하여 게임의 전반적인 현실감을 높이기 위해 현실적인 물리학을 적용했습니다."
+                >
                   주요 메커니즘인 래그돌, ledge hang, 슬라이드를 구현하여 게임의
                   전반적인 현실감을 높이기 위해 현실적인 물리학을 적용했습니다.
                 </li>
               </p>
               <p>
-                <li>
+                <li
+                  data-lang-en="Implemented character movement animation systems including mechanics such as ragdoll and ledge hang."
+                  data-lang-ko="래그돌, ledge hang과 같은 메커니즘을 포함한 캐릭터 움직임 애니메이션 시스템을 구현했습니다."
+                >
                   래그돌, ledge hang과 같은 메커니즘을 포함한 캐릭터 움직임
                   애니메이션 시스템을 구현했습니다.
                 </li>
               </p>
               <p>
-                <li>
+                <li
+                  data-lang-en="Implemented overall game play logic, increasing game stability through testing and debugging."
+                  data-lang-ko="전반적인 게임 플레이 로직을 구현하고, 테스트와 디버깅을 통해 게임의 안정성을 높였습니다."
+                >
                   전반적인 게임 플레이 로직을 구현하고, 테스트와 디버깅을 통해
                   게임의 안정성을 높였습니다.
                 </li>
               </p>
+
               <p>
                 <video width="100%" height="auto" controls>
                   <source src="../assets/video/Bear.mp4" type="video/mp4" />
