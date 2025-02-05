@@ -151,9 +151,22 @@
               </p>
 
               <p>
-                <video width="100%" height="auto" controls>
+                <!-- <video width="100%" height="auto" controls>
                   <source src="../assets/video/Bear.mp4" type="video/mp4" />
+                </video> -->
+                <video id="myVideo" width="100%" height="auto" controls>
+                  <source
+                    src="../assets/video/BEAR Gameplay Video.mp4"
+                    type="video/mp4"
+                  />
                 </video>
+
+                <script>
+                  document.addEventListener('DOMContentLoaded', function () {
+                    const video = document.getElementById('myVideo');
+                    video.volume = 0.1;
+                  });
+                </script>
               </p>
             </div>
           </div>

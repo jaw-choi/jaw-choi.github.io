@@ -184,12 +184,22 @@
               </p>
 
               <p>
-                <video width="100%" height="auto" controls>
+                <!-- <video width="100%" height="auto" controls>
                   <source
                     src="../assets/video/Bit Saver.mp4"
                     type="video/mp4"
                   />
+                </video> -->
+                <video id="myVideo" width="100%" height="auto" controls>
+                  <source src="../assets/video/Bit Saver.mp4" type="video/mp4" />
                 </video>
+
+                <script>
+                  document.addEventListener('DOMContentLoaded', function () {
+                    const video = document.getElementById('myVideo');
+                    video.volume = 0.2;
+                  });
+                </script>
               </p>
               <div class="col-md-8 p-0">
                 <img src="../assets/img/project/bitsaver_drum.png" class="img-fluid" alt="">
