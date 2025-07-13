@@ -1,0 +1,191 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>AstraRoad</title>
+    <meta content="" name="descriptison" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="../assets/img/favicon.png" rel="icon" />
+    <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="../assets/vendor/icofont/icofont.min.css" rel="stylesheet" />
+    <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link
+      href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/boxicons/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="../assets/css/style.css" rel="stylesheet" />
+
+    <!-- =======================================================
+    * Template Name: Personal - v2.2.0
+    * Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+    <script>
+      function toggleLanguage(language) {
+        // 현재 언어를 LocalStorage에 저장
+        localStorage.setItem('language', language);
+
+        // 모든 요소를 선택
+        const elements = document.querySelectorAll('[data-lang-en]');
+
+        elements.forEach((element) => {
+          // 선택한 언어에 따라 내용을 변경
+          if (language === 'ko') {
+            element.textContent = element.getAttribute('data-lang-ko');
+          } else if (language === 'en') {
+            element.textContent = element.getAttribute('data-lang-en');
+          }
+        });
+      }
+
+      // 페이지가 로드될 때 저장된 언어를 적용
+      document.addEventListener('DOMContentLoaded', () => {
+        const savedLanguage = localStorage.getItem('language') || 'en';
+        toggleLanguage(savedLanguage);
+      });
+    </script>
+  </head>
+
+  <body data-gr-c-s-loaded="false">
+    <!-- ======= Portfolio Details ======= -->
+    <main id="main">
+      <div id="portfolio-details" class="portfolio-details">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 portfolio-info">
+              <br />
+              <h2 style="color: white">Astra Road</h2>
+              <ul>
+                <li>
+                  <strong data-lang-en="Duration" data-lang-ko="기간"
+                    >기간</strong
+                  >:
+                  <span
+                    data-lang-en="2024-06-24 ~ Continue"
+                    data-lang-ko="2024-06-24 ~ 계속"
+                    >2024-06-24 ~ 계속
+                  </span>
+                </li>
+
+                <li>
+                  <strong
+                    data-lang-en="Project Description"
+                    data-lang-ko="프로젝트 설명"
+                    >프로젝트 설명</strong
+                  >:
+                  <span
+                    data-lang-en="3D Platformer Combat Game - Gameplay & UI Programmer / Team of 2"
+                    data-lang-ko="3D 플랫포머 전투 게임 - 게임플레이& UI 프로그래머 / 2인팀"
+                    >3D 플랫포머 퍼즐 게임 - 게임플레이& UI 프로그래머 /
+                    2인팀</span
+                  >
+                </li>
+
+                <li>
+                  <strong data-lang-en="Tech Stack" data-lang-ko="기술 스택"
+                    >기술 스택</strong
+                  >:
+                  <span data-lang-en="Unreal, C++" data-lang-ko="Unreal, C++"
+                    >Unreal, C++</span
+                  >
+                </li>
+                <li>
+                  <strong data-lang-en="Github URL" data-lang-ko="Github URL"
+                    >Github URL</strong
+                  >:
+                  <a
+                    href="https://github.com/lois505/JWHJ_GAMES"
+                    target="_blank"
+                    data-lang-en="Project Link"
+                    data-lang-ko="프로젝트 링크"
+                    >프로젝트 링크</a
+                  >
+                </li>
+              </ul>
+              <p>
+                <li
+                  data-lang-en="Used the csv file to construct the map and made it move to the corresponding tile by the value of the dice."
+                  data-lang-ko="csv 파일을 활용하여 맵을 구성하고 주사위 값만큼 해당 타일로 이동되게 만들었습니다."
+                >
+                  csv 파일을 활용하여 맵을 구성하고 주사위 값만큼 해당 타일로
+                  이동되게 만들었습니다.
+                </li>
+              </p>
+              <p>
+                <li
+                  data-lang-en="At the start of the game, I created a UI to move the camera and roll the dice with a map that rotates the dice."
+                  data-lang-ko="게임 시작시 주사위를 돌리는 맵으로 카메라가 이동되게 하고 주사위를 굴리는 UI를 만들었습니다."
+                >
+                  게임 시작시 주사위를 돌리는 맵으로 카메라가 이동되게 하고
+                  주사위를 굴리는 UI를 만들었습니다.
+                </li>
+              </p>
+              <p>
+                <li
+                  data-lang-en="Collaborated with team members to perform debugging, bug identification, and fixing."
+                  data-lang-ko="팀원과 협력하여 디버깅, 버그 식별 및 수정 작업을 수행했습니다."
+                >
+                  팀원과 협력하여 디버깅, 버그 식별 및 수정 작업을 수행했습니다.
+                </li>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Portfolio Details -->
+    </main>
+    <!-- End #main -->
+
+    <!-- Template Main JS File -->
+    <script src="../assets/js/main.js"></script>
+
+    <script>
+      if (window.self == window.top) {
+        (function (i, s, o, g, r, a, m) {
+          i['GoogleAnalyticsObject'] = r;
+          (i[r] =
+            i[r] ||
+            function () {
+              (i[r].q = i[r].q || []).push(arguments);
+            }),
+            (i[r].l = 1 * new Date());
+          (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+          a.async = 1;
+          a.src = g;
+          m.parentNode.insertBefore(a, m);
+        })(
+          window,
+          document,
+          'script',
+          '//www.google-analytics.com/analytics.js',
+          'ga'
+        );
+        ga('create', 'UA-55234356-4', 'auto');
+        ga('send', 'pageview');
+      }
+    </script>
+  </body>
+</html>
