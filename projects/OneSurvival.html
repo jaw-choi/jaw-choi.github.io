@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>AstraRoad</title>
+    <title>OneSurvival</title>
     <meta content="" name="descriptison" />
     <meta content="" name="keywords" />
 
@@ -77,16 +77,16 @@
           <div class="row">
             <div class="col-lg-12 portfolio-info">
               <br />
-              <h2 style="color: white">Astra Road</h2>
+              <h2 style="color: white">One Survival</h2>
               <ul>
                 <li>
                   <strong data-lang-en="Duration" data-lang-ko="기간"
                     >기간</strong
                   >:
                   <span
-                    data-lang-en="2024-06-24 ~ Continue"
-                    data-lang-ko="2024-06-24 ~ 계속"
-                    >2024-06-24 ~ 계속
+                    data-lang-en="2024-07-14 ~ Continue"
+                    data-lang-ko="2024-07-14 ~ 계속"
+                    >2024-07-14 ~ 계속
                   </span>
                 </li>
 
@@ -97,10 +97,10 @@
                     >프로젝트 설명</strong
                   >:
                   <span
-                    data-lang-en="3D Platformer Combat Game - Gameplay & UI Programmer / Team of 2"
-                    data-lang-ko="3D 플랫포머 전투 게임 - 게임플레이& UI 프로그래머 / 2인팀"
-                    >3D 플랫포머 퍼즐 게임 - 게임플레이& UI 프로그래머 /
-                    2인팀</span
+                    data-lang-en="2D LogLike Automatic Attack Survival Game - Game Programmer / Solo Project"
+                    data-lang-ko="2D 로그라이크 자동 공격 서바이벌 게임 - 게임 프로그래머 / 솔로프로젝트"
+                    >2D 로그라이크 자동 공격 서바이벌 게임 - 게임 프로그래머 /
+                    솔로프로젝트</span
                   >
                 </li>
 
@@ -108,8 +108,8 @@
                   <strong data-lang-en="Tech Stack" data-lang-ko="기술 스택"
                     >기술 스택</strong
                   >:
-                  <span data-lang-en="Unreal, C++" data-lang-ko="Unreal, C++"
-                    >Unreal, C++</span
+                  <span data-lang-en="Unity, C#" data-lang-ko="Unity, C#"
+                    >Unity, C#</span
                   >
                 </li>
                 <li>
@@ -117,7 +117,7 @@
                     >Github URL</strong
                   >:
                   <a
-                    href="https://github.com/lois505/JWHJ_GAMES"
+                    href="https://github.com/jaw-choi/OneSurvival"
                     target="_blank"
                     data-lang-en="Project Link"
                     data-lang-ko="프로젝트 링크"
@@ -127,20 +127,20 @@
               </ul>
               <p>
                 <li
-                  data-lang-en="Used the csv file to construct the map and made it move to the corresponding tile by the value of the dice."
-                  data-lang-ko="csv 파일을 활용하여 맵을 구성하고 주사위 값만큼 해당 타일로 이동되게 만들었습니다."
+                  data-lang-en="Designed a weapon system based on ScriptableObject, enabling easy addition and scalability of weapon data."
+                  data-lang-ko="ScriptableObject 기반 무기 시스템을 통해 무기 데이터를 손쉽게 추가·확장 가능한 구조로 설계하였습니다."
                 >
-                  csv 파일을 활용하여 맵을 구성하고 주사위 값만큼 해당 타일로
-                  이동되게 만들었습니다.
+                  ScriptableObject 기반 무기 시스템을 통해 무기 데이터를 손쉽게
+                  추가·확장 가능한 구조로 설계하였습니다.
                 </li>
               </p>
               <p>
                 <li
-                  data-lang-en="At the start of the game, I created a UI to move the camera and roll the dice with a map that rotates the dice."
-                  data-lang-ko="게임 시작시 주사위를 돌리는 맵으로 카메라가 이동되게 하고 주사위를 굴리는 UI를 만들었습니다."
+                  data-lang-en="Implemented a custom Object Pooling system to maintain stable performance with hundreds of active objects."
+                  data-lang-ko="Object Pooling 시스템을 직접 구현하여 수백 개의 오브젝트가 동시에 등장해도 안정적인 성능을 유지했습니다."
                 >
-                  게임 시작시 주사위를 돌리는 맵으로 카메라가 이동되게 하고
-                  주사위를 굴리는 UI를 만들었습니다.
+                  Object Pooling 시스템을 직접 구현하여 수백 개의 오브젝트가
+                  동시에 등장해도 안정적인 성능을 유지했습니다.
                 </li>
               </p>
               <p>
@@ -155,6 +155,19 @@
           </div>
         </div>
       </div>
+      <!--
+      시간 기반 적 스폰 웨이브 시스템으로 점점 강해지는 적군과 몰아치기 패턴을 구성하였습니다.
+→ Developed a time-based enemy spawn wave system that increases difficulty and intensity over time.
+
+다양한 자동 공격 방식 및 타겟팅 로직을 무기별로 분리하여 전략적인 전투가 가능하도록 구현했습니다.
+→ Separated various auto-attack patterns and targeting logic by weapon type to support strategic combat.
+
+로그라이크 무기 선택 UI를 통해 레벨업 시 무기/스킬을 무작위로 선택하며 플레이어 빌드를 다양화했습니다.
+→ Created a roguelike-style weapon selection UI that presents random upgrade choices upon leveling up.
+
+게임 매니저 및 상태 관리 시스템을 통해 씬 전환 없이 일시정지, 사망, 게임 시작 등의 흐름을 자연스럽게 제어했습니다.
+→ Built game manager and state control systems to handle pause, death, and game start transitions seamlessly without scene changes.
+      -->
       <!-- End Portfolio Details -->
     </main>
     <!-- End #main -->
