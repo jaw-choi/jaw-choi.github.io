@@ -45,14 +45,9 @@
     ======================================================== -->
     <script>
       function toggleLanguage(language) {
-        // 현재 언어를 LocalStorage에 저장
         localStorage.setItem('language', language);
-
-        // 모든 요소를 선택
         const elements = document.querySelectorAll('[data-lang-en]');
-
         elements.forEach((element) => {
-          // 선택한 언어에 따라 내용을 변경
           if (language === 'ko') {
             element.textContent = element.getAttribute('data-lang-ko');
           } else if (language === 'en') {
@@ -61,7 +56,6 @@
         });
       }
 
-      // 페이지가 로드될 때 저장된 언어를 적용
       document.addEventListener('DOMContentLoaded', () => {
         const savedLanguage = localStorage.getItem('language') || 'en';
         toggleLanguage(savedLanguage);
@@ -77,17 +71,23 @@
           <div class="row">
             <div class="col-lg-12 portfolio-info">
               <br />
-              <h2 style="color: white">One Survival</h2>
+              <h2
+                style="color: white"
+                data-lang-en="One Survival"
+                data-lang-ko="One Survival"
+              >
+                One Survival
+              </h2>
               <ul>
                 <li>
                   <strong data-lang-en="Duration" data-lang-ko="기간"
                     >기간</strong
                   >:
                   <span
-                    data-lang-en="2024-07-14 ~ Continue"
+                    data-lang-en="2024-07-14 ~ Ongoing"
                     data-lang-ko="2024-07-14 ~ 계속"
-                    >2024-07-14 ~ 계속
-                  </span>
+                    >2024-07-14 ~ 계속</span
+                  >
                 </li>
 
                 <li>
@@ -97,10 +97,10 @@
                     >프로젝트 설명</strong
                   >:
                   <span
-                    data-lang-en="2D LogLike Automatic Attack Survival Game - Game Programmer / Solo Project"
-                    data-lang-ko="2D 로그라이크 자동 공격 서바이벌 게임 - 게임 프로그래머 / 솔로프로젝트"
-                    >2D 로그라이크 자동 공격 서바이벌 게임 - 게임 프로그래머 /
-                    솔로프로젝트</span
+                    data-lang-en="2D Roguelike Auto-Attack Survival — Game Programmer / Solo Project"
+                    data-lang-ko="2D 로그라이크 자동 공격 서바이벌 — 게임 프로그래머 / 솔로 프로젝트"
+                    >2D 로그라이크 자동 공격 서바이벌 — 게임 프로그래머 / 솔로
+                    프로젝트</span
                   >
                 </li>
 
@@ -125,49 +125,95 @@
                   >
                 </li>
               </ul>
-              <p>
+
+              <!-- Key Contributions / Highlights -->
+              <h3 data-lang-en="Highlights" data-lang-ko="핵심 구현">
+                핵심 구현
+              </h3>
+              <ul>
                 <li
-                  data-lang-en="Designed a weapon system based on ScriptableObject, enabling easy addition and scalability of weapon data."
-                  data-lang-ko="ScriptableObject 기반 무기 시스템을 통해 무기 데이터를 손쉽게 추가·확장 가능한 구조로 설계하였습니다."
+                  data-lang-en="Replaced per-enemy animations with a texture atlas and a single mesh; UV is computed on GPU, reducing draw calls and minimizing repeated rendering overhead."
+                  data-lang-ko="각 Enemy 애니메이션 대신 Texture Atlas와 단일 Mesh를 사용하고 UV를 GPU에서 계산하도록 하여 Draw Call을 줄이고 반복 렌더링 부하를 최소화했습니다."
                 >
-                  ScriptableObject 기반 무기 시스템을 통해 무기 데이터를 손쉽게
-                  추가·확장 가능한 구조로 설계하였습니다.
+                  각 Enemy 애니메이션 대신 Texture Atlas와 단일 Mesh를 사용하고
+                  UV를 GPU에서 계산하도록 하여 Draw Call을 줄이고 반복 렌더링
+                  부하를 최소화했습니다.
                 </li>
-              </p>
-              <p>
                 <li
-                  data-lang-en="Implemented a custom Object Pooling system to maintain stable performance with hundreds of active objects."
-                  data-lang-ko="Object Pooling 시스템을 직접 구현하여 수백 개의 오브젝트가 동시에 등장해도 안정적인 성능을 유지했습니다."
+                  data-lang-en="Used Coroutines for periodic behaviors, reducing Update calls and code complexity."
+                  data-lang-ko="Coroutine으로 주기적 동작을 구현하여 Update 호출을 줄이고 코드 복잡성을 낮췄습니다."
                 >
-                  Object Pooling 시스템을 직접 구현하여 수백 개의 오브젝트가
-                  동시에 등장해도 안정적인 성능을 유지했습니다.
+                  Coroutine으로 주기적 동작을 구현하여 Update 호출을 줄이고 코드
+                  복잡성을 낮췄습니다.
                 </li>
-              </p>
-              <p>
                 <li
-                  data-lang-en="Collaborated with team members to perform debugging, bug identification, and fixing."
-                  data-lang-ko="팀원과 협력하여 디버깅, 버그 식별 및 수정 작업을 수행했습니다."
+                  data-lang-en="Optimized memory via Object Pooling for enemies and items; unified component lifecycle in OnEnable/OnDisable and managed initialization via interfaces."
+                  data-lang-ko="적·아이템에 Object Pooling을 적용해 메모리를 최적화하고, 컴포넌트 수명주기를 OnEnable/OnDisable로 통일하여 인터페이스 기반 초기화를 관리했습니다."
                 >
-                  팀원과 협력하여 디버깅, 버그 식별 및 수정 작업을 수행했습니다.
+                  적·아이템에 Object Pooling을 적용해 메모리를 최적화하고,
+                  컴포넌트 수명주기를 OnEnable/OnDisable로 통일하여 인터페이스
+                  기반 초기화를 관리했습니다.
                 </li>
-              </p>
+                <li
+                  data-lang-en="Connected client and server to implement login and leaderboard so players can compete."
+                  data-lang-ko="클라이언트와 서버를 연결해 로그인과 랭킹을 구현하여 플레이어 간 경쟁이 가능하도록 했습니다."
+                >
+                  클라이언트와 서버를 연결해 로그인과 랭킹을 구현하여 플레이어
+                  간 경쟁이 가능하도록 했습니다.
+                </li>
+                <li
+                  data-lang-en="Separated data with ScriptableObject and built a custom editor tool to view/edit/save all ScriptableObjects in a single layout, cutting tuning time."
+                  data-lang-ko="ScriptableObject로 데이터를 분리하고, 전체 ScriptableObject를 한 화면에서 보고·수정·저장하는 커스텀 툴을 제작해 튜닝 시간을 단축했습니다."
+                >
+                  ScriptableObject로 데이터를 분리하고, 전체 ScriptableObject를
+                  한 화면에서 보고·수정·저장하는 커스텀 툴을 제작해 튜닝 시간을
+                  단축했습니다.
+                </li>
+                <li
+                  data-lang-en="Adopted component-based composition for character, enemy, weapon, projectile, and effects; mitigated hidden order/dependency issues with managers and reduced event usage."
+                  data-lang-ko="캐릭터·적·무기·투사체·이펙트를 컴포넌트로 조합하고, 실행 순서·의존성 문제는 매니저와 이벤트 최소화로 완화했습니다."
+                >
+                  캐릭터·적·무기·투사체·이펙트를 컴포넌트로 조합하고, 실행
+                  순서·의존성 문제는 매니저와 이벤트 최소화로 완화했습니다.
+                </li>
+                <li
+                  data-lang-en="Enhanced impact with hit-flash and knockback effects."
+                  data-lang-ko="히트 플래시와 넉백 효과로 타격감을 강화했습니다."
+                >
+                  히트 플래시와 넉백 효과로 타격감을 강화했습니다.
+                </li>
+                <li
+                  data-lang-en="Created an infinite map illusion by moving only four grid tiles relative to the player while maintaining performance."
+                  data-lang-ko="플레이어 기준으로 4개의 그리드만 이동시켜 성능을 유지하며 무한 맵처럼 보이게 구현했습니다."
+                >
+                  플레이어 기준으로 4개의 그리드만 이동시켜 성능을 유지하며 무한
+                  맵처럼 보이게 구현했습니다.
+                </li>
+                <li
+                  data-lang-en="Granted gold based on survival time and dealt damage; upgrades use gold to reinforce player goals."
+                  data-lang-ko="생존 시간과 누적 데미지에 따라 골드를 지급하고, 업그레이드에 사용하여 목표성을 강화했습니다."
+                >
+                  생존 시간과 누적 데미지에 따라 골드를 지급하고, 업그레이드에
+                  사용하여 목표성을 강화했습니다.
+                </li>
+              </ul>
+
+              <video id="myVideo" width="100%" height="auto" controls>
+                <source
+                  src="../assets/video/OneSurvivalVideo.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <!-- (Optional) Additional ideas kept as comments -->
+              <!--
+              Developed a time-based enemy spawn wave system that scales difficulty over time.
+              Separated auto-attack patterns and targeting logic by weapon type for strategic combat.
+              Built game/state managers to handle pause, death, and game start seamlessly without scene changes.
+              -->
             </div>
           </div>
         </div>
       </div>
-      <!--
-      시간 기반 적 스폰 웨이브 시스템으로 점점 강해지는 적군과 몰아치기 패턴을 구성하였습니다.
-→ Developed a time-based enemy spawn wave system that increases difficulty and intensity over time.
-
-다양한 자동 공격 방식 및 타겟팅 로직을 무기별로 분리하여 전략적인 전투가 가능하도록 구현했습니다.
-→ Separated various auto-attack patterns and targeting logic by weapon type to support strategic combat.
-
-로그라이크 무기 선택 UI를 통해 레벨업 시 무기/스킬을 무작위로 선택하며 플레이어 빌드를 다양화했습니다.
-→ Created a roguelike-style weapon selection UI that presents random upgrade choices upon leveling up.
-
-게임 매니저 및 상태 관리 시스템을 통해 씬 전환 없이 일시정지, 사망, 게임 시작 등의 흐름을 자연스럽게 제어했습니다.
-→ Built game manager and state control systems to handle pause, death, and game start transitions seamlessly without scene changes.
-      -->
       <!-- End Portfolio Details -->
     </main>
     <!-- End #main -->

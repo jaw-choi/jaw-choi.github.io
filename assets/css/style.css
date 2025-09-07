@@ -124,6 +124,29 @@ h6 {
   width: 40px;
   height: 40px;
 }
+/* Portfolio list readability */
+.portfolio-details .portfolio-info ul {
+  padding-left: 1.25rem;
+  margin: 0;
+}
+
+.portfolio-details .portfolio-info ul li {
+  line-height: 1.9; /* 줄 간격 */
+  margin: 10px 0 14px; /* 항목 사이 간격 */
+  word-break: keep-all; /* 한글 단어 중간 줄바꿈 방지 */
+}
+
+.portfolio-details .portfolio-info h3 {
+  margin: 28px 0 16px; /* 섹션 제목 여백 */
+}
+
+/* 모바일에서 약간만 줄이기 */
+@media (max-width: 576px) {
+  .portfolio-details .portfolio-info ul li {
+    line-height: 1.8;
+    margin: 8px 0 12px;
+  }
+}
 
 #header .social-links a:hover {
   background: #1c7d32;

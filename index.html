@@ -564,7 +564,31 @@
     </div>
 
     <div class="row portfolio-container">
+  <style>
+    .portfolio-wrap img {
+      width: 100%;           /* 가로는 꽉 채우기 */
+      height: 160px;         /* 고정 높이 */
+      object-fit: contain;   /* 비율 유지, 안 잘리게 */
+      background-color: #000;/* 남는 공간 배경 (원하면 투명/흰색 등으로 변경 가능) */
+      display: block;
+    }
+  </style>
+      <div class="col-lg-4 col-md-6 portfolio-item filter-game">
+        <center>
+          <h4>One Survival</h4>
+        </center>
+        <div class="portfolio-wrap">
+          <img src="assets/img/project/J Studio Logo.png" class="img-fluid" alt="">
+          <div class="portfolio-info">
 
+            <div class="portfolio-links">
+              <a href="projects/OneSurvival.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe"
+              class="venobox" title="Project Details" data-lang-en="View" data-lang-ko="자세히">자세히</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  
       <div class="col-lg-4 col-md-6 portfolio-item filter-game">
         <center>
           <h4>BIT SAVER</h4>
@@ -728,21 +752,7 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 portfolio-item filter-game">
-        <center>
-          <h4>One Survival</h4>
-        </center>
-        <div class="portfolio-wrap">
-          <img src="assets/img/project/OneSurvival.png" class="img-fluid" alt="">
-          <div class="portfolio-info">
 
-            <div class="portfolio-links">
-              <a href="projects/OneSurvival.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe"
-              class="venobox" title="Project Details" data-lang-en="View" data-lang-ko="자세히">자세히</a>
-            </div>
-          </div>
-        </div>
-      </div>
       <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-game">
         <center>
           <h4>A* Algorithm Demo</h4>
