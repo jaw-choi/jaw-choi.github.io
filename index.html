@@ -50,7 +50,7 @@
     const newLanguage = currentLanguage === 'ko' ? 'en' : 'ko'; // 언어 전환
 
     // 언어에 따라 URL 설정
-    const url = newLanguage === 'ko' ? 'https://resume.creddle.io/resume/e94zbhqhc0l?lang=ko' : 'https://resume.creddle.io/resume/e94zbhqhc0l?lang=en';
+    const url = newLanguage === 'ko' ? 'https://drive.google.com/file/d/1Y0bdj9zHQIz__Sk30EWF33W56hghqRVr/view?usp=drive_link' : 'https://drive.google.com/file/d/1Y0bdj9zHQIz__Sk30EWF33W56hghqRVr/view?usp=drive_link';
 
     // href 속성 변경
     resumeLink.href = url;
@@ -85,11 +85,11 @@
           if (language === 'ko') {
               element.textContent = element.getAttribute('data-lang-ko');
               currentLanguage = resumeLink.getAttribute('data-lang-ko');
-              url = 'https://drive.google.com/file/d/1m6kveZcuY_sjoaY-dLG4fmuOGRdwe9oZ/view?usp=sharing';
+              url = 'https://drive.google.com/file/d/1Y0bdj9zHQIz__Sk30EWF33W56hghqRVr/view?usp=drive_link';
           } else if (language === 'en') {
               element.textContent = element.getAttribute('data-lang-en');
               currentLanguage = resumeLink.getAttribute('data-lang-en');
-              url = 'https://resume.creddle.io/resume/e94zbhqhc0l';
+              url = 'https://drive.google.com/file/d/1Y0bdj9zHQIz__Sk30EWF33W56hghqRVr/view?usp=drive_link';
           }
       });
       resumeLink.href = url;
@@ -105,9 +105,9 @@
   function openResume(language) {
     let url;
     if (language === 'ko') {
-        url = 'https://www.google.com/';
+        url = 'https://drive.google.com/file/d/1Y0bdj9zHQIz__Sk30EWF33W56hghqRVr/view?usp=drive_link';
     } else {
-        url = 'https://resume.creddle.io/resume/e94zbhqhc0l';
+        url = 'https://drive.google.com/file/d/1Y0bdj9zHQIz__Sk30EWF33W56hghqRVr/view?usp=drive_link';
     }
     window.open(url, '_blank');
 }
@@ -144,7 +144,7 @@
           <li><a href="#portfolio"><span data-lang-en="Projects" data-lang-ko="프로젝트">Projects</span></a></li>
           <li><a href="#skills"><span data-lang-en="Skills" data-lang-ko="기술">Skills</span></a></li>
           <!-- <li><a href="https://resume.creddle.io/resume/e94zbhqhc0l" target="_blank"><span data-lang-en="Resume" data-lang-ko="이력서">Resume</span></a></li> -->
-          <li><a id="resume-link" href="https://resume.creddle.io/resume/e94zbhqhc0l" target="_blank"><span data-lang-en="Resume" data-lang-ko="이력서">Resume</span></a></li>
+          <li><a id="resume-link" href="https://drive.google.com/file/d/1Y0bdj9zHQIz__Sk30EWF33W56hghqRVr/view?usp=drive_link" target="_blank"><span data-lang-en="Resume" data-lang-ko="이력서">Resume</span></a></li>
           <!-- <li><a href="https://resume.creddle.io/resume/e94zbhqhc0l" target="_blank"><span data-lang-en="Resume" data-lang-ko="이력서">Resume</span></a></li> -->
          
           <li><a href="#contacts"><span data-lang-en="Contact" data-lang-ko="연락처">Contact</span></a></li>
@@ -1023,8 +1023,8 @@
       </div>
       <div class="row">
         <div class="col-md-3 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-          <a href="https://drive.google.com/file/d/1iHBNV2UkH5LkhAP-1hYRZ2Ez_BQ6g4S7/view?usp=sharing" target="_blank"><div class="icon"><i class="icofont-page"></i></div></a>
-          <h4 class="title"><a href="https://drive.google.com/file/d/1iHBNV2UkH5LkhAP-1hYRZ2Ez_BQ6g4S7/view?usp=sharing" target="_blank">Resume</a></h4>
+          <a href="https://drive.google.com/file/d/1Y0bdj9zHQIz__Sk30EWF33W56hghqRVr/view?usp=drive_link" target="_blank"><div class="icon"><i class="icofont-page"></i></div></a>
+          <h4 class="title"><a href="https://drive.google.com/file/d/1Y0bdj9zHQIz__Sk30EWF33W56hghqRVr/view?usp=drive_link" target="_blank">Resume</a></h4>
           <p class="description" style="color:#fff;">The link contains downloadable resume</p>
         </div>
         <!-- <div class="col-md-3 mt-4 mt-md-0 icon-box" data-aos="fade-up">
@@ -1057,9 +1057,9 @@
           <div class="info-box">
             <i class="bx bx-map"></i>
             <h3 data-lang-en="My Address" data-lang-ko="주소">My Address</h3>
-            <p data-lang-en="15817 NE 90th st" data-lang-ko="대구광역시 달성군 다사읍">15817 NE 90th st</p>
-            <p data-lang-en="Apt G157" data-lang-ko=" ****">Apt G157</p>
-            <p data-lang-en="Redmond, WA 98052" data-lang-ko="****">Redmond, WA 98052</p>
+            <p data-lang-en="15817 NE 90th st" data-lang-ko="서울특별시 관악구">15817 NE 90th st</p>
+            <p data-lang-en="Apt G157" data-lang-ko=" ">Apt G157</p>
+            <p data-lang-en="Redmond, WA 98052" data-lang-ko=" ">Redmond, WA 98052</p>
             
           </div>
         </div>
