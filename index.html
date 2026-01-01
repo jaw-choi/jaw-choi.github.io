@@ -98,7 +98,7 @@
 
   // 페이지가 로드될 때 저장된 언어를 적용
   document.addEventListener('DOMContentLoaded', () => {
-      const savedLanguage = localStorage.getItem('language') || 'en';
+      const savedLanguage = localStorage.getItem('language') || 'ko';
       toggleLanguage(savedLanguage);
   });
 
@@ -129,7 +129,7 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <!-- ======= Header ======= -->
-  <header id="header" class="header-tops">
+  <header id="header" class="header-tops header-top">
 
     <div class="container">
 
@@ -137,22 +137,12 @@
       <h2 style="color:#fff">I'm <span class="typing" style="color:#12D640"></span></h2>
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="#header"> <span data-lang-en="Home" data-lang-ko="홈">Home</span></a></li>
-          <li><a href="#portfolio"><span data-lang-en="Projects" data-lang-ko="프로젝트">Projects</span></a></li>
-          <li><a href="#education"><span data-lang-en="Education" data-lang-ko="학력">Education</span></a></li>
-          <li><a href="#about"><span data-lang-en="About" data-lang-ko="소개">About</span></a></li>
-          <li><a href="#experience"><span data-lang-en="Experience" data-lang-ko="경력">Experience</span></a></li>
-          <li><a href="#skills"><span data-lang-en="Skills" data-lang-ko="기술">Skills</span></a></li>
-          <!-- <li><a href="https://resume.creddle.io/resume/e94zbhqhc0l" target="_blank"><span data-lang-en="Resume" data-lang-ko="이력서">Resume</span></a></li> -->
-          <li><a id="resume-link" href="https://drive.google.com/file/d/1Y0bdj9zHQIz__Sk30EWF33W56hghqRVr/view?usp=drive_link" target="_blank"><span data-lang-en="Resume" data-lang-ko="이력서">Resume</span></a></li>
-          <!-- <li><a href="https://resume.creddle.io/resume/e94zbhqhc0l" target="_blank"><span data-lang-en="Resume" data-lang-ko="이력서">Resume</span></a></li> -->
-         
-          <li><a href="#contacts"><span data-lang-en="Contact" data-lang-ko="연락처">Contact</span></a></li>
+          <li class="active"><a href="#portfolio"><span data-lang-en="Portfolio" data-lang-ko="포트폴리오">Portfolio</span></a></li>
           <li>
-            <a href="#language"><span data-lang-en="언어" data-lang-ko="Language">언어</span></a>
+            <a href="javascript:void(0)" role="button"><span data-lang-en="Language" data-lang-ko="언어">Language</span></a>
             <ul class="dropdown">
-                <li><a href="#" onclick="toggleLanguage('ko')"><span data-lang-en="한글" data-lang-ko="Korean">한글</span></a></li>
-                <li><a href="#" onclick="toggleLanguage('en')"><span data-lang-en="영어" data-lang-ko="English">영어</span></a></li>
+                <li><a href="javascript:void(0)" onclick="toggleLanguage('ko')"><span data-lang-en="Korean" data-lang-ko="한국어">Korean</span></a></li>
+                <li><a href="javascript:void(0)" onclick="toggleLanguage('en')"><span data-lang-en="English" data-lang-ko="영어">English</span></a></li>
             </ul>
         </li>
 
@@ -171,7 +161,7 @@
   </header><!-- End Header -->
 
   <!-- ======= About Section ======= -->
-  <section id="about" class="about">
+  <section id="portfolio" class="about">
 
     <!-- ======= About Me ======= -->
     <div class="about-me container">
@@ -241,310 +231,20 @@
 
     </div><!-- End About Me -->
 
-    <!-- ======= Interests ======= -->
-    <div class="interests container">
-
-      <div class="section-title">
-        <h2 data-lang-en="Interests" data-lang-ko="관심사">Interests</h2>
-
-      </div>
-
-      <div class="row">
-        <div class="col-lg-3 col-md-4">
-          <div class="icon-box">
-            <i class="ri-search-line" style="color: #ffbb2c;"></i>
-            <h3>Algorithms</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-          <div class="icon-box">
-            <i class="ri-ruler-2-line" style="color: #5578ff;"></i>
-            <h3>Computer Graphics</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-          <div class="icon-box">
-            <i class="ri-gamepad-line" style="color: #e80368;"></i>
-            <h3>Game Programming</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
-          <div class="icon-box">
-            <i class="ri-numbers-line" style="color: #1c7d32;"></i>
-            <h3>Data Structures</h3>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- End Interests -->
   </section><!-- End About Section -->
 
 
 
-  <!-- ======= Education Section ======= -->
-  <section id="education" class="services">
-    <div class="container">
-      <div class="section-title">
-        <h2 data-lang-en="Education" data-lang-ko="학력">Education</h2>
-
-      </div>
-      <div class="row">
-        <div class="col-lg-12" data-aos="fade-up" style="display: inline-block;">
-
-
-          <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
-            <img src="assets/img/education/kLogo3.jpg" class="img-fluid" alt="">
-            
-            <p style="text-align:left;color:#fff;padding: 5px 10px;"><em data-lang-en="BSCS RTIS" data-lang-ko="디지펜 게임공학과">Bachelor's Degree in Computer Science in RTIS Simulation</em></p>
-            <p style="text-align:left;color:#fff;padding: 5px 10px;"><em data-lang-en=" Credit: 3.7 / 4.0" data-lang-ko=" 학점: 4.0 / 4.5"> Credit: 4.0 / 4.5</em></p>
-            <h5 style="text-align:left;padding: 0px 10px;" data-lang-en="March 2018 - June 2022" data-lang-ko="2018년 3월 - 2022년 6월">March 2018 - June 2022</h5>
-            <!-- <h6 style="text-align:left;color:#fff;padding: 0px 10px;" data-lang-en="Relevant Coursework" data-lang-ko="관련 과정">Relevant Coursework</h6> -->
-            <!-- <ul style="text-align:left;color:#fff;">
-                <li data-lang-en="Parallel Programming" data-lang-ko="Parallel Programming">Parallel Programming</li>
-                <li data-lang-en="Ray Tracing" data-lang-ko="Ray Tracing">Ray Tracing</li>
-                <li data-lang-en="Real-Time Rendering" data-lang-ko="Real-Time Rendering">Real-Time Rendering</li>
-                <li data-lang-en="Portable Game System" data-lang-ko="Portable Game System">Portable Game System</li>
-                <li data-lang-en="Linear Algebra & 3D Math" data-lang-ko="Linear Algebra & 3D Math">Linear Algebra & 3D Math</li>
-            </ul> -->
-          </div>
-
-          <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
-            <img src="assets/img/education/dig.jpg" class="img-fluid" alt="">
-            
-            <p style="text-align:left;color:#fff;padding: 5px 10px;"><em data-lang-en="BSCS RTIS" data-lang-ko="Bachelor's Degree in Computer Science in RTIS">Bachelor's Degree in Computer Science in RTIS</em></p>
-            <p style="text-align:left;color:#fff;padding: 5px 10px;"><em data-lang-en=" Credit: 3.7 / 4.0" data-lang-ko=" 학점: 3.7 / 4.0"> Credit: 3.7 / 4.0</em></p>
-            <h5 style="text-align:left;padding: 0px 10px;" data-lang-en="August 2022 - April 2024" data-lang-ko="2022년 8월 - 2024년 4월">August 2022 - April 2024</h5>
-            <!-- <h6 style="text-align:left;color:#fff;padding: 0px 10px;" data-lang-en="Relevant Coursework" data-lang-ko="관련 과정">Relevant Coursework</h6> -->
-            <!-- <ul style="text-align:left;color:#fff;">
-                <li data-lang-en="Parallel Programming" data-lang-ko="Parallel Programming">Parallel Programming</li>
-                <li data-lang-en="Ray Tracing" data-lang-ko="Ray Tracing">Ray Tracing</li>
-                <li data-lang-en="Real-Time Rendering" data-lang-ko="Real-Time Rendering">Real-Time Rendering</li>
-                <li data-lang-en="Portable Game System" data-lang-ko="Portable Game System">Portable Game System</li>
-                <li data-lang-en="Linear Algebra & 3D Math" data-lang-ko="Linear Algebra & 3D Math">Linear Algebra & 3D Math</li>
-            </ul> -->
-          </div>
-
-          </div>
-          
-        </div>
-
-        <div class="section-title">
-          <h2 data-lang-en="Language" data-lang-ko="어학">Language</h2>
   
-        </div>
-        <div class="row">
-          <div class="col-lg-12" data-aos="fade-up" style="display: inline-block;">
+
+
+
   
-  
-            <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
-              <img src="assets/img/certification/certificate2_png.png" class="img-fluid" alt="">
-              
-              <p style="text-align:left;color:#fff;padding: 5px 10px;"><em data-lang-en="OPic(English)" data-lang-ko="OPic(영어)">OPic(영어)</em></p>
-              <p style="text-align:left;color:#fff;padding: 5px 10px;"><em data-lang-en="Intermediate High(IH)" data-lang-ko="Intermediate High(IH)">Intermediate High(IH)</em></p>
-              <h5 style="text-align:left;padding: 0px 10px;" data-lang-en="Date : 12th Aug 2024" data-lang-ko="취득일 : 2024년 8월 12일">Date : 12th Aug 2024</h5>
-            </div>
-  
-  
-            </div>
-            
-          </div>
-
-          <div class="section-title">
-            <h2 data-lang-en="Certificate" data-lang-ko="자격증">Certificate</h2>
-    
-          </div>
-          <div class="row">
-            <div class="col-lg-12" data-aos="fade-up" style="display: inline-block;">
-    
-    
-              <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
-                <img src="assets/img/certification/certificate_png.png" class="img-fluid" alt="">
-                
-                <p style="text-align:left;color:#fff;padding: 5px 10px;"><em data-lang-en="정보처리기사" data-lang-ko="정보처리기사">정보처리기사</em></p>
-                <h5 style="text-align:left;padding: 0px 10px;" data-lang-en="Date : 13th June 2025" data-lang-ko="취득일 : 2025년 6월 13일">Date : 13th June 2025</h5>
-              </div>
-    
-              <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
-                <img src="assets/img/certification/certificate1_png.png" class="img-fluid" alt="">
-                
-                <p style="text-align:left;color:#fff;padding: 5px 10px;"><em data-lang-en="데이터분석 준전문가(ADsP)" data-lang-ko="ADsP">데이터분석 준전문가(ADsP)</em></p>
-                <h5 style="text-align:left;padding: 0px 10px;" data-lang-en="Date : 13th June 2025" data-lang-ko="취득일 : 2025년 6월 13일">Date : 13th June 2025</h5>
-              </div>
-    
-              </div>
-              
-            </div>
-      </div>
-      
-        
-    <!-- <div class="portfolio">
-    <div class="container">
-      <div class="section-title">
-        <h2>Online Certification</h2>
-      </div>
-
-      <div class="row portfolio-container" style="position: relative; height: 437.75px;">
-
-         <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 0px; top: 0px;">
-          <div class="portfolio-wrap">
-            <img src="assets/img/certification/stanford.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Machine Learning</h4>
-              <div class="portfolio-links">
-                <a href="https://www.coursera.org/account/accomplishments/certificate/2BTJ636Q2E93?utm_medium=certificate&amp;utm_source=link&amp;utm_campaign=copybutton_certificate/" target="_blank" title="Certificate"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-           </div>
-          </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 370px; top: 0px;">
-          <div class="portfolio-wrap">
-            <img src="assets/img/certification/stanford.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Algorithms-Design and Analysis</h4>
-              <div class="portfolio-links">
-                <a href="https://www.coursera.org/account/accomplishments/certificate/6THRQXYE9EHZ?utm_medium=certificate&amp;utm_source=link&amp;utm_campaign=copybutton_certificate" target="_blank" title="Certificate"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 740px; top: 0px;">
-          <div class="portfolio-wrap">
-            <img src="assets/img/certification/ucsd.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Algorithmic Toolbox</h4>
-              <div class="portfolio-links">
-                <a href="https://coursera.org/share/98bbfb990484fac370d5e5ed14334ea4" target="_blank" title="Certificate"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-project" style="position: absolute; left: 0px; top: 218.875px;">
-          <div class="portfolio-wrap">
-            <img src="assets/img/certification/ibm.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Deep Learning with Tensorflow</h4>
-              <div class="portfolio-links">
-                <a href="https://drive.google.com/file/d/1FSwPt19EzY_tpvqkE6igtLf3gccKcssC/view?usp=sharing" target="_blank" title="Certificate"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-project" style="position: absolute; left: 370px; top: 218.875px;">
-          <div class="portfolio-wrap">
-            <img src="assets/img/certification/ibm.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Machine Learning with Python</h4>
-              <div class="portfolio-links">
-                <a href="https://drive.google.com/file/d/1gimySw_NPzCJ54dqZ2j2wYyz-JDOg-S0/view?usp=sharing" target="_blank" title="Certificate"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-project" style="position: absolute; left: 740px; top: 218.875px;">
-          <div class="portfolio-wrap">
-            <img src="assets/img/certification/dai.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Neural Networks and Deep Learning</h4>
-              <div class="portfolio-links">
-                <a href="https://www.coursera.org/account/accomplishments/certificate/ELXZ6FE2BU7X?utm_medium=certificate&amp;utm_source=link&amp;utm_campaign=copybutton_certificate/" target="_blank" title="Certificate"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-      </div>
-    </div>
-    </div>
-
-  </section>
-  <!-- End Education Section -->
-
-
-
-  <!-- Start Experience Section -->
-
-  <section id="experience" class="services">
-    <div class="container">
-      <div class="section-title">
-        <h2 data-lang-en="Experience" data-lang-ko="경력">Experience</h2>
-
-      <!--  </div>
-      <div class="row">
-          <div class="col-lg-12" data-aos="fade-up">
-              <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-                <h4 style="text-align:left;"><a href="https://www.digipen.edu/" style="color:#12d640">Arizona State University</a><br> </h4>
-                <h5 style="text-align:left;">January 2021 - Present</h5>
-                <p style="text-align:left;color:#fff"><em>Software Engineer </em></p>
-                <ul style="text-align:left;">
-                  <li>Managed large‑scale deployment of JupyterHub with Nbgrader and webwork software, facilitating approx 5500 students.</li>
-                  <li>Configured, troubleshot, and administered server‑side web applications for the statistics department.</li>
-                  <li>Handled Linux server administration and Apache configuration; automated tasks like user account creation, managing student database, and system maintenance using Shell and automation scripts, reducing manual work by 200%.</li>
-                </ul>
-              </div> -->
-              <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-                <h4 style="text-align:left;"><a style="color:#12d640" data-lang-en="Software Engineer Intern" data-lang-ko="소프트웨어 엔지니어 인턴">Software Engineer Intern</a><br> </h4>
-                <h5 style="text-align:left;" data-lang-en="January 2024 - April 2024" data-lang-ko="2024년 1월 - 2024년 4월">January 2024 - April 2024</h5>
-                <p style="text-align:left;color:#fff"><em data-lang-en="A Round Entertainment, Jersey City, NJ" data-lang-ko="A Round Entertainment, Jersey City, NJ">A Round Entertainment, Jersey City, NJ</em></p>
-                <ul style="text-align:left;">
-                    <li data-lang-en="Developed a dating app using React Native and utilized Firebase for efficient database management." data-lang-ko="React Native를 사용하여 데이팅 앱을 개발하고 Firebase를 활용하여 데이터베이스 관리를 수행했습니다.">Developed a dating app using React Native and utilized Firebase for database management.</li>
-                    <li data-lang-en="Developed and maintained web applications using HTML, CSS, React-Native and JavaScript and collaborated with the development/UI team." data-lang-ko="HTML, CSS, React-Native, JavaScript를 사용하여 애플리케이션을 개발 및 유지 보수하고 UI/UX 팀과 협력했습니다.">Developed and maintained web applications using HTML, CSS, React-Native and JavaScript and collaborated with the development/UI team.</li>
-                </ul>
-            </div>
-            <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-                <h4 style="text-align:left;"><a style="color:#12d640" data-lang-en="Teaching Assistant" data-lang-ko="조교">Teaching Assistant</a><br> </h4>
-                <h5 style="text-align:left;" data-lang-en="August 2019 - August 2019" data-lang-ko="2019년 8월 - 2019년 8월">August 2019 - August 2019</h5>
-                <p style="text-align:left;color:#fff"><em data-lang-en="ProjectFun K-12 program in Digipen" data-lang-ko="디지펜 ProjectFun K-12 프로그램">ProjectFun K-12 program in Digipen</em></p>
-                <ul style="text-align:left;">
-                    <li data-lang-en="Assist 10 students in the game project class and held office hours every day" data-lang-ko="연세대 캠퍼스에서 개최된 게임 프로젝트 수업에서 교수님과 함께 10명의 학생을 돕고 Digipen 자체 엔진인 Zero Engine을 공부하고 활용하는 시간을 가졌습니다.">Assist 10 students in the game project class and held office hours every day</li>
-                    <li data-lang-en="Made a sample project with a custom engine and showed it to the students for the professor to use it as a presentation" data-lang-ko="커스텀 엔진을 사용하여 샘플 프로젝트를 만들고 교수님이 발표 자료로 사용할 수 있도록 학생들에게 보여주었습니다.">Made a sample project with a custom engine and showed it to the students for the professor to use it as a presentation</li>
-                </ul>
-            </div>
-            <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-                <h4 style="text-align:left;"><a style="color:#12d640" data-lang-en="Military service" data-lang-ko="군 복무">Military service</a><br> </h4>
-                <h5 style="text-align:left;" data-lang-en="Aug 2019 - March 2021" data-lang-ko="2019년 8월 - 2021년 3월">Aug 2019 - March 2021</h5>
-                <p style="text-align:left;color:#fff"><em data-lang-en="Republic of Korea" data-lang-ko="대한민국">Republic of Korea</em></p>
-                <ul style="text-align:left;">
-                    <li data-lang-en="Discipline the recruit in Army Recruit Training Center and was discharged as a sergeant" data-lang-ko="육군 훈련소에서 분대장(조교)으로서 신병 훈련을 지도하고 병장으로 전역했습니다.">Discipline the recruit in Army Recruit Training Center and was discharged as a sergeant</li>
-                </ul>
-            </div>
-            
-              <!-- <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-                <h4 style="text-align:left;"><a href="https://www.meditab.com/" target="_blank" style="color:#12d640">Meditab Software Pvt. Ltd.</a><br> </h4>
-                <h5 style="text-align:left;">May 2018 - June 2018</h5>
-                <p style="text-align:left;color:#fff"><em>Programmer Analyst</em></p>
-                <ul style="text-align:left;">
-                  <li>Optimized image processing algorithm of pill detection by creating customized MASKRCNN  algorithm, increasing accuracy by 15%; trained classification algorithm with the help of triplet loss to learn the image embedding of pill, reducing the hassle of collecting data of new pills. </li>
-                  <li>Devised a pipeline of the project to incorporate it into the product of the company. Implemented Restful APIs in Django that enabled our quality Analyst team to increase reporting speed by 46%.</li>
-                  <li>Built a web app to onboard data from the company’s product using Flask, Postgres, and AWS S3, enabling interactive charts in real-time.</li>
-                  <li>Mentored 2 interns to optimize the pill detection algorithm and to include the multiprocessing pipeline, increasing overall speed by 75%.</li>
-                </ul>
-              </div>
-              <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-                <h4 style="text-align:left;"><a href="https://www.sac.gov.in/Vyom/index.jsp" target="_blank" style="color:#12d640">Space Application Centre, ISRO</a><br> </h4>
-                <h5 style="text-align:left;">Jan 2018 - May 2018</h5>
-                <p style="text-align:left;color:#fff"><em>Research Intern</em></p>
-                <ul style="text-align:left;">
-                  <li>Implemented noise reduction algorithm on the satellite image and prepared architecture for detecting objects in high‑resolution satellite images, achieving 80% accuracy.</li>
-                  <li>Increased accessibility of satellite image data by redesigning database and application for showcasing graphical data.</li>
-                </ul> -->
-            </div>
-          </div>
-        </div>
-    </div>
-  </section>
-
-  <!-- End Experience Section -->
 
 
 
 <!-- Start Project Section -->
-<section id="portfolio" class="portfolio">
+<section id="projects" class="portfolio">
   <div class="container">
 
     <div class="section-title">
@@ -1023,7 +723,7 @@
       </div>
       <div class="row">
         <div class="col-md-3 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-          <a href="https://drive.google.com/file/d/1Y0bdj9zHQIz__Sk30EWF33W56hghqRVr/view?usp=drive_link" target="_blank"><div class="icon"><i class="icofont-page"></i></div></a>
+          <a id="resume-link" href="https://drive.google.com/file/d/1Y0bdj9zHQIz__Sk30EWF33W56hghqRVr/view?usp=drive_link" target="_blank"><div class="icon"><i class="icofont-page"></i></div></a>
           <h4 class="title"><a href="https://drive.google.com/file/d/1Y0bdj9zHQIz__Sk30EWF33W56hghqRVr/view?usp=drive_link" target="_blank">Resume</a></h4>
           <p class="description" style="color:#fff;">The link contains downloadable resume</p>
         </div>
@@ -1040,6 +740,308 @@
       </div>
     </div>
   </section> <!--End Links Section -->
+
+<!-- Start Experience Section -->
+
+  <section id="experience" class="services">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-lang-en="Experience" data-lang-ko="경력">Experience</h2>
+
+      <!--  </div>
+      <div class="row">
+          <div class="col-lg-12" data-aos="fade-up">
+              <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
+                <h4 style="text-align:left;"><a href="https://www.digipen.edu/" style="color:#12d640">Arizona State University</a><br> </h4>
+                <h5 style="text-align:left;">January 2021 - Present</h5>
+                <p style="text-align:left;color:#fff"><em>Software Engineer </em></p>
+                <ul style="text-align:left;">
+                  <li>Managed large‑scale deployment of JupyterHub with Nbgrader and webwork software, facilitating approx 5500 students.</li>
+                  <li>Configured, troubleshot, and administered server‑side web applications for the statistics department.</li>
+                  <li>Handled Linux server administration and Apache configuration; automated tasks like user account creation, managing student database, and system maintenance using Shell and automation scripts, reducing manual work by 200%.</li>
+                </ul>
+              </div> -->
+              <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
+                <h4 style="text-align:left;"><a style="color:#12d640" data-lang-en="Software Engineer Intern" data-lang-ko="소프트웨어 엔지니어 인턴">Software Engineer Intern</a><br> </h4>
+                <h5 style="text-align:left;" data-lang-en="January 2024 - April 2024" data-lang-ko="2024년 1월 - 2024년 4월">January 2024 - April 2024</h5>
+                <p style="text-align:left;color:#fff"><em data-lang-en="A Round Entertainment, Jersey City, NJ" data-lang-ko="A Round Entertainment, Jersey City, NJ">A Round Entertainment, Jersey City, NJ</em></p>
+                <ul style="text-align:left;">
+                    <li data-lang-en="Developed a dating app using React Native and utilized Firebase for efficient database management." data-lang-ko="React Native를 사용하여 데이팅 앱을 개발하고 Firebase를 활용하여 데이터베이스 관리를 수행했습니다.">Developed a dating app using React Native and utilized Firebase for database management.</li>
+                    <li data-lang-en="Developed and maintained web applications using HTML, CSS, React-Native and JavaScript and collaborated with the development/UI team." data-lang-ko="HTML, CSS, React-Native, JavaScript를 사용하여 애플리케이션을 개발 및 유지 보수하고 UI/UX 팀과 협력했습니다.">Developed and maintained web applications using HTML, CSS, React-Native and JavaScript and collaborated with the development/UI team.</li>
+                </ul>
+            </div>
+            <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
+                <h4 style="text-align:left;"><a style="color:#12d640" data-lang-en="Teaching Assistant" data-lang-ko="조교">Teaching Assistant</a><br> </h4>
+                <h5 style="text-align:left;" data-lang-en="August 2019 - August 2019" data-lang-ko="2019년 8월 - 2019년 8월">August 2019 - August 2019</h5>
+                <p style="text-align:left;color:#fff"><em data-lang-en="ProjectFun K-12 program in Digipen" data-lang-ko="디지펜 ProjectFun K-12 프로그램">ProjectFun K-12 program in Digipen</em></p>
+                <ul style="text-align:left;">
+                    <li data-lang-en="Assist 10 students in the game project class and held office hours every day" data-lang-ko="연세대 캠퍼스에서 개최된 게임 프로젝트 수업에서 교수님과 함께 10명의 학생을 돕고 Digipen 자체 엔진인 Zero Engine을 공부하고 활용하는 시간을 가졌습니다.">Assist 10 students in the game project class and held office hours every day</li>
+                    <li data-lang-en="Made a sample project with a custom engine and showed it to the students for the professor to use it as a presentation" data-lang-ko="커스텀 엔진을 사용하여 샘플 프로젝트를 만들고 교수님이 발표 자료로 사용할 수 있도록 학생들에게 보여주었습니다.">Made a sample project with a custom engine and showed it to the students for the professor to use it as a presentation</li>
+                </ul>
+            </div>
+            <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
+                <h4 style="text-align:left;"><a style="color:#12d640" data-lang-en="Military service" data-lang-ko="군 복무">Military service</a><br> </h4>
+                <h5 style="text-align:left;" data-lang-en="Aug 2019 - March 2021" data-lang-ko="2019년 8월 - 2021년 3월">Aug 2019 - March 2021</h5>
+                <p style="text-align:left;color:#fff"><em data-lang-en="Republic of Korea" data-lang-ko="대한민국">Republic of Korea</em></p>
+                <ul style="text-align:left;">
+                    <li data-lang-en="Discipline the recruit in Army Recruit Training Center and was discharged as a sergeant" data-lang-ko="육군 훈련소에서 분대장(조교)으로서 신병 훈련을 지도하고 병장으로 전역했습니다.">Discipline the recruit in Army Recruit Training Center and was discharged as a sergeant</li>
+                </ul>
+            </div>
+            
+              <!-- <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
+                <h4 style="text-align:left;"><a href="https://www.meditab.com/" target="_blank" style="color:#12d640">Meditab Software Pvt. Ltd.</a><br> </h4>
+                <h5 style="text-align:left;">May 2018 - June 2018</h5>
+                <p style="text-align:left;color:#fff"><em>Programmer Analyst</em></p>
+                <ul style="text-align:left;">
+                  <li>Optimized image processing algorithm of pill detection by creating customized MASKRCNN  algorithm, increasing accuracy by 15%; trained classification algorithm with the help of triplet loss to learn the image embedding of pill, reducing the hassle of collecting data of new pills. </li>
+                  <li>Devised a pipeline of the project to incorporate it into the product of the company. Implemented Restful APIs in Django that enabled our quality Analyst team to increase reporting speed by 46%.</li>
+                  <li>Built a web app to onboard data from the company’s product using Flask, Postgres, and AWS S3, enabling interactive charts in real-time.</li>
+                  <li>Mentored 2 interns to optimize the pill detection algorithm and to include the multiprocessing pipeline, increasing overall speed by 75%.</li>
+                </ul>
+              </div>
+              <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
+                <h4 style="text-align:left;"><a href="https://www.sac.gov.in/Vyom/index.jsp" target="_blank" style="color:#12d640">Space Application Centre, ISRO</a><br> </h4>
+                <h5 style="text-align:left;">Jan 2018 - May 2018</h5>
+                <p style="text-align:left;color:#fff"><em>Research Intern</em></p>
+                <ul style="text-align:left;">
+                  <li>Implemented noise reduction algorithm on the satellite image and prepared architecture for detecting objects in high‑resolution satellite images, achieving 80% accuracy.</li>
+                  <li>Increased accessibility of satellite image data by redesigning database and application for showcasing graphical data.</li>
+                </ul> -->
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- End Experience Section -->
+
+<!-- ======= Education Section ======= -->
+  <section id="education" class="services">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-lang-en="Education" data-lang-ko="학력">Education</h2>
+
+      </div>
+      <div class="row">
+        <div class="col-lg-12" data-aos="fade-up" style="display: inline-block;">
+
+
+          <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
+            <img src="assets/img/education/kLogo3.jpg" class="img-fluid" alt="" style="width: 100%; height: 180px; object-fit: contain; background: #fff;">
+            
+            <p style="text-align:left;color:#fff;padding: 5px 10px;"><em data-lang-en="BSCS RTIS" data-lang-ko="디지펜 게임공학과">Bachelor's Degree in Computer Science in RTIS Simulation</em></p>
+            <p style="text-align:left;color:#fff;padding: 5px 10px;"><em data-lang-en=" Credit: 3.7 / 4.0" data-lang-ko=" 학점: 4.0 / 4.5"> Credit: 4.0 / 4.5</em></p>
+            <h5 style="text-align:left;padding: 0px 10px;" data-lang-en="March 2018 - June 2022" data-lang-ko="2018년 3월 - 2022년 6월">March 2018 - June 2022</h5>
+            <!-- <h6 style="text-align:left;color:#fff;padding: 0px 10px;" data-lang-en="Relevant Coursework" data-lang-ko="관련 과정">Relevant Coursework</h6> -->
+            <!-- <ul style="text-align:left;color:#fff;">
+                <li data-lang-en="Parallel Programming" data-lang-ko="Parallel Programming">Parallel Programming</li>
+                <li data-lang-en="Ray Tracing" data-lang-ko="Ray Tracing">Ray Tracing</li>
+                <li data-lang-en="Real-Time Rendering" data-lang-ko="Real-Time Rendering">Real-Time Rendering</li>
+                <li data-lang-en="Portable Game System" data-lang-ko="Portable Game System">Portable Game System</li>
+                <li data-lang-en="Linear Algebra & 3D Math" data-lang-ko="Linear Algebra & 3D Math">Linear Algebra & 3D Math</li>
+            </ul> -->
+          </div>
+
+          <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
+            <img src="assets/img/education/dig.jpg" class="img-fluid" alt="" style="width: 100%; height: 180px; object-fit: contain; background: #fff;">
+            
+            <p style="text-align:left;color:#fff;padding: 5px 10px;"><em data-lang-en="BSCS RTIS" data-lang-ko="Bachelor's Degree in Computer Science in RTIS">Bachelor's Degree in Computer Science in RTIS</em></p>
+            <p style="text-align:left;color:#fff;padding: 5px 10px;"><em data-lang-en=" Credit: 3.7 / 4.0" data-lang-ko=" 학점: 3.7 / 4.0"> Credit: 3.7 / 4.0</em></p>
+            <h5 style="text-align:left;padding: 0px 10px;" data-lang-en="August 2022 - April 2024" data-lang-ko="2022년 8월 - 2024년 4월">August 2022 - April 2024</h5>
+            <!-- <h6 style="text-align:left;color:#fff;padding: 0px 10px;" data-lang-en="Relevant Coursework" data-lang-ko="관련 과정">Relevant Coursework</h6> -->
+            <!-- <ul style="text-align:left;color:#fff;">
+                <li data-lang-en="Parallel Programming" data-lang-ko="Parallel Programming">Parallel Programming</li>
+                <li data-lang-en="Ray Tracing" data-lang-ko="Ray Tracing">Ray Tracing</li>
+                <li data-lang-en="Real-Time Rendering" data-lang-ko="Real-Time Rendering">Real-Time Rendering</li>
+                <li data-lang-en="Portable Game System" data-lang-ko="Portable Game System">Portable Game System</li>
+                <li data-lang-en="Linear Algebra & 3D Math" data-lang-ko="Linear Algebra & 3D Math">Linear Algebra & 3D Math</li>
+            </ul> -->
+          </div>
+
+          </div>
+          
+        </div>
+    </div>
+  </section>
+  <!-- End Education Section -->
+
+<!-- ======= Language Section ======= -->
+  <section id="language" class="services">
+    <div class="container">
+<div class="section-title">
+          <h2 data-lang-en="Language" data-lang-ko="어학">Language</h2>
+  
+        </div>
+        <div class="row">
+          <div class="col-lg-12" data-aos="fade-up" style="display: inline-block;">
+  
+  
+            <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
+              <img src="assets/img/certification/certificate2_png.png" class="img-fluid" alt="" style="width: 100%; height: 200px; object-fit: contain; background: #fff;">
+              
+              <p style="text-align:left;color:#fff;padding: 5px 10px;"><em data-lang-en="OPic(English)" data-lang-ko="OPic(영어)">OPic(영어)</em></p>
+              <p style="text-align:left;color:#fff;padding: 5px 10px;"><em data-lang-en="Intermediate High(IH)" data-lang-ko="Intermediate High(IH)">Intermediate High(IH)</em></p>
+              <h5 style="text-align:left;padding: 0px 10px;" data-lang-en="Date : 12th Aug 2024" data-lang-ko="취득일 : 2024년 8월 12일">Date : 12th Aug 2024</h5>
+            </div>
+  
+  
+            </div>
+            
+          </div>
+    </div>
+  </section>
+  <!-- End Language Section -->
+
+<!-- ======= Certificate Section ======= -->
+  <section id="certificate" class="services">
+    <div class="container">
+<div class="section-title">
+            <h2 data-lang-en="Certificate" data-lang-ko="자격증">Certificate</h2>
+    
+          </div>
+          <div class="row">
+            <div class="col-lg-12" data-aos="fade-up" style="display: inline-block;">
+    
+    
+              <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
+                <img src="assets/img/certification/certificate_png.png" class="img-fluid" alt="" style="width: 100%; height: 200px; object-fit: contain; background: #fff;">
+                
+                <p style="text-align:left;color:#fff;padding: 5px 10px;"><em data-lang-en="정보처리기사" data-lang-ko="정보처리기사">정보처리기사</em></p>
+                <h5 style="text-align:left;padding: 0px 10px;" data-lang-en="Date : 13th June 2025" data-lang-ko="취득일 : 2025년 6월 13일">Date : 13th June 2025</h5>
+              </div>
+    
+              <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
+                <img src="assets/img/certification/certificate1_png.png" class="img-fluid" alt="" style="width: 100%; height: 200px; object-fit: contain; background: #fff;">
+                
+                <p style="text-align:left;color:#fff;padding: 5px 10px;"><em data-lang-en="데이터분석 준전문가(ADsP)" data-lang-ko="ADsP">데이터분석 준전문가(ADsP)</em></p>
+                <h5 style="text-align:left;padding: 0px 10px;" data-lang-en="Date : 13th June 2025" data-lang-ko="취득일 : 2025년 6월 13일">Date : 13th June 2025</h5>
+              </div>
+    
+              </div>
+              
+            </div>
+      </div>
+<!-- <div class="portfolio">
+    <div class="container">
+      <div class="section-title">
+        <h2>Online Certification</h2>
+      </div>
+
+      <div class="row portfolio-container" style="position: relative; height: 437.75px;">
+
+         <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 0px; top: 0px;">
+          <div class="portfolio-wrap">
+            <img src="assets/img/certification/stanford.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Machine Learning</h4>
+              <div class="portfolio-links">
+                <a href="https://www.coursera.org/account/accomplishments/certificate/2BTJ636Q2E93?utm_medium=certificate&amp;utm_source=link&amp;utm_campaign=copybutton_certificate/" target="_blank" title="Certificate"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+           </div>
+          </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 370px; top: 0px;">
+          <div class="portfolio-wrap">
+            <img src="assets/img/certification/stanford.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Algorithms-Design and Analysis</h4>
+              <div class="portfolio-links">
+                <a href="https://www.coursera.org/account/accomplishments/certificate/6THRQXYE9EHZ?utm_medium=certificate&amp;utm_source=link&amp;utm_campaign=copybutton_certificate" target="_blank" title="Certificate"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 740px; top: 0px;">
+          <div class="portfolio-wrap">
+            <img src="assets/img/certification/ucsd.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Algorithmic Toolbox</h4>
+              <div class="portfolio-links">
+                <a href="https://coursera.org/share/98bbfb990484fac370d5e5ed14334ea4" target="_blank" title="Certificate"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-project" style="position: absolute; left: 0px; top: 218.875px;">
+          <div class="portfolio-wrap">
+            <img src="assets/img/certification/ibm.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Deep Learning with Tensorflow</h4>
+              <div class="portfolio-links">
+                <a href="https://drive.google.com/file/d/1FSwPt19EzY_tpvqkE6igtLf3gccKcssC/view?usp=sharing" target="_blank" title="Certificate"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-project" style="position: absolute; left: 370px; top: 218.875px;">
+          <div class="portfolio-wrap">
+            <img src="assets/img/certification/ibm.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Machine Learning with Python</h4>
+              <div class="portfolio-links">
+                <a href="https://drive.google.com/file/d/1gimySw_NPzCJ54dqZ2j2wYyz-JDOg-S0/view?usp=sharing" target="_blank" title="Certificate"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-project" style="position: absolute; left: 740px; top: 218.875px;">
+          <div class="portfolio-wrap">
+            <img src="assets/img/certification/dai.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Neural Networks and Deep Learning</h4>
+              <div class="portfolio-links">
+                <a href="https://www.coursera.org/account/accomplishments/certificate/ELXZ6FE2BU7X?utm_medium=certificate&amp;utm_source=link&amp;utm_campaign=copybutton_certificate/" target="_blank" title="Certificate"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div> -->
+    </div>
+  </section>
+  <!-- End Certificate Section -->
+
+<!-- ======= Interests Section ======= -->
+  <section id="interests" class="interests">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-lang-en="Interests" data-lang-ko="관심사">Interests</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-3 col-md-4">
+          <div class="icon-box">
+            <i class="ri-search-line" style="color: #ffbb2c;"></i>
+            <h3>Algorithms</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+          <div class="icon-box">
+            <i class="ri-ruler-2-line" style="color: #5578ff;"></i>
+            <h3>Computer Graphics</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+          <div class="icon-box">
+            <i class="ri-gamepad-line" style="color: #e80368;"></i>
+            <h3>Game Programming</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
+          <div class="icon-box">
+            <i class="ri-numbers-line" style="color: #1c7d32;"></i>
+            <h3>Data Structures</h3>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- End Interests Section -->
 
 
   <!-- Start Contact Section -->
@@ -1090,7 +1092,7 @@
           <div class="info-box">
             <i class="bx bx-phone-call"></i>
             <h3 data-lang-en="Contact" data-lang-ko="연락처">Contact</h3>
-            <p data-lang-en="+1 206-228-3400" data-lang-ko="010-****-2295">+1 206-228-3400</p>
+            <p data-lang-en="+1 206-228-3400" data-lang-ko="010-2776-2295">+1 206-228-3400</p>
             
           </div>
         </div>
