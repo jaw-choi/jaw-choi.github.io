@@ -251,261 +251,570 @@
       <h2>Projects</h2>
     </div>
 
-    <div class="row">
-      <div class="col-lg-12 d-flex justify-content-center">
-        <ul id="portfolio-flters">
-          <li data-filter="*" class="filter-active" data-lang-en="All" data-lang-ko="전체">전체</li>
-          <li data-filter=".filter-game" data-lang-en="Game Project" data-lang-ko="게임 프로젝트">게임 프로젝트</li>
-          <li data-filter=".filter-graphic" data-lang-en="Graphic Project" data-lang-ko="그래픽 프로젝트">그래픽 프로젝트</li>
-          <li data-filter=".filter-Software" data-lang-en="Software & App" data-lang-ko="소프트웨어 & 앱">소프트웨어 & 앱</li>
-          
-        </ul>
+    <div class="project-narrative">
+      <div class="section-title">
+        <h2 data-lang-en="Project Narrative" data-lang-ko="프로젝트 서술 방식">프로젝트 서술 방식</h2>
+        <p data-lang-en="Focus on how and why, not just what." data-lang-ko="무엇을 만들었는지보다, 어떻게 만들었고 왜 그렇게 결정했는지를 중심으로 정리합니다.">무엇을 만들었는지보다, 어떻게 만들었고 왜 그렇게 결정했는지를 중심으로 정리합니다.</p>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="story-card">
+            <h4 data-lang-en="Project Template" data-lang-ko="프로젝트 템플릿">프로젝트 템플릿</h4>
+            <ul>
+              <li data-lang-en="Problem/Context: what issue and why it matters" data-lang-ko="문제/멥락: 어떤 문제를 만났고 왜 중요한지">문제/멥락: 어떤 문제를 만났고 왜 중요한지</li>
+              <li data-lang-en="Alternatives: what options and why the choice" data-lang-ko="고민/선택지: 여러 대안과 선택 이유">고민/선택지: 여러 대안과 선택 이유</li>
+              <li data-lang-en="Solution: approach, trade-offs, key decisions" data-lang-ko="해결 방식: 접근, 트레이드오프, 핵심 의사결정">해결 방식: 접근, 트레이드오프, 핵심 의사결정</li>
+              <li data-lang-en="Collaboration: roles, coordination, communication" data-lang-ko="협업: 역할 분담, 조율, 커뮤니케이션">협업: 역할 분담, 조율, 커뮤니케이션</li>
+              <li data-lang-en="Outcome: result, learnings, next steps" data-lang-ko="결과/회고: 성과, 배운 점, 다음 개선">결과/회고: 성과, 배운 점, 다음 개선</li>
+              <li data-lang-en="Tech Stack: list only essential tech" data-lang-ko="기술 스택: 핵심 기술만 간단히">기술 스택: 핵심 기술만 간단히</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="story-card">
+            <h4 data-lang-en="Writing Principles" data-lang-ko="작성 원칙">작성 원칙</h4>
+            <ul>
+              <li data-lang-en="Explain why the decision fits the problem" data-lang-ko="문제와 의사결정의 연결고리를 분명히">문제와 의사결정의 연결고리를 분명히</li>
+              <li data-lang-en="Show teamwork and ownership" data-lang-ko="협업 태도와 주도성을 드러내기">협업 태도와 주도성을 드러내기</li>
+              <li data-lang-en="Use evidence or impact where possible" data-lang-ko="가능하면 수치/근거로 설득">가능하면 수치/근거로 설득</li>
+              <li data-lang-en="Include constraints and trade-offs" data-lang-ko="제약과 트레이드오프를 숨기지 않기">제약과 트레이드오프를 숨기지 않기</li>
+              <li data-lang-en="Keep tools as supporting details" data-lang-ko="기술은 보조 정보로 정리">기술은 보조 정보로 정리</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="row portfolio-container">
-  <style>
-    .portfolio-wrap img {
-      width: 100%;           /* 가로는 꽉 채우기 */
-      height: 160px;         /* 고정 높이 */
-      object-fit: contain;   /* 비율 유지, 안 잘리게 */
-      background-color: #000;/* 남는 공간 배경 (원하면 투명/흰색 등으로 변경 가능) */
-      display: block;
-    }
-  </style>
-      <div class="col-lg-4 col-md-6 portfolio-item filter-game">
-        <center>
-          <h4>One Survival</h4>
-        </center>
-        <div class="portfolio-wrap">
-          <img src="assets/img/project/J Studio Logo.png" class="img-fluid" alt="">
-          <div class="portfolio-info">
-
-            <div class="portfolio-links">
-              <a href="projects/OneSurvival.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe"
-              class="venobox" title="Project Details" data-lang-en="View" data-lang-ko="자세히">자세히</a>
+    <div class="project-list">
+      <article class="project-story">
+        <div class="row align-items-start">
+          <div class="col-lg-4">
+            <div class="project-media">
+              <img src="assets/img/project/J Studio Logo.png" class="img-fluid" alt="">
             </div>
           </div>
-        </div>
-      </div>
-  
-      <div class="col-lg-4 col-md-6 portfolio-item filter-game">
-        <center>
-          <h4>BIT SAVER</h4>
-        </center>
-        <div class="portfolio-wrap">
-          <img src="assets/img/project/bitsaver.png" class="img-fluid" alt="">
-          <div class="portfolio-info">
-
-            <div class="portfolio-links">
-              <a href="projects/bitsaver.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe"
-              class="venobox" title="Project Details" data-lang-en="View" data-lang-ko="자세히">자세히</a>
+          <div class="col-lg-8">
+            <div class="project-header">
+              <h3 data-lang-en="One Survival" data-lang-ko="One Survival">One Survival</h3>
+              <p class="project-meta">
+                <span data-lang-en="Duration" data-lang-ko="기간">기간</span>:
+                <span data-lang-en="2024-07-14 ~ Ongoing" data-lang-ko="2024-07-14 ~ 계속">2024-07-14 ~ 계속</span>
+                <span class="meta-sep">|</span>
+                <span data-lang-en="Role/Team" data-lang-ko="역할/팀">역할/팀</span>:
+                <span data-lang-en="Solo Project" data-lang-ko="정리 예정">정리 예정</span>
+              </p>
             </div>
+            <ul class="project-narrative-list">
+              <li>
+                <strong data-lang-en="Problem/Context" data-lang-ko="문제/멥락">문제/멥락</strong>:
+                <span data-lang-en="2D Roguelike Auto-Attack Survival — Game Programmer" data-lang-ko="2D 로그라이크 자동 공격 서바이벌 — 게임 프로그래머 / 솔로 프로젝트">2D 로그라이크 자동 공격 서바이벌 — 게임 프로그래머 / 솔로 프로젝트</span>
+              </li>
+              <li>
+                <strong data-lang-en="Considerations" data-lang-ko="고민/선택지">고민/선택지</strong>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+              </li>
+              <li>
+                <strong data-lang-en="Solution" data-lang-ko="해결 방식">해결 방식</strong>:
+                <ul class="project-solution-list">
+              <li data-lang-en="Replaced per-enemy animations with a texture atlas and a single mesh; UV is computed on GPU, reducing draw calls and minimizing repeated rendering overhead." data-lang-ko="각 Enemy 애니메이션 대신 Texture Atlas와 단일 Mesh를 사용하고 UV를 GPU에서 계산하도록 하여 Draw Call을 줄이고 반복 렌더링 부하를 최소화했습니다.">각 Enemy 애니메이션 대신 Texture Atlas와 단일 Mesh를 사용하고 UV를 GPU에서 계산하도록 하여 Draw Call을 줄이고 반복 렌더링 부하를 최소화했습니다.</li>
+              <li data-lang-en="Used Coroutines for periodic behaviors, reducing Update calls and code complexity." data-lang-ko="Coroutine으로 주기적 동작을 구현하여 Update 호출을 줄이고 코드 복잡성을 낮췄습니다.">Coroutine으로 주기적 동작을 구현하여 Update 호출을 줄이고 코드 복잡성을 낮췄습니다.</li>
+              <li data-lang-en="Optimized memory via Object Pooling for enemies and items; unified component lifecycle in OnEnable/OnDisable and managed initialization via interfaces." data-lang-ko="적·아이템에 Object Pooling을 적용해 메모리를 최적화하고, 컴포넌트 수명주기를 OnEnable/OnDisable로 통일하여 인터페이스 기반 초기화를 관리했습니다.">적·아이템에 Object Pooling을 적용해 메모리를 최적화하고, 컴포넌트 수명주기를 OnEnable/OnDisable로 통일하여 인터페이스 기반 초기화를 관리했습니다.</li>
+              <li data-lang-en="Connected client and server to implement login and leaderboard so players can compete." data-lang-ko="클라이언트와 서버를 연결해 로그인과 랭킹을 구현하여 플레이어 간 경쟁이 가능하도록 했습니다.">클라이언트와 서버를 연결해 로그인과 랭킹을 구현하여 플레이어 간 경쟁이 가능하도록 했습니다.</li>
+                </ul>
+              </li>
+              <li>
+                <strong data-lang-en="Collaboration/Attitude" data-lang-ko="협업/태도">협업/태도</strong>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+              </li>
+              <li>
+                <strong data-lang-en="Outcome/Retrospective" data-lang-ko="결과/회고">결과/회고</strong>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+              </li>
+              <li>
+                <strong data-lang-en="Tech Stack" data-lang-ko="기술 스택">기술 스택</strong>:
+                <span data-lang-en="Unity, C#" data-lang-ko="Unity, C#">Unity, C#</span>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
+      </article>
 
-      <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-graphic">
-        <center>
-          <h4>커스텀 그래픽 엔진</h4>
-        </center>
-        <div class="portfolio-wrap">
-          <img src="assets/img/project/GraphicsEngine.png" class="img-fluid" alt="">
-          <div class="portfolio-info">
-
-            <div class="portfolio-links">
-              <a href="projects/GraphicsEngine.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe"
-                class="venobox" title="Project Details"> 자세히</a>
+      <article class="project-story">
+        <div class="row align-items-start">
+          <div class="col-lg-4">
+            <div class="project-media">
+              <img src="assets/img/project/bitsaver.png" class="img-fluid" alt="">
             </div>
           </div>
-        </div>
-      </div> -->
-
-
-      <div class="col-lg-4 col-md-6 portfolio-item filter-graphic">
-        <center>
-          <h4 data-lang-en="3D Graphics Tech Demo" data-lang-ko="3D 그래픽 기술 데모">3D 그래픽 기술 데모</h4>
-
-        </center>
-        <div class="portfolio-wrap">
-          <img src="assets/img/project/graphic_tech.png" class="img-fluid" alt="">
-          <div class="portfolio-info">
-            <div class="portfolio-links">
-              <a href="projects/graphictechdemo.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe"
-              class="venobox" title="Project Details" data-lang-en="View" data-lang-ko="자세히">자세히</a>
+          <div class="col-lg-8">
+            <div class="project-header">
+              <h3 data-lang-en="BIT SAVER" data-lang-ko="BIT SAVER">BIT SAVER</h3>
+              <p class="project-meta">
+                <span data-lang-en="Duration" data-lang-ko="기간">기간</span>:
+                <span data-lang-en="March 2021 - June 2022" data-lang-ko="2021.03 - 2022.06">2021.03 - 2022.06</span>
+                <span class="meta-sep">|</span>
+                <span data-lang-en="Role/Team" data-lang-ko="역할/팀">역할/팀</span>:
+                <span data-lang-en="Tech Lead / Team of 4" data-lang-ko="Tech Lead / 4인팀">Tech Lead / 4인팀</span>
+              </p>
             </div>
+            <ul class="project-narrative-list">
+              <li>
+                <strong data-lang-en="Problem/Context" data-lang-ko="문제/멥락">문제/멥락</strong>:
+                <span data-lang-en="2D Rhythm Action Game" data-lang-ko="2D 리듬 엑션 게임">2D 리듬 엑션 게임</span>
+              </li>
+              <li>
+                <strong data-lang-en="Considerations" data-lang-ko="고민/선택지">고민/선택지</strong>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+              </li>
+              <li>
+                <strong data-lang-en="Solution" data-lang-ko="해결 방식">해결 방식</strong>:
+                <ul class="project-solution-list">
+              <li data-lang-en="Implemented a custom engine based on singleton components using C++, OpenGL, and VS2019." data-lang-ko="C++, OpenGL, VS2019를 사용하여 싱글톤 컴포넌트 기반의 커스텀 엔진을 구현하였습니다.">C++, OpenGL, VS2019를 사용하여 싱글톤 컴포넌트 기반의 커스텀 엔진을 구현하였습니다.</li>
+              <li data-lang-en="Effectively applied graphic elements to the custom engine using OpenGL and GLSL, enhancing and optimizing the overall graphic experience." data-lang-ko="OpenGL과 GLSL을 사용하여 커스텀 엔진에 그래픽 요소를 효과적으로 적용하여 전반적인 그래픽 경험을 향상시키고 최적화했습니다.">OpenGL과 GLSL을 사용하여 커스텀 엔진에 그래픽 요소를 효과적으로 적용하여 전반적인 그래픽 경험을 향상시키고 최적화했습니다.</li>
+              <li data-lang-en="We used the Object Pool for notes that are frequently assigned and released in the game. We improved performance by reducing the time use for unnecessary memory allocation and release. In this process, we found the object pool technique effective for objects that are repeatedly assigned and released.
+                  " data-lang-ko="게임 내 자주 할당 되고 해제되는 노트에 대해서 Object Pool을 사용했습니다. 불필요한 메모리 할당 및 해제에 대한 시간 사용을 줄여서 성능을 높였습니다. 이 과정에서 unique_ptr을 사용 하여 메모리 관리를 자동화하여 반복적으로 할당되고 해제되는 객체에 대해서 object pool과 unique_ptr이 효과적인 것을 알았습니다.">게임 내 자주 할당 되고 해제되는 노트에 대해서 Object Pool을 사용했습니다. 불필요한 메모리 할당 및 해제에 대한 시간 사용을 줄여서 성능을 높였습니다. 이 과정에서 unique_ptr을 사용 하여 메모리 관리를 자동화하여 반복적으로 할당되고 해제되는 객체에 대해서 object pool과 unique_ptr이 효과적인 것을 알았습니다.</li>
+              <li data-lang-en="Documented and managed the game architecture by visualizing the current state and goals of the project to ensure smooth collaboration with producers, designers, and engineers." data-lang-ko="프로듀서, 디자이너, 엔지니어와의 원활한 협력을 위해 프로젝트의 현재 상태와 목표 방향을 시각화하여 게임 아키텍처를 문서화하고 관리했습니다.">프로듀서, 디자이너, 엔지니어와의 원활한 협력을 위해 프로젝트의 현재 상태와 목표 방향을 시각화하여 게임 아키텍처를 문서화하고 관리했습니다.</li>
+                </ul>
+              </li>
+              <li>
+                <strong data-lang-en="Collaboration/Attitude" data-lang-ko="협업/태도">협업/태도</strong>:
+                <span data-lang-en="Documented and managed the game architecture by visualizing the current state and goals of the project to ensure smooth collaboration with producers, designers, and engineers." data-lang-ko="프로듀서, 디자이너, 엔지니어와의 원활한 협력을 위해 프로젝트의 현재 상태와 목표 방향을 시각화하여 게임 아키텍처를 문서화하고 관리했습니다.">프로듀서, 디자이너, 엔지니어와의 원활한 협력을 위해 프로젝트의 현재 상태와 목표 방향을 시각화하여 게임 아키텍처를 문서화하고 관리했습니다.</span>
+              </li>
+              <li>
+                <strong data-lang-en="Outcome/Retrospective" data-lang-ko="결과/회고">결과/회고</strong>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+              </li>
+              <li>
+                <strong data-lang-en="Tech Stack" data-lang-ko="기술 스택">기술 스택</strong>:
+                <span data-lang-en="C++, OpenGL, Visual Studio, Arduino" data-lang-ko="C++, OpenGL, Visual Studio, Arduino">C++, OpenGL, Visual Studio, Arduino</span>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
+      </article>
 
-
-      <div class="col-lg-4 col-md-6 portfolio-item filter-graphic">
-        <!-- <br> -->
-        <center>
-          <h4 data-lang-en="Shading Project" data-lang-ko="Shading 프로젝트">Shading 프로젝트</h4>
-
-        </center>
-        <div class="portfolio-wrap">
-          <img src="assets/img/project/shading_model.png" class="img-fluid" alt="">
-          <div class="portfolio-info">
-            <div class="portfolio-links">
-              <a href="projects/shadingModel.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe"
-              class="venobox" title="Project Details" data-lang-en="View" data-lang-ko="자세히">자세히</a>
+      <article class="project-story">
+        <div class="row align-items-start">
+          <div class="col-lg-4">
+            <div class="project-media">
+              <img src="assets/img/project/graphic_tech.png" class="img-fluid" alt="">
             </div>
           </div>
-        </div>
-      </div>
-
-      <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-graphic">
-        <center>
-          <h4 data-lang-en="Ray Tracing" data-lang-ko="레이 트레이싱">레이 트레이싱</h4>
-        </center>
-        <div class="portfolio-wrap">
-          <img src="assets/img/project/raytracing.png" class="img-fluid" alt="">
-          <div class="portfolio-info">
-            <div class="portfolio-links">
-              <a href="projects/raytracing.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe"
-              class="venobox" title="Project Details" data-lang-en="View" data-lang-ko="자세히">자세히</a>
+          <div class="col-lg-8">
+            <div class="project-header">
+              <h3 data-lang-en="3D 그래픽 기술 데모" data-lang-ko="3D 그래픽 기술 데모">3D 그래픽 기술 데모</h3>
+              <p class="project-meta">
+                <span data-lang-en="Duration" data-lang-ko="기간">기간</span>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+                <span class="meta-sep">|</span>
+                <span data-lang-en="Role/Team" data-lang-ko="역할/팀">역할/팀</span>:
+                <span data-lang-en="Team of 2" data-lang-ko="2인팀">2인팀</span>
+              </p>
             </div>
+            <ul class="project-narrative-list">
+              <li>
+                <strong data-lang-en="Problem/Context" data-lang-ko="문제/멥락">문제/멥락</strong>:
+                <span data-lang-en="3D Graphic Technology Demo" data-lang-ko="3D 그래픽 기술 데모">3D 그래픽 기술 데모</span>
+              </li>
+              <li>
+                <strong data-lang-en="Considerations" data-lang-ko="고민/선택지">고민/선택지</strong>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+              </li>
+              <li>
+                <strong data-lang-en="Solution" data-lang-ko="해결 방식">해결 방식</strong>:
+                <ul class="project-solution-list">
+              <li data-lang-en="Implemented various 3D technologies using C++ and OpenGL, establishing the foundation of computer graphics programming. Also created various example demos using the implemented technologies." data-lang-ko="C++과 OpenGL을 사용하여 다양한 3D 기술들을 직접 구현하며 컴퓨터 그래픽 프로그래밍의 기반을 다졌습니다. 또한, 구현한 기술들을 활용하여 다양한 예시 데모들을 만들었습니다.">C++과 OpenGL을 사용하여 다양한 3D 기술들을 직접 구현하며 컴퓨터 그래픽 프로그래밍의 기반을 다졌습니다. 또한, 구현한 기술들을 활용하여 다양한 예시 데모들을 만들었습니다.</li>
+              <li data-lang-en="Procedural Geometry Modeling" data-lang-ko="절차적 기하학 모델링">절차적 기하학 모델링</li>
+              <li data-lang-en="Toon Shading, Fog Effects Implementation" data-lang-ko="툰 쉐이딩, 안개 효과 구현">툰 쉐이딩, 안개 효과 구현</li>
+              <li data-lang-en="Value Noise Implementation" data-lang-ko="값 노이즈(Value Noise)">값 노이즈(Value Noise)</li>
+                </ul>
+              </li>
+              <li>
+                <strong data-lang-en="Collaboration/Attitude" data-lang-ko="협업/태도">협업/태도</strong>:
+                <span data-lang-en="Team of 2" data-lang-ko="2인팀">2인팀</span>
+              </li>
+              <li>
+                <strong data-lang-en="Outcome/Retrospective" data-lang-ko="결과/회고">결과/회고</strong>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+              </li>
+              <li>
+                <strong data-lang-en="Tech Stack" data-lang-ko="기술 스택">기술 스택</strong>:
+                <span data-lang-en="C++, OpenGL, GLSL, ImGui" data-lang-ko="C++, OpenGL, GLSL, ImGui">C++, OpenGL, GLSL, ImGui</span>
+              </li>
+            </ul>
           </div>
         </div>
-      </div> -->
+      </article>
 
-      <div class="col-lg-4 col-md-6 portfolio-item filter-game">
-        <center>
-          <h4>BEAR</h4>
-        </center>
-        <div class="portfolio-wrap">
-          <img src="assets/img/project/bear.png" class="img-fluid" alt="">
-          <div class="portfolio-info">
-
-            <div class="portfolio-links">
-              <a href="projects/bear.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox"
-              title="Project Details" data-lang-en="View" data-lang-ko="자세히">자세히</a>
+      <article class="project-story">
+        <div class="row align-items-start">
+          <div class="col-lg-4">
+            <div class="project-media">
+              <img src="assets/img/project/shading_model.png" class="img-fluid" alt="">
             </div>
           </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 portfolio-item filter-game">
-        <center>
-          <h4>Enter the G157</h4>
-        </center>
-        <div class="portfolio-wrap">
-          <img src="assets/img/project/enter_the_g157.png" class="img-fluid" alt="">
-          <div class="portfolio-info">
-
-            <div class="portfolio-links">
-              <a href="projects/treasure_hunter.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe"
-              class="venobox" title="Project Details" data-lang-en="View" data-lang-ko="자세히">자세히</a>
+          <div class="col-lg-8">
+            <div class="project-header">
+              <h3 data-lang-en="Shading 프로젝트" data-lang-ko="Shading 프로젝트">Shading 프로젝트</h3>
+              <p class="project-meta">
+                <span data-lang-en="Duration" data-lang-ko="기간">기간</span>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+                <span class="meta-sep">|</span>
+                <span data-lang-en="Role/Team" data-lang-ko="역할/팀">역할/팀</span>:
+                <span data-lang-en="Solo Project" data-lang-ko="정리 예정">정리 예정</span>
+              </p>
             </div>
+            <ul class="project-narrative-list">
+              <li>
+                <strong data-lang-en="Problem/Context" data-lang-ko="문제/멥락">문제/멥락</strong>:
+                <span data-lang-en="3D Graphic Shading Project" data-lang-ko="3D 그래픽 쉐이팅 프로젝트 / 솔로 프로젝트">3D 그래픽 쉐이팅 프로젝트 / 솔로 프로젝트</span>
+              </li>
+              <li>
+                <strong data-lang-en="Considerations" data-lang-ko="고민/선택지">고민/선택지</strong>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+              </li>
+              <li>
+                <strong data-lang-en="Solution" data-lang-ko="해결 방식">해결 방식</strong>:
+                <ul class="project-solution-list">
+              <li data-lang-en="Implemented shading algorithms on the GPU through shader programming." data-lang-ko="쉐이더 프로그래밍을 통해 GPU에서 셰이딩 알고리즘을 구현했습니다.">쉐이더 프로그래밍을 통해 GPU에서 셰이딩 알고리즘을 구현했습니다.</li>
+              <li data-lang-en="Implemented a simple shading model including Phong lighting model and environment mapping (reflection and refraction)." data-lang-ko="Phong 조명 모델 및 환경 매핑(반사 및 굴절)을 포함한 간단한 셰이딩 모델을 구현했습니다.">Phong 조명 모델 및 환경 매핑(반사 및 굴절)을 포함한 간단한 셰이딩 모델을 구현했습니다.</li>
+              <li data-lang-en="Implemented a 3D object loader for importing assets into the graphic pipeline." data-lang-ko="그래픽 파이프라인에 에셋을 가져오기 위한 3D 객체 로더를 구현했습니다.">그래픽 파이프라인에 에셋을 가져오기 위한 3D 객체 로더를 구현했습니다.</li>
+                </ul>
+              </li>
+              <li>
+                <strong data-lang-en="Collaboration/Attitude" data-lang-ko="협업/태도">협업/태도</strong>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+              </li>
+              <li>
+                <strong data-lang-en="Outcome/Retrospective" data-lang-ko="결과/회고">결과/회고</strong>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+              </li>
+              <li>
+                <strong data-lang-en="Tech Stack" data-lang-ko="기술 스택">기술 스택</strong>:
+                <span data-lang-en="C++, OpenGL, GLSL" data-lang-ko="C++, OpenGL, GLSL">C++, OpenGL, GLSL</span>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="col-lg-4 col-md-6 portfolio-item filter-graphic">
-        <center>
-          <h4 data-lang-en="Curve Project" data-lang-ko="곡선 프로젝트">곡선 프로젝트</h4>
-
-        </center>
-        <div class="portfolio-wrap">
-          <img src="assets/img/project/curves.png" class="img-fluid" alt="">
-          <div class="portfolio-info">
-
-            <div class="portfolio-links">
-              <a href="projects/curve.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox"
-              title="Project Details" data-lang-en="View" data-lang-ko="자세히">자세히</a>
+      <article class="project-story">
+        <div class="row align-items-start">
+          <div class="col-lg-4">
+            <div class="project-media">
+              <img src="assets/img/project/bear.png" class="img-fluid" alt="">
             </div>
           </div>
-        </div>
-      </div>
-
-      <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-game">
-        <center>
-          <h4>테트리스</h4>
-        </center>
-        <div class="portfolio-wrap">
-          <img src="assets/img/project/tetris.jpg" class="img-fluid" alt="">
-          <div class="portfolio-info">
-
-            <div class="portfolio-links">
-              <a href="projects/tetris.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox"
-                title="Project Details"> 자세히</a>
+          <div class="col-lg-8">
+            <div class="project-header">
+              <h3 data-lang-en="BEAR" data-lang-ko="BEAR">BEAR</h3>
+              <p class="project-meta">
+                <span data-lang-en="Duration" data-lang-ko="기간">기간</span>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+                <span class="meta-sep">|</span>
+                <span data-lang-en="Role/Team" data-lang-ko="역할/팀">역할/팀</span>:
+                <span data-lang-en="Quality Director / Team of 6" data-lang-ko="Quality Director / 6인팀">Quality Director / 6인팀</span>
+              </p>
             </div>
+            <ul class="project-narrative-list">
+              <li>
+                <strong data-lang-en="Problem/Context" data-lang-ko="문제/멥락">문제/멥락</strong>:
+                <span data-lang-en="3D Platformer Game" data-lang-ko="3D 플랫포머 게임">3D 플랫포머 게임</span>
+              </li>
+              <li>
+                <strong data-lang-en="Considerations" data-lang-ko="고민/선택지">고민/선택지</strong>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+              </li>
+              <li>
+                <strong data-lang-en="Solution" data-lang-ko="해결 방식">해결 방식</strong>:
+                <ul class="project-solution-list">
+              <li data-lang-en="Implemented ragdoll, ledge hang, and slide mechanics to apply realistic physics and enhance the overall realism of the game." data-lang-ko="주요 메커니즘인 래그돌, ledge hang, 슬라이드를 구현하여 게임의 전반적인 현실감을 높이기 위해 현실적인 물리학을 적용했습니다.">주요 메커니즘인 래그돌, ledge hang, 슬라이드를 구현하여 게임의 전반적인 현실감을 높이기 위해 현실적인 물리학을 적용했습니다.</li>
+              <li data-lang-en="Created UI for interacting with games like Pause menu or Main menu." data-lang-ko="Pause menu나 Main menu등 유저가 게임과 상호작용 하기 위한 UI를 만들었습니다. ">Pause menu나 Main menu등 유저가 게임과 상호작용 하기 위한 UI를 만들었습니다. </li>
+              <li data-lang-en="Implemented the logic of going on to the next stage, and a camera animation." data-lang-ko="다음 스테이지로 넘어가는 로직을 구현하고, 이때의 카메라 애니메이션을 만들었습니다.">다음 스테이지로 넘어가는 로직을 구현하고, 이때의 카메라 애니메이션을 만들었습니다.</li>
+              <li data-lang-en="Created a feature that allows users to get different picture cards for each saveable spot and see them again on the menu screen." data-lang-ko="각 저장 가능한 spot 마다 서로 다른 그림카드를 얻고 메뉴화면에서 이들을 다시 볼 수 있게 하는 기능을 만들었습니다.">각 저장 가능한 spot 마다 서로 다른 그림카드를 얻고 메뉴화면에서 이들을 다시 볼 수 있게 하는 기능을 만들었습니다.</li>
+                </ul>
+              </li>
+              <li>
+                <strong data-lang-en="Collaboration/Attitude" data-lang-ko="협업/태도">협업/태도</strong>:
+                <span data-lang-en="Quality Director / Team of 6" data-lang-ko="Quality Director / 6인팀">Quality Director / 6인팀</span>
+              </li>
+              <li>
+                <strong data-lang-en="Outcome/Retrospective" data-lang-ko="결과/회고">결과/회고</strong>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+              </li>
+              <li>
+                <strong data-lang-en="Tech Stack" data-lang-ko="기술 스택">기술 스택</strong>:
+                <span data-lang-en="Unreal Engine 5, C++" data-lang-ko="Unreal5, C++">Unreal5, C++</span>
+              </li>
+            </ul>
           </div>
         </div>
-      </div> -->
+      </article>
 
-      <div class="col-lg-4 col-md-6 portfolio-item filter-game">
-        <center>
-          <h4>Paparazzi</h4>
-        </center>
-        <div class="portfolio-wrap">
-          <img src="assets/img/project/paparazzi.png" class="img-fluid" alt="">
-          <div class="portfolio-info">
-
-            <div class="portfolio-links">
-              <a href="projects/paparazzi.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe"
-              class="venobox" title="Project Details" data-lang-en="View" data-lang-ko="자세히">자세히</a>
+      <article class="project-story">
+        <div class="row align-items-start">
+          <div class="col-lg-4">
+            <div class="project-media">
+              <img src="assets/img/project/enter_the_g157.png" class="img-fluid" alt="">
             </div>
           </div>
-        </div>
-      </div>
-
-
-      <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-game">
-        <center>
-          <h4>A* Algorithm Demo</h4>
-        </center>
-        <div class="portfolio-wrap">
-          <img src="assets/img/project/tileMapThumb.png" class="img-fluid" alt="">
-          <div class="portfolio-info">
-
-            <div class="portfolio-links">
-              <a href="projects/AstarAlgorithm.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe"
-              class="venobox" title="Project Details" data-lang-en="View" data-lang-ko="자세히">자세히</a>
+          <div class="col-lg-8">
+            <div class="project-header">
+              <h3 data-lang-en="Enter the G157" data-lang-ko="Enter the G157">Enter the G157</h3>
+              <p class="project-meta">
+                <span data-lang-en="Duration" data-lang-ko="기간">기간</span>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+                <span class="meta-sep">|</span>
+                <span data-lang-en="Role/Team" data-lang-ko="역할/팀">역할/팀</span>:
+                <span data-lang-en="Tech Lead / Team of 4" data-lang-ko="Tech 리드 / 4인팀">Tech 리드 / 4인팀</span>
+              </p>
             </div>
+            <ul class="project-narrative-list">
+              <li>
+                <strong data-lang-en="Problem/Context" data-lang-ko="문제/멥락">문제/멥락</strong>:
+                <span data-lang-en="2D Top-down Game" data-lang-ko="2D 탑다운 게임">2D 탑다운 게임</span>
+              </li>
+              <li>
+                <strong data-lang-en="Considerations" data-lang-ko="고민/선택지">고민/선택지</strong>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+              </li>
+              <li>
+                <strong data-lang-en="Solution" data-lang-ko="해결 방식">해결 방식</strong>:
+                <ul class="project-solution-list">
+              <li data-lang-en="Utilized C#, Unity Engine, and Nintendo SDK to develop the game." data-lang-ko="C#과 Unity Engine 및 Nintendo SDK를 활용해서 게임을 제작하였습니다.">C#과 Unity Engine 및 Nintendo SDK를 활용해서 게임을 제작하였습니다.</li>
+              <li data-lang-en="Implemented Procedural Generation technique to automatically generate maps with random map generation." data-lang-ko="맵을 자동 생성되게 하기 위하여 Procedural Generation 기법을 응용하여 랜덤맵이 생성되게 구현했습니다.">맵을 자동 생성되게 하기 위하여 Procedural Generation 기법을 응용하여 랜덤맵이 생성되게 구현했습니다.</li>
+              <li data-lang-en="Focused on debugging and bug fixing to enhance game stability." data-lang-ko="게임의 안정성을 높이기 위해 디버깅과 버그 수정에 집중했습니다.">게임의 안정성을 높이기 위해 디버깅과 버그 수정에 집중했습니다.</li>
+              <li data-lang-en="Applied direction key control, sound effects, and vibration effects based on Nintendo SDK." data-lang-ko="Nintendo SDK에 기초하여 방향키 조정, 효과음과 진동효과를 적용했습니다.">Nintendo SDK에 기초하여 방향키 조정, 효과음과 진동효과를 적용했습니다.</li>
+                </ul>
+              </li>
+              <li>
+                <strong data-lang-en="Collaboration/Attitude" data-lang-ko="협업/태도">협업/태도</strong>:
+                <span data-lang-en="Focused on debugging and bug fixing to enhance game stability." data-lang-ko="게임의 안정성을 높이기 위해 디버깅과 버그 수정에 집중했습니다.">게임의 안정성을 높이기 위해 디버깅과 버그 수정에 집중했습니다.</span>
+              </li>
+              <li>
+                <strong data-lang-en="Outcome/Retrospective" data-lang-ko="결과/회고">결과/회고</strong>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+              </li>
+              <li>
+                <strong data-lang-en="Tech Stack" data-lang-ko="기술 스택">기술 스택</strong>:
+                <span data-lang-en="C#, Unity, Nintendo SDK" data-lang-ko="C#, Unity, Nintendo SDK">C#, Unity, Nintendo SDK</span>
+              </li>
+            </ul>
           </div>
         </div>
-      </div> -->
-      
-            <div class="col-lg-4 col-md-6 portfolio-item filter-graphic">
-        <center>
-          <h4>Cloth Demo</h4>
-        </center>
-        <div class="portfolio-wrap">
-          <!-- <img src="assets/img/project/clothDemoThumbnail.png" class="img-fluid" alt=""> -->
-          <img src="assets/img/project/clothDemoThumbnail.png" class="img-fluid" alt="" style="height: 160px; object-fit: cover;">
+      </article>
 
-          <div class="portfolio-info">
-
-            <div class="portfolio-links">
-              <a href="projects/ClothDemo.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe"
-              class="venobox" title="Project Details" data-lang-en="View" data-lang-ko="자세히">자세히</a>
+      <article class="project-story">
+        <div class="row align-items-start">
+          <div class="col-lg-4">
+            <div class="project-media">
+              <img src="assets/img/project/curves.png" class="img-fluid" alt="">
             </div>
           </div>
-        </div>
-      </div> 
-
-      <div class="col-lg-4 col-md-6 portfolio-item filter-Software">
-        <!-- <br> -->
-        <center>
-          <h4 data-lang-en="Dating Application" data-lang-ko="데이팅 어플리케이션">데이팅 어플리케이션</h4>
-
-        </center>
-        <div class="portfolio-wrap">
-          <img src="assets/img/project/Dating.jpg" class="img-fluid" alt="">
-          <div class="portfolio-info">
-            <div class="portfolio-links">
-              <a href="projects/dating.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox"
-               title="Project Details" data-lang-en="View" data-lang-ko="자세히">자세히</a>
+          <div class="col-lg-8">
+            <div class="project-header">
+              <h3 data-lang-en="곡선 프로젝트" data-lang-ko="곡선 프로젝트">곡선 프로젝트</h3>
+              <p class="project-meta">
+                <span data-lang-en="Duration" data-lang-ko="기간">기간</span>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+                <span class="meta-sep">|</span>
+                <span data-lang-en="Role/Team" data-lang-ko="역할/팀">역할/팀</span>:
+                <span data-lang-en="Solo Project" data-lang-ko="솔로 프로젝트">솔로 프로젝트</span>
+              </p>
             </div>
+            <ul class="project-narrative-list">
+              <li>
+                <strong data-lang-en="Problem/Context" data-lang-ko="문제/멥락">문제/멥락</strong>:
+                <span data-lang-en="Computer Graphics / Parametric Polynomial Curves" data-lang-ko="컴퓨터 그래픽스 / 매개변수 다항식 곡선">컴퓨터 그래픽스 / 매개변수 다항식 곡선</span>
+              </li>
+              <li>
+                <strong data-lang-en="Considerations" data-lang-ko="고민/선택지">고민/선택지</strong>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+              </li>
+              <li>
+                <strong data-lang-en="Solution" data-lang-ko="해결 방식">해결 방식</strong>:
+                <ul class="project-solution-list">
+              <li data-lang-en="Resolved problems related to vector spaces of polynomials and spline functions using linear algebra, establishing knowledge in the process." data-lang-ko="선형 대수를 사용하여 다항식과 스플라인 함수의 벡터 공간과 관련된 문제를 해결하며 지식을 확립했습니다.">선형 대수를 사용하여 다항식과 스플라인 함수의 벡터 공간과 관련된 문제를 해결하며 지식을 확립했습니다.</li>
+              <li data-lang-en="Implemented 2D curves of the following algorithms using C++ and OpenGL:" data-lang-ko="C++와 OpenGL을 사용하여 다음 알고리즘의 2D 곡선을 구현했습니다.">C++와 OpenGL을 사용하여 다음 알고리즘의 2D 곡선을 구현했습니다.</li>
+              <li data-lang-en="De Casteljau algorithm for polynomial functions" data-lang-ko="다항식 함수용 De Casteljau 알고리즘">다항식 함수용 De Casteljau 알고리즘</li>
+              <li data-lang-en="De Casteljau algorithm for Bezier curves" data-lang-ko="베지어 곡선용 De Casteljau 알고리즘">베지어 곡선용 De Casteljau 알고리즘</li>
+                </ul>
+              </li>
+              <li>
+                <strong data-lang-en="Collaboration/Attitude" data-lang-ko="협업/태도">협업/태도</strong>:
+                <span data-lang-en="Solo Project" data-lang-ko="솔로 프로젝트">솔로 프로젝트</span>
+              </li>
+              <li>
+                <strong data-lang-en="Outcome/Retrospective" data-lang-ko="결과/회고">결과/회고</strong>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+              </li>
+              <li>
+                <strong data-lang-en="Tech Stack" data-lang-ko="기술 스택">기술 스택</strong>:
+                <span data-lang-en="C#, Unity, Calculus, Linear Algebra" data-lang-ko="C#, Unity, Calculus, Linear Algebra">C#, Unity, Calculus, Linear Algebra</span>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
-      <div class="col-lg-4 col-md-6 portfolio-item filter-Software">
-        
+      </article>
+
+      <article class="project-story">
+        <div class="row align-items-start">
+          <div class="col-lg-4">
+            <div class="project-media">
+              <img src="assets/img/project/paparazzi.png" class="img-fluid" alt="">
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="project-header">
+              <h3 data-lang-en="Paparazzi" data-lang-ko="Paparazzi">Paparazzi</h3>
+              <p class="project-meta">
+                <span data-lang-en="Duration" data-lang-ko="기간">기간</span>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+                <span class="meta-sep">|</span>
+                <span data-lang-en="Role/Team" data-lang-ko="역할/팀">역할/팀</span>:
+                <span data-lang-en="Gameplay &amp; Graphics Programmer / Team of 6" data-lang-ko="게임플레이&amp; UI 프로그래머 / 6인팀">게임플레이&amp; UI 프로그래머 / 6인팀</span>
+              </p>
+            </div>
+            <ul class="project-narrative-list">
+              <li>
+                <strong data-lang-en="Problem/Context" data-lang-ko="문제/멥락">문제/멥락</strong>:
+                <span data-lang-en="3D Platformer Puzzle Game" data-lang-ko="3D 플랫포머 퍼즐 게임">3D 플랫포머 퍼즐 게임</span>
+              </li>
+              <li>
+                <strong data-lang-en="Considerations" data-lang-ko="고민/선택지">고민/선택지</strong>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+              </li>
+              <li>
+                <strong data-lang-en="Solution" data-lang-ko="해결 방식">해결 방식</strong>:
+                <ul class="project-solution-list">
+              <li data-lang-en="Implemented a cannon system that periodically fires projectiles and applies a knockback effect upon player collision." data-lang-ko="대포 시스템을 구현하여 일정 시간마다 공이 발사되도록 하고, 플레이어와 충돌 시 뒤로 밀려나는 물리 효과를 적용했습니다.">대포 시스템을 구현하여 일정 시간마다 공이 발사되도록 하고, 플레이어와 충돌 시 뒤로 밀려나는 물리 효과를 적용했습니다.</li>
+              <li data-lang-en="Developed the main menu and pause menu, incorporating functions like resume, settings, and exit, while enhancing the user experience with smooth UI transitions." data-lang-ko="메인 메뉴 및 일시 정지 메뉴를 제작하여 게임 재개, 설정, 종료 등의 기능을 구현하고 UI 전환 효과를 추가해 사용자 경험을 개선했습니다.">메인 메뉴 및 일시 정지 메뉴를 제작하여 게임 재개, 설정, 종료 등의 기능을 구현하고 UI 전환 효과를 추가해 사용자 경험을 개선했습니다.</li>
+              <li data-lang-en="Collaborated with team members to perform debugging, bug identification, and fixing." data-lang-ko="팀원들과 협력하여 디버깅, 버그 식별 및 수정 작업을 수행했습니다.">팀원들과 협력하여 디버깅, 버그 식별 및 수정 작업을 수행했습니다.</li>
+                </ul>
+              </li>
+              <li>
+                <strong data-lang-en="Collaboration/Attitude" data-lang-ko="협업/태도">협업/태도</strong>:
+                <span data-lang-en="Collaborated with team members to perform debugging, bug identification, and fixing." data-lang-ko="팀원들과 협력하여 디버깅, 버그 식별 및 수정 작업을 수행했습니다.">팀원들과 협력하여 디버깅, 버그 식별 및 수정 작업을 수행했습니다.</span>
+              </li>
+              <li>
+                <strong data-lang-en="Outcome/Retrospective" data-lang-ko="결과/회고">결과/회고</strong>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+              </li>
+              <li>
+                <strong data-lang-en="Tech Stack" data-lang-ko="기술 스택">기술 스택</strong>:
+                <span data-lang-en="Unity, C#" data-lang-ko="Unity, C#">Unity, C#</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-story">
+        <div class="row align-items-start">
+          <div class="col-lg-4">
+            <div class="project-media">
+              <img src="assets/img/project/clothDemoThumbnail.png" class="img-fluid" alt="">
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="project-header">
+              <h3 data-lang-en="Cloth Demo" data-lang-ko="Cloth Demo">Cloth Demo</h3>
+              <p class="project-meta">
+                <span data-lang-en="Duration" data-lang-ko="기간">기간</span>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+                <span class="meta-sep">|</span>
+                <span data-lang-en="Role/Team" data-lang-ko="역할/팀">역할/팀</span>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+              </p>
+            </div>
+            <ul class="project-narrative-list">
+              <li>
+                <strong data-lang-en="Problem/Context" data-lang-ko="문제/멥락">문제/멥락</strong>:
+                <span data-lang-en="Cloth Demo Program with Cloth function of Unity" data-lang-ko="Unity의 Cloth 기능을 활용한 Cloth 데모 프로그램">Unity의 Cloth 기능을 활용한 Cloth 데모 프로그램</span>
+              </li>
+              <li>
+                <strong data-lang-en="Considerations" data-lang-ko="고민/선택지">고민/선택지</strong>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+              </li>
+              <li>
+                <strong data-lang-en="Solution" data-lang-ko="해결 방식">해결 방식</strong>:
+                <ul class="project-solution-list">
+              <li data-lang-en="I created a simple demo using Unity 3D that implements the cloth function." data-lang-ko="Cloth 기능을 사용하여 Unity 3D를 활용해서 간단한 데모를 만들었습니다.">Cloth 기능을 사용하여 Unity 3D를 활용해서 간단한 데모를 만들었습니다.</li>
+              <li data-lang-en="Changes could be seen by fixing the particles or adjusting the collision constructs values." data-lang-ko="Particle들을 고정 시키거나 collision constraints(정밀한 반응)값들을 조절하면서 변화를 관찰했습니다.">Particle들을 고정 시키거나 collision constraints(정밀한 반응)값들을 조절하면서 변화를 관찰했습니다.</li>
+              <li data-lang-en="While adjusting values such as Cloth&#x27;s stretching stiffness, bending stiffness, and damping, I observed how this value affects Cloth." data-lang-ko="Cloth의 stretching stiffness나 Bending Stiffness,damping 같은 값들을 조절 하면서 이 수치가 cloth에 어떤 영향을 주는지 관찰했습니다.">Cloth의 stretching stiffness나 Bending Stiffness,damping 같은 값들을 조절 하면서 이 수치가 cloth에 어떤 영향을 주는지 관찰했습니다.</li>
+              <li data-lang-en="(stretching stiffness, Bending Stiffness and damping)" data-lang-ko="(얼마나 늘어나는지,얼마나 휘는지, 얼마나 잘 변화하는지 등)">(얼마나 늘어나는지,얼마나 휘는지, 얼마나 잘 변화하는지 등)</li>
+                </ul>
+              </li>
+              <li>
+                <strong data-lang-en="Collaboration/Attitude" data-lang-ko="협업/태도">협업/태도</strong>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+              </li>
+              <li>
+                <strong data-lang-en="Outcome/Retrospective" data-lang-ko="결과/회고">결과/회고</strong>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+              </li>
+              <li>
+                <strong data-lang-en="Tech Stack" data-lang-ko="기술 스택">기술 스택</strong>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-story">
+        <div class="row align-items-start">
+          <div class="col-lg-4">
+            <div class="project-media">
+              <img src="assets/img/project/Dating.jpg" class="img-fluid" alt="">
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="project-header">
+              <h3 data-lang-en="데이팅 어플리케이션" data-lang-ko="데이팅 어플리케이션">데이팅 어플리케이션</h3>
+              <p class="project-meta">
+                <span data-lang-en="Duration" data-lang-ko="기간">기간</span>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+                <span class="meta-sep">|</span>
+                <span data-lang-en="Role/Team" data-lang-ko="역할/팀">역할/팀</span>:
+                <span data-lang-en="Team of 10" data-lang-ko="15인 팀">15인 팀</span>
+              </p>
+            </div>
+            <ul class="project-narrative-list">
+              <li>
+                <strong data-lang-en="Problem/Context" data-lang-ko="문제/멥락">문제/멥락</strong>:
+                <span data-lang-en="Dating Application" data-lang-ko="데이팅 어플리케이션">데이팅 어플리케이션</span>
+              </li>
+              <li>
+                <strong data-lang-en="Considerations" data-lang-ko="고민/선택지">고민/선택지</strong>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+              </li>
+              <li>
+                <strong data-lang-en="Solution" data-lang-ko="해결 방식">해결 방식</strong>:
+                <ul class="project-solution-list">
+              <li data-lang-en="Implemented core features of the dating app such as user profile editing, interest selection, and image positioning." data-lang-ko="사용자 프로파일 편집, 이미지 위치 설정, 관심사 선택 등 데이팅 앱의 핵심 기능을 구현했습니다.">사용자 프로파일 편집, 이미지 위치 설정, 관심사 선택 등 데이팅 앱의 핵심 기능을 구현했습니다.</li>
+              <li data-lang-en="Utilized Firebase to read and store user information, seamlessly integrating it with the core functionalities of the application." data-lang-ko="Firebase를 활용하여 사용자 정보를 읽고 저장하며, 이를 애플리케이션의 핵심 기능과 원활하게 통합했습니다.">Firebase를 활용하여 사용자 정보를 읽고 저장하며, 이를 애플리케이션의 핵심 기능과 원활하게 통합했습니다.</li>
+              <li data-lang-en="Collaborated with the UI/UX team to produce the visual appearance of the app based on the designs derived from communication and collaboration." data-lang-ko="UI/UX 팀과 소통, 협업하여 도출된 디자인을 기반으로 앱의 시각적 외형을 제작했습니다.">UI/UX 팀과 소통, 협업하여 도출된 디자인을 기반으로 앱의 시각적 외형을 제작했습니다.</li>
+                </ul>
+              </li>
+              <li>
+                <strong data-lang-en="Collaboration/Attitude" data-lang-ko="협업/태도">협업/태도</strong>:
+                <span data-lang-en="Collaborated with the UI/UX team to produce the visual appearance of the app based on the designs derived from communication and collaboration." data-lang-ko="UI/UX 팀과 소통, 협업하여 도출된 디자인을 기반으로 앱의 시각적 외형을 제작했습니다.">UI/UX 팀과 소통, 협업하여 도출된 디자인을 기반으로 앱의 시각적 외형을 제작했습니다.</span>
+              </li>
+              <li>
+                <strong data-lang-en="Outcome/Retrospective" data-lang-ko="결과/회고">결과/회고</strong>:
+                <span data-lang-en="To be updated" data-lang-ko="정리 예정">정리 예정</span>
+              </li>
+              <li>
+                <strong data-lang-en="Tech Stack" data-lang-ko="기술 스택">기술 스택</strong>:
+                <span data-lang-en="JavaScript, React, React Native, Expo, Firebase, Android Studio" data-lang-ko="JavaScript, React, React-native, Expo, Firebase, Android Studio">JavaScript, React, React-native, Expo, Firebase, Android Studio</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
     </div>
+  </div>
 </section>
 
 <!-- End Project Section -->
@@ -827,7 +1136,9 @@
 
 
           <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
-            <img src="assets/img/education/kLogo3.jpg" class="img-fluid" alt="" style="width: 100%; height: 180px; object-fit: contain; background: #fff;">
+              <div class="credential-media">
+                <img src="assets/img/education/kLogo3.jpg" class="img-fluid" alt="">
+              </div>
             
             <p style="text-align:left;color:#fff;padding: 5px 10px;"><em data-lang-en="BSCS RTIS" data-lang-ko="디지펜 게임공학과">Bachelor's Degree in Computer Science in RTIS Simulation</em></p>
             <p style="text-align:left;color:#fff;padding: 5px 10px;"><em data-lang-en=" Credit: 3.7 / 4.0" data-lang-ko=" 학점: 4.0 / 4.5"> Credit: 4.0 / 4.5</em></p>
@@ -843,7 +1154,9 @@
           </div>
 
           <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
-            <img src="assets/img/education/dig.jpg" class="img-fluid" alt="" style="width: 100%; height: 180px; object-fit: contain; background: #fff;">
+              <div class="credential-media">
+                <img src="assets/img/education/dig.jpg" class="img-fluid" alt="">
+              </div>
             
             <p style="text-align:left;color:#fff;padding: 5px 10px;"><em data-lang-en="BSCS RTIS" data-lang-ko="Bachelor's Degree in Computer Science in RTIS">Bachelor's Degree in Computer Science in RTIS</em></p>
             <p style="text-align:left;color:#fff;padding: 5px 10px;"><em data-lang-en=" Credit: 3.7 / 4.0" data-lang-ko=" 학점: 3.7 / 4.0"> Credit: 3.7 / 4.0</em></p>
@@ -877,7 +1190,9 @@
   
   
             <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
-              <img src="assets/img/certification/certificate2_png.png" class="img-fluid" alt="" style="width: 100%; height: 200px; object-fit: contain; background: #fff;">
+                <div class="credential-media">
+                  <img src="assets/img/certification/certificate2_png.png" class="img-fluid" alt="">
+                </div>
               
               <p style="text-align:left;color:#fff;padding: 5px 10px;"><em data-lang-en="OPic(English)" data-lang-ko="OPic(영어)">OPic(영어)</em></p>
               <p style="text-align:left;color:#fff;padding: 5px 10px;"><em data-lang-en="Intermediate High(IH)" data-lang-ko="Intermediate High(IH)">Intermediate High(IH)</em></p>
@@ -904,14 +1219,18 @@
     
     
               <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
-                <img src="assets/img/certification/certificate_png.png" class="img-fluid" alt="" style="width: 100%; height: 200px; object-fit: contain; background: #fff;">
+                  <div class="credential-media">
+                    <img src="assets/img/certification/certificate_png.png" class="img-fluid" alt="">
+                  </div>
                 
                 <p style="text-align:left;color:#fff;padding: 5px 10px;"><em data-lang-en="정보처리기사" data-lang-ko="정보처리기사">정보처리기사</em></p>
                 <h5 style="text-align:left;padding: 0px 10px;" data-lang-en="Date : 13th June 2025" data-lang-ko="취득일 : 2025년 6월 13일">Date : 13th June 2025</h5>
               </div>
     
               <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
-                <img src="assets/img/certification/certificate1_png.png" class="img-fluid" alt="" style="width: 100%; height: 200px; object-fit: contain; background: #fff;">
+                  <div class="credential-media">
+                    <img src="assets/img/certification/certificate1_png.png" class="img-fluid" alt="">
+                  </div>
                 
                 <p style="text-align:left;color:#fff;padding: 5px 10px;"><em data-lang-en="데이터분석 준전문가(ADsP)" data-lang-ko="ADsP">데이터분석 준전문가(ADsP)</em></p>
                 <h5 style="text-align:left;padding: 0px 10px;" data-lang-en="Date : 13th June 2025" data-lang-ko="취득일 : 2025년 6월 13일">Date : 13th June 2025</h5>

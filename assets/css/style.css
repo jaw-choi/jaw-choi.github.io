@@ -741,6 +741,24 @@ section .container {
   margin: 10px;
 }
 
+.services .credential-media {
+  background: #fff;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 12px;
+}
+
+.services .credential-media img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
 .services .icon-box .icon {
   margin: 0 auto;
   width: 64px;
@@ -814,6 +832,110 @@ section .container {
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
+.project-narrative {
+  margin: 10px 0 30px;
+}
+
+.project-narrative .story-card {
+  background: rgba(9, 32, 58, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 24px;
+  height: 100%;
+}
+
+.project-narrative .story-card h4 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.project-narrative .story-card ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.project-narrative .story-card li {
+  color: #dee2e6;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 6px 0;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.project-story {
+  background: rgba(9, 32, 58, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 24px;
+}
+
+.project-media img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  background: #000;
+}
+
+.project-header h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.project-meta {
+  font-size: 14px;
+  color: #dee2e6;
+  margin-bottom: 12px;
+}
+
+.project-meta .meta-sep {
+  margin: 0 8px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.project-narrative-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.project-narrative-list li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+  color: #dee2e6;
+}
+
+.project-narrative-list strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.project-solution-list {
+  margin: 8px 0 0 18px;
+}
+
+.project-solution-list li {
+  margin: 6px 0;
+  color: #dee2e6;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .project-story {
+    padding: 18px;
+  }
+
+  .project-media img {
+    height: 180px;
+  }
+}
+
 .portfolio .portfolio-item {
   margin-bottom: 30px;
 }
