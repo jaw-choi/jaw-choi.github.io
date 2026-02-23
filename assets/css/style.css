@@ -1011,6 +1011,12 @@ section .container {
   margin: 0;
 }
 
+.project-note .project-narrative-list {
+  list-style: disc;
+  padding-left: 18px;
+  margin: 0 0 12px;
+}
+
 .project-narrative-list li {
   margin-bottom: 10px;
   line-height: 1.5;

@@ -220,7 +220,14 @@
         <div class="row align-items-start">
           <div class="col-lg-4">
             <div class="project-media">
-              <img src="assets/img/project/consoleSurvivor.png" class="img-fluid" alt="Console Vampire Survivors-like">
+              <iframe
+                src="https://www.youtube.com/embed/AnUZnEjQzKU"
+                title="Console Vampire Survivors-like demo"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                style="width: 100%; aspect-ratio: 16 / 9;">
+              </iframe>
             </div>
           </div>
           <div class="col-lg-8">
@@ -230,6 +237,8 @@
                 <a href="https://github.com/jaw-choi/Wanted4_ShootingGame" target="_blank" rel="noopener noreferrer" data-lang-en="View on GitHub" data-lang-ko="GitHub 보기">GitHub 보기</a>
                 <span class="meta-sep">|</span>
                 <a href="https://learn-forever.tistory.com/27" target="_blank" rel="noopener noreferrer" data-lang-en="Read retrospective" data-lang-ko="회고록 보기">회고록 보기</a>
+                <span class="meta-sep">|</span>
+                <a href="javascript:void(0)" data-lang-en="View dev logs" data-lang-ko="개발 기록 보기">개발 기록 보기</a>
               </p>
               <p class="project-meta">
                 <span data-lang-en="Duration" data-lang-ko="기간">기간</span>: <span data-lang-en="2026-02-05 ~ 2026-02-11" data-lang-ko="2026.02.05 ~ 2026.02.11">2026.02.05 ~ 2026.02.11</span>
@@ -243,9 +252,87 @@
             </ul>
             <details class="project-code">
               <summary data-lang-en="Show notes (placeholder)" data-lang-ko="기록 보기 (임시)">기록 보기 (임시)</summary>
-              <pre><code>// TODO: add retrospective highlights / dev log summary
-// Period: 2026-02-05 ~ 2026-02-11
-</code></pre>
+              <div class="project-note">
+                <p><strong>1. 프로젝트 개요</strong></p>
+                <ul class="project-narrative-list">
+                  <li>콘솔 뱀서라이크 게임 데모</li>
+                  <li>자체 엔진 기반 Player/Enemy/Bullet, 스탯, 카메라, Object Pooling, Quadtree, 구현 과정 경험 및 문서화 목표</li>
+                </ul>
+
+                <p><strong>주요 기능</strong></p>
+                <ul class="project-narrative-list">
+                  <li>충돌 처리: Quadtree 공간 분할 후 AABB 적용</li>
+                  <li>오브젝트 풀링: Exp Gem/Enemy/Bullet 반복 할당 필요 메모리 공간 미리 할당</li>
+                  <li>카메라/월드 확장: 스크롤링 카메라, 잔디 타일링</li>
+                  <li>디버그 모드: 화면에 Quadtree 디버그 라인 표시</li>
+                  <li>문서화: Obsidian 기반 개발일지/체크리스트/이슈 로그</li>
+                  <li>Git 전략: 잦은 커밋으로 빠른 롤백, 솔로 프로젝트로 브랜치 미사용</li>
+                  <li>이슈 트래킹: 체크리스트 + 날짜별 로그 + 이슈 분류</li>
+                </ul>
+
+                <p><strong>2. 아키텍처 및 워크플로우</strong></p>
+                <p><strong>아키텍처 특징 및 설계 의도</strong></p>
+                <ul class="project-narrative-list">
+                  <li>게임 루프: GameLevel 중심 루프, Actor 리스트 순회 Tick/Render 수행</li>
+                  <li>스탯 공통화: IStatHolder 인터페이스 + Stat struct로 Player/Enemy 스탯 접근 통일</li>
+                  <li>확장성: Object Pooling으로 생성/삭제 비용 및 단편화 리스크 감소</li>
+                  <li>충돌 최적화: AABB 유지 + Quadtree 확장 구조로 단계적 최적화</li>
+                  <li>검증: 디버그 모드(좌표/쿼드트리 테스트)로 통합 과정 검증</li>
+                </ul>
+
+                <p><strong>3. 주요 작업</strong></p>
+                <ul class="project-narrative-list">
+                  <li>오브젝트 풀링: Enemy/Gem/Bullet 재사용 구조 구현, prewarm 적용 후 메모리 무한 증가 이슈 분석 및 수정</li>
+                  <li>충돌 처리 최적화: AABB 구현 후 Quadtree 도입, 디버그 함수화, 활성 객체 필터링 및 Query 사용 방식 정리</li>
+                </ul>
+
+                <p><strong>4. 문제 해결 및 기술적 도전</strong></p>
+                <ul class="project-narrative-list">
+                  <li><strong>이슈 1</strong>: 오브젝트 풀링 이후 메모리 무한 증가 → GameLevel hasBeginPlay 분리로 초기화 1회 보장</li>
+                  <li><strong>이슈 2</strong>: Quadtree 전환 후 메모리 에러/충돌 누락 → Actor 활성 필터링 + Query 흐름 재정리</li>
+                  <li>의사결정: A* 시도 후 방향벡터 추격으로 전환, swap-pop으로 O(1) 삭제, raw pointer 소유권 규칙 문서화 필요성 확인</li>
+                  <li>개선 아이디어: 타일맵/장애물 기반 A* 재적용, Enemy 간 충돌 Layer 적용, 소유권/해제 책임 명문화</li>
+                </ul>
+
+                <p><strong>5. 결과 및 회고</strong></p>
+                <ul class="project-narrative-list">
+                  <li>결과: 핵심 시스템 통합 완료(Player/Enemy/Bullet, HP/EXP/레벨업, Pause UI), Object Pooling/Quadtree/스크롤 월드 구현</li>
+                  <li>성과 지표: Stress Test에서 FPS 저하 체감 없음, vector 삭제 O(N) → swap-pop으로 O(1) 최적화, 메모리 무한 증가 버그 해결</li>
+                  <li>임팩트: 대량 객체 처리 + 충돌 최적화 + UI/pause + 스탯 시스템 하나의 루프 통합</li>
+                  <li>회고: 엔진 루프 관점 디버깅 역량 강화, 정규화/형변환/const/링킹 등 기본기 이슈 케이스 축적</li>
+                  <li>다시 한다면: FPS/메모리 측정 루틴 내장, Quadtree 소유권 문서화, 초기화 루틴 1회 보장 구조 고정</li>
+                </ul>
+
+                <p><strong>프로파일링</strong></p>
+                <ul class="project-narrative-list">
+                  <li>FPS 출력</li>
+                  <li>Quadtree 적용 전/후</li>
+                  <li>Stress Test 조건 화면</li>
+                  <li>Object Pooling 전/후 프로세스 메모리 변화 비교</li>
+                </ul>
+
+                <p><strong>프로젝트 회고</strong></p>
+                <p><strong>잘한 점</strong></p>
+                <ul class="project-narrative-list">
+                  <li>문서화와 커밋 전략 꾸준히 유지</li>
+                  <li>Quadtree 시각화</li>
+                  <li>프로파일링 진행</li>
+                  <li>스탯 구조 간소화 유지</li>
+                </ul>
+
+                <p><strong>부족한 점</strong></p>
+                <ul class="project-narrative-list">
+                  <li>기술 구현 집중으로 게임성 개선 시간 배분 미흡</li>
+                  <li>프로파일링 요소로 FPS만 고려해서 정확도 떨어짐</li>
+                </ul>
+
+                <p><strong>소감</strong></p>
+                <ul class="project-narrative-list">
+                  <li>엔진의 큰 그림 이해</li>
+                  <li>기록의 중요성 체감</li>
+                  <li>원하는 기능 직접 구현 경험</li>
+                </ul>
+              </div>
             </details>
           </div>
         </div>
