@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jaewoo Choi - PDF Portfolio</title>
+  <style>
+    :root {
+      --page-w: 210mm;
+      --page-h: 297mm;
+      --ink: #0f172a;
+      --muted: #475569;
+      --line: #dbe4ee;
+      --soft: #f6fafc;
+      --accent: #0f766e;
+      --accent-strong: #0b3c5d;
+      --accent-soft: #def4f1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #d7dee7;
+      color: var(--ink);
+      font-family: "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      line-height: 1.5;
+    }
+
+    body {
+      padding: 14px 0 24px;
+    }
+
+    a {
+      color: var(--accent-strong);
+      text-decoration: none;
+    }
+
+    .screen-note {
+      width: var(--page-w);
+      margin: 0 auto 8px;
+      padding: 8px 12px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .page {
+      position: relative;
+      width: var(--page-w);
+      min-height: var(--page-h);
+      margin: 0 auto 14px;
+      padding: 12mm 12mm 11mm;
+      background: #ffffff;
+      box-shadow: 0 14px 36px rgba(15, 23, 42, 0.15);
+      overflow: hidden;
+      page-break-after: always;
+    }
+
+    .page:last-child {
+      page-break-after: auto;
+    }
+
+    .page-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .page-url {
+      font-weight: 700;
+      color: var(--accent-strong);
+    }
+
+    .page-number {
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .section-title {
+      margin: 0 0 10px;
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #ffffff;
+    }
+
+    .soft {
+      background: var(--soft);
+    }
+
+    .badge {
+      padding: 14px 16px;
+      border: 1px solid #cae8e3;
+      border-radius: 18px;
+      background: var(--accent-soft);
+    }
+
+    .badge strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 15px;
+      color: var(--accent-strong);
+    }
+
+    .badge span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .pill-list,
+    .bullet-list,
+    .toc-list,
+    .link-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill-list li {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid #c8e8e3;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .bullet-list li {
+      position: relative;
+      padding-left: 14px;
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .bullet-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 5px;
+      height: 5px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .hero-top {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .hero-contact {
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: var(--soft);
+    }
+
+    .hero-contact strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 10.5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-strong);
+    }
+
+    .hero-contact span {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .cover-main {
+      display: grid;
+      grid-template-columns: 0.72fr 1.28fr;
+      gap: 18px;
+      align-items: start;
+      min-height: 132mm;
+      margin-bottom: 14px;
+    }
+
+    .cover-photo {
+      height: auto;
+      min-height: 81mm;
+      max-height: 81mm;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      display: block;
+      width: 100%;
+      background: #eef2f7;
+      align-self: start;
+    }
+
+    .cover-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 8px 0;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .cover-name {
+      margin: 0 0 8px;
+      font-size: 42px;
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+    }
+
+    .cover-role {
+      margin: 0 0 18px;
+      color: var(--accent);
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .cover-intro {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .cover-bottom {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .cover-links {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .cover-link-item {
+      padding: 12px 14px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: var(--soft);
+      font-size: 12px;
+      color: var(--muted);
+      word-break: break-all;
+    }
+
+    .cover-link-item strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 12px;
+      color: var(--accent-strong);
+    }
+
+    .toc-box {
+      height: 224mm;
+      padding: 28px 30px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #f8fbfd 0%, #f1f7fb 100%);
+    }
+
+    .toc-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 19px;
+      color: var(--muted);
+    }
+
+    .toc-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .toc-list strong {
+      min-width: 28px;
+      color: var(--accent);
+      font-size: 22px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .three-col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .content-card {
+      padding: 20px 22px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .content-card h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
+    }
+
+    .content-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .content-card.large p {
+      font-size: 16.5px;
+      line-height: 1.7;
+    }
+
+    .project-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .project-image {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: #eef2f7;
+      display: block;
+    }
+
+    .project-summary {
+      padding: 20px 22px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: var(--soft);
+    }
+
+    .project-summary h3 {
+      margin: 0 0 8px;
+      font-size: 19px;
+    }
+
+    .url-box {
+      margin-top: 14px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: var(--soft);
+    }
+
+    .url-box strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: var(--accent-strong);
+    }
+
+    .url-box a {
+      font-size: 13px;
+      word-break: break-all;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .meta-chip {
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid #d3def5;
+      background: #edf4ff;
+      color: #1d4ed8;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .stat-box {
+      padding: 16px 13px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+      text-align: center;
+    }
+
+    .stat-box strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--accent-strong);
+      font-size: 20px;
+    }
+
+    .stat-box span {
+      display: block;
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .timeline.single {
+      grid-template-columns: 1fr;
+    }
+
+    .section-group + .section-group {
+      margin-top: 16px;
+    }
+
+    .group-title {
+      margin: 0 0 10px;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--accent-strong);
+    }
+
+    .timeline-item {
+      padding: 20px 22px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .timeline-item h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+
+    .timeline-meta {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .archive-grid.compact {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .archive-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 12px;
+      padding: 14px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .archive-item img {
+      width: 120px;
+      height: 92px;
+      object-fit: cover;
+      border-radius: 14px;
+      background: #eef2f7;
+    }
+
+    .archive-item h3 {
+      margin: 0 0 6px;
+      font-size: 16px;
+    }
+
+    .archive-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .archive-item.compact {
+      grid-template-columns: 72px 1fr;
+      gap: 8px;
+      padding: 10px;
+    }
+
+    .archive-item.compact img {
+      width: 72px;
+      height: 56px;
+      border-radius: 10px;
+    }
+
+    .archive-item.compact h3 {
+      margin: 0 0 4px;
+      font-size: 14px;
+    }
+
+    .archive-item.compact p {
+      font-size: 11.5px;
+      line-height: 1.4;
+    }
+
+    .cert-card {
+      padding: 20px 22px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: var(--soft);
+    }
+
+    .cert-card h3 {
+      margin: 0 0 10px;
+      font-size: 17px;
+    }
+
+    .link-list li {
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      word-break: break-all;
+    }
+
+    .mini-box-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .mini-box {
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: var(--soft);
+    }
+
+    .mini-box h3 {
+      margin: 0 0 8px;
+      font-size: 14px;
+    }
+
+    .mini-box .bullet-list li,
+    .mini-box .link-list li {
+      font-size: 11.5px;
+      margin-bottom: 6px;
+    }
+
+    .page-footer {
+      position: absolute;
+      left: 12mm;
+      right: 12mm;
+      bottom: 7mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 6px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 9.5px;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    @media print {
+      html, body {
+        background: #ffffff;
+      }
+
+      body {
+        padding: 0;
+      }
+
+      .screen-note {
+        display: none;
+      }
+
+      .page {
+        margin: 0;
+        box-shadow: none;
+        break-after: page;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .page:last-child {
+        break-after: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="screen-note">브라우저에서 이 파일을 열고 인쇄 후 PDF로 저장하면 됩니다. 각 페이지는 내용을 더 크게 배치해 빈 공간을 줄인 버전입니다.</div>
+
+  <section class="page">
+    <div class="page-header">
+      <div class="page-url">포트폴리오 풀버전 주소 : <a href="https://jaw-choi.github.io/">https://jaw-choi.github.io/</a></div>
+      <div class="page-number">Page 1 / 8</div>
+    </div>
+
+    <div class="hero-top">
+      <div class="hero-contact"><strong>Phone</strong><span>010-2776-2295</span></div>
+      <div class="hero-contact"><strong>Email</strong><span>wod6983@gmail.com</span></div>
+      <div class="hero-contact"><strong>Location</strong><span>서울특별시 광진구</span></div>
+      <div class="hero-contact"><strong>Portfolio</strong><span>jaw-choi.github.io</span></div>
+    </div>
+
+    <div class="cover-main">
+      <img class="cover-photo" src="assets/img/profile.jpg" alt="최재우 프로필 사진">
+      <div class="cover-copy">
+        <span class="eyebrow">Game Programmer Portfolio</span>
+        <h1 class="cover-name">최재우</h1>
+        <p class="cover-role">Systems, Engine Logic, Graphics Fundamentals</p>
+        <p class="cover-intro">
+          기존 기능을 단순히 활용하는 것보다 핵심 기술을 직접 구현하며 시스템을 이해하는 개발 방식을 지향합니다.
+          게임 개발 과정에서 필요한 엔진 구조, 알고리즘, 그래픽 표현 등을 직접 구현하며 기술적인 기반을 쌓아왔고,
+          아이디어를 실제 게임 애플리케이션으로 완성해 출시하는 경험을 통해 개발의 전 과정을 반복적으로 경험해왔습니다.
+          이러한 과정을 통해 기술 구현과 실제 결과물을 연결하는 개발자로 성장하고 있습니다.
+        </p>
+      </div>
+    </div>
+
+    <div class="cover-bottom">
+      <div class="badge">
+        <strong>관심 분야</strong>
+        <span>게임플레이 시스템, 엔진 구조, 알고리즘 최적화, 그래픽스 프로그래밍</span>
+      </div>
+      <div class="badge">
+        <strong>핵심 방향</strong>
+        <span>기존 기능 사용보다 핵심 기술을 직접 구현하며 시스템을 이해하는 개발</span>
+      </div>
+      <div class="badge">
+        <strong>강점</strong>
+        <span>구현과 문서화를 함께 가져가며 문제 해결 근거를 남기는 방식</span>
+      </div>
+      <div class="badge">
+        <strong>결과물</strong>
+        <span>프로토타입에서 실제 스토어 출시까지 연결하는 실행 중심의 결과물</span>
+      </div>
+    </div>
+
+    <div class="cover-links">
+      <div class="cover-link-item">
+        <strong>Portfolio Full Version</strong>
+        <a href="https://jaw-choi.github.io/">https://jaw-choi.github.io/</a>
+      </div>
+      <div class="cover-link-item">
+        <strong>GitHub</strong>
+        <a href="https://github.com/jaw-choi">https://github.com/jaw-choi</a>
+      </div>
+      <div class="cover-link-item">
+        <strong>LinkedIn</strong>
+        <a href="https://www.linkedin.com/in/jaw-choi">https://www.linkedin.com/in/jaw-choi</a>
+      </div>
+      <div class="cover-link-item">
+        <strong>Blog</strong>
+        <a href="https://learn-forever.tistory.com/">https://learn-forever.tistory.com/</a>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Cover</span>
+      <span>1</span>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">
+      <div class="page-url">포트폴리오 풀버전 주소 : <a href="https://jaw-choi.github.io/">https://jaw-choi.github.io/</a></div>
+      <div class="page-number">Page 2 / 8</div>
+    </div>
+
+    <h2 class="section-title">목차</h2>
+    <div class="toc-box">
+      <ul class="toc-list">
+        <li><strong>1</strong><span>표지 / 이름 / 사진 / 소개</span></li>
+        <li><strong>2</strong><span>목차</span></li>
+        <li><strong>3</strong><span>소개 / 핵심 역량 / 기술 스택</span></li>
+        <li><strong>4</strong><span>대표 프로젝트 1. 콘솔 뱀서라이크</span></li>
+        <li><strong>5</strong><span>대표 프로젝트 2. 눈덩이를 굴려라</span></li>
+        <li><strong>6</strong><span>대표 프로젝트 3. Shading Project</span></li>
+        <li><strong>7</strong><span>경험 / 학력 / 학습 방향</span></li>
+        <li><strong>8</strong><span>기타 프로젝트 / 자격 / 링크 / 연락처</span></li>
+      </ul>
+    </div>
+
+    <div class="page-footer">
+      <span>Contents</span>
+      <span>2</span>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">
+      <div class="page-url">포트폴리오 풀버전 주소 : <a href="https://jaw-choi.github.io/">https://jaw-choi.github.io/</a></div>
+      <div class="page-number">Page 3 / 8</div>
+    </div>
+
+    <h2 class="section-title">소개 / 핵심 역량 / 기술 스택</h2>
+    <div class="content-card large soft" style="margin-bottom:14px;">
+      <h3>소개</h3>
+      <p>
+        저는 기술 구현과 실제 결과물을 연결하는 개발자입니다. 엔진 구조, 알고리즘, 그래픽 표현을 직접 구현하며
+        시스템이 동작하는 원리를 몸으로 익혀왔고, 단순히 기능을 조합하는 것보다 핵심 로직을 설계하고 검증하는 과정을 중요하게 생각합니다.
+        또한 빠른 프로토타이핑과 실제 출시 경험을 반복하며, 구현이 제품으로 이어지는 전 과정을 경험해왔습니다.
+      </p>
+    </div>
+
+    <div class="two-col" style="margin-bottom:14px;">
+      <div class="content-card">
+        <h3>핵심 역량</h3>
+        <ul class="bullet-list">
+          <li>엔진 구조와 게임 루프를 직접 구현하며 시스템 단위로 사고합니다.</li>
+          <li>Quadtree, Object Pooling, 렌더링 파이프라인을 코드로 검증합니다.</li>
+          <li>기획부터 출시, 운영 이슈 대응까지 제품 완성 과정을 경험했습니다.</li>
+          <li>개발 기록과 회고를 통해 구현 근거를 남기고 개선 방향을 명확히 합니다.</li>
+        </ul>
+      </div>
+      <div class="content-card">
+        <h3>일하는 방식</h3>
+        <ul class="bullet-list">
+          <li>기술 구현의 이유를 먼저 정의하고, 구조 단위로 쪼개서 개발합니다.</li>
+          <li>성능, 충돌, 메모리 같은 핵심 문제를 직접 측정하고 비교합니다.</li>
+          <li>실험 과정과 이슈를 문서화해 다음 구현과 협업에 바로 연결합니다.</li>
+          <li>완성도와 출시 가능성을 함께 고려해 우선순위를 빠르게 정합니다.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="content-card">
+      <h3>기술 스택</h3>
+      <ul class="pill-list">
+        <li>C++</li>
+        <li>C</li>
+        <li>C#</li>
+        <li>Unity</li>
+        <li>Unreal Engine</li>
+        <li>OpenGL</li>
+        <li>GLSL</li>
+        <li>JavaScript</li>
+        <li>HTML/CSS</li>
+        <li>Firebase</li>
+        <li>Git</li>
+        <li>Android Studio</li>
+      </ul>
+    </div>
+
+    <div class="page-footer">
+      <span>About / Skills</span>
+      <span>3</span>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">
+      <div class="page-url">포트폴리오 풀버전 주소 : <a href="https://jaw-choi.github.io/">https://jaw-choi.github.io/</a></div>
+      <div class="page-number">Page 4 / 8</div>
+    </div>
+
+    <h2 class="section-title">대표 프로젝트 1. 콘솔 뱀서라이크</h2>
+    <div class="project-hero">
+      <img class="project-image" src="assets/img/project/consoleSurvivor.png" alt="콘솔 뱀서라이크">
+      <div class="project-summary">
+        <div class="project-meta">
+          <span class="meta-chip">C++</span>
+          <span class="meta-chip">AABB</span>
+          <span class="meta-chip">A* Algorithm</span>
+          <span class="meta-chip">Quadtree</span>
+          <span class="meta-chip">Object Pooling</span>
+        </div>
+        <h3>프로젝트 개요</h3>
+        <ul class="bullet-list">
+          <li>1주 스프린트로 아이디어 검증부터 플레이 가능한 데모까지 구현</li>
+          <li>Player, Enemy, Bullet, HP/EXP/레벨업, Pause UI를 하나의 루프로 통합</li>
+          <li>대량 객체 처리와 충돌 최적화 과정을 직접 실험하고 기록</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-box"><strong>1주</strong><span>아이디어 검증부터 데모 완성</span></div>
+      <div class="stat-box"><strong>통합 루프</strong><span>플레이어, 적, 총알, 스탯, UI</span></div>
+      <div class="stat-box"><strong>최적화</strong><span>Quadtree와 swap-pop 적용</span></div>
+      <div class="stat-box"><strong>문서화</strong><span>개발일지, 체크리스트, 이슈 로그</span></div>
+    </div>
+
+    <div class="two-col">
+      <div class="content-card">
+        <h3>핵심 구현</h3>
+        <ul class="bullet-list">
+          <li>Quadtree 공간 분할 후 AABB 기반 충돌 처리</li>
+          <li>A* Algorithm 계산 및 시각화</li>
+          <li>Enemy, Gem, Bullet 재사용을 위한 오브젝트 풀링</li>
+          <li>스크롤링 카메라와 월드 확장 구조 구현</li>
+          <li>디버그 라인 시각화로 트리 구조와 충돌 검증</li>
+        </ul>
+      </div>
+      <div class="content-card">
+        <h3>문제 해결과 결과</h3>
+        <ul class="bullet-list">
+          <li>유닛 점유 그리드 방식으로 A* 알고리즘 계산에 최적화를 진행함</li>
+          <li>활성 객체 필터링과 Query 흐름 정리로 충돌 누락 해결</li>
+          <li>삭제 비용을 swap-pop으로 줄여 O(1) 처리 구조로 개선</li>
+          <li>Stress Test에서 FPS 저하 체감 없이 핵심 시스템 통합 완료</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="url-box">
+      <strong>GitHub URL</strong>
+      <a href="https://github.com/jaw-choi/Wanted4_ShootingGame">https://github.com/jaw-choi/Wanted4_ShootingGame</a>
+    </div>
+
+    <div class="page-footer">
+      <span>Project 1</span>
+      <span>4</span>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">
+      <div class="page-url">포트폴리오 풀버전 주소 : <a href="https://jaw-choi.github.io/">https://jaw-choi.github.io/</a></div>
+      <div class="page-number">Page 5 / 8</div>
+    </div>
+
+    <h2 class="section-title">대표 프로젝트 2. 눈덩이를 굴려라</h2>
+    <div class="project-hero">
+      <img class="project-image" src="assets/img/RollingSnow/ingame1.png" alt="눈덩이를 굴려라">
+      <div class="project-summary">
+        <div class="project-meta">
+          <span class="meta-chip">Unity</span>
+          <span class="meta-chip">C#</span>
+          <span class="meta-chip">Google Play</span>
+          <span class="meta-chip">AdMob</span>
+        </div>
+        <h3>프로젝트 포인트</h3>
+        <ul class="bullet-list">
+          <li>기획부터 출시까지 전 과정을 경험한 실제 서비스 프로젝트</li>
+          <li>2인 팀 환경에서 UI, 릴리즈, 운영 대응을 함께 수행</li>
+          <li>스토어 출시 후에도 랭킹 시스템과 운영 개선 작업을 진행 중</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-bottom:14px;">
+      <div class="content-card">
+        <h3>주요 역할</h3>
+        <ul class="bullet-list">
+          <li>Unity 기반 게임플레이 및 UI 구현</li>
+          <li>디자인 시안 반영 흐름 정리와 네이밍 규칙 표준화</li>
+          <li>릴리즈 체크리스트와 버전 관리 규칙 정리</li>
+          <li>광고 호출 안정화와 콘솔 정책 대응</li>
+        </ul>
+      </div>
+      <div class="content-card">
+        <h3>출시 / 운영 관점에서 배운 점</h3>
+        <ul class="bullet-list">
+          <li>Figma→Unity 플로우로 UI 반영 속도 개선</li>
+          <li>개발용과 릴리즈용 체크리스트를 분리해 실수 감소</li>
+          <li>광고 로드 상태 확인 후 호출하는 구조로 안정성 확보</li>
+          <li>콘솔 설정과 버전 규칙 정리로 심사 및 패치 대응 효율 향상</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-box"><strong>2인 팀</strong><span>디자인-개발 밀착 협업</span></div>
+      <div class="stat-box"><strong>출시 완료</strong><span>실제 스토어 배포 경험</span></div>
+      <div class="stat-box"><strong>UI Workflow</strong><span>반영 속도와 규칙 정리</span></div>
+      <div class="stat-box"><strong>운영 대응</strong><span>광고, 버전, 콘솔 관리</span></div>
+    </div>
+
+    <div class="url-box">
+      <strong>Google Play URL</strong>
+      <a href="https://play.google.com/store/apps/details?id=com.BeoMeoStudio.RollingSnow">https://play.google.com/store/apps/details?id=com.BeoMeoStudio.RollingSnow</a>
+    </div>
+
+    <div class="page-footer">
+      <span>Project 2</span>
+      <span>5</span>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">
+      <div class="page-url">포트폴리오 풀버전 주소 : <a href="https://jaw-choi.github.io/">https://jaw-choi.github.io/</a></div>
+      <div class="page-number">Page 6 / 8</div>
+    </div>
+
+    <h2 class="section-title">대표 프로젝트 3. Shading Project</h2>
+    <div class="project-hero">
+      <img class="project-image" src="assets/img/project/shading_model.png" alt="Shading Project">
+      <div class="project-summary">
+        <div class="project-meta">
+          <span class="meta-chip">Deferred Shading</span>
+          <span class="meta-chip">G-buffer</span>
+          <span class="meta-chip">Cubemap</span>
+          <span class="meta-chip">ImGui</span>
+        </div>
+        <h3>핵심 학습 포인트</h3>
+        <ul class="bullet-list">
+          <li>디퍼드 셰이딩과 G-buffer 구조 이해</li>
+          <li>반사 벡터 계산과 큐브맵 샘플링 구현</li>
+          <li>라이팅 패스와 렌더링 파이프라인 흐름 정리</li>
+          <li>실시간 파라미터 제어와 디버그 시각화 구성</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="three-col" style="margin-bottom:14px;">
+      <div class="content-card">
+        <h3>Geometry Pass</h3>
+        <p>VAO/VBO/EBO, MRT, G-buffer 생성으로 위치·노멀·알베도 데이터를 수집했습니다.</p>
+      </div>
+      <div class="content-card">
+        <h3>Lighting Pass</h3>
+        <p>Deferred Shading과 reflection vector 계산을 통해 광원 연산과 반사를 구현했습니다.</p>
+      </div>
+      <div class="content-card">
+        <h3>Tools</h3>
+        <p>ImGui, G-buffer 디버그 뷰, 프레임 카운터를 붙여 시각적으로 검증했습니다.</p>
+      </div>
+    </div>
+
+    <div class="content-card large soft">
+      <h3>프로젝트 의미</h3>
+      <p>
+        그래픽스 개념을 이론으로만 학습하지 않고, 데이터 수집부터 라이팅 패스까지 전체 흐름을 직접 구현하며 렌더링 파이프라인을 체득한 프로젝트입니다.
+        결과적으로 셰이딩 데모와 시각 비교 샘플을 통해 그래픽스 프로그래밍 기본기를 결과물로 정리했습니다.
+      </p>
+    </div>
+
+    <div class="url-box">
+      <strong>Demo YouTube URL</strong>
+      <a href="https://www.youtube.com/watch?v=DgqO1aJCEA0">https://www.youtube.com/watch?v=DgqO1aJCEA0</a>
+    </div>
+
+    <div class="page-footer">
+      <span>Project 3</span>
+      <span>6</span>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">
+      <div class="page-url">포트폴리오 풀버전 주소 : <a href="https://jaw-choi.github.io/">https://jaw-choi.github.io/</a></div>
+      <div class="page-number">Page 7 / 8</div>
+    </div>
+
+    <h2 class="section-title">경험 / 학력 / 학습 방향</h2>
+    <div class="section-group">
+      <h3 class="group-title">경험</h3>
+      <div class="timeline single">
+        <div class="timeline-item">
+          <h3>원티드 포텐업 게임 개발 트랙</h3>
+          <p class="timeline-meta">2026.01 - 현재</p>
+          <p>운영체제, 네트워크 등 CS 기초를 빠르게 보강하고, 개인 콘솔 프로젝트를 통해 엔진 로직 최적화와 데이터 중심 설계를 체득했습니다.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>코딩테스트 알고리즘 스터디장</h3>
+          <p class="timeline-meta">2026.01 - 현재</p>
+          <p>월/수/금 주 3회 스터디를 운영하며 알고리즘 설계와 문제 해결 접근을 설명하고 커리큘럼을 관리하고 있습니다.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Software Engineer Intern, A Round Entertainment</h3>
+          <p class="timeline-meta">2024.01 - 2024.04 · New Jersey · Remote</p>
+          <p>Joopy 앱 프로필 편집, 이미지 업로드/정렬, Firebase 실시간 동기화를 구현하며 모바일 앱 실무 협업을 경험했습니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-group">
+      <h3 class="group-title">학력</h3>
+      <div class="timeline single">
+        <div class="timeline-item">
+          <h3>대구 계명대 디지펜 게임공학과</h3>
+          <p class="timeline-meta">2018.03 - 2024.08 · GPA 4.0 / 4.5</p>
+          <p>게임 엔진, 렌더링, 수학, 시스템 구현 중심 학습과 프로젝트 수행 경험을 축적했습니다.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>DigiPen Institute of Technology</h3>
+          <p class="timeline-meta">2022.08 - 2024.04 · GPA 3.7 / 4.0</p>
+          <p>실시간 인터랙티브 시스템과 그래픽스 프로그래밍 과목을 중심으로 학습했습니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Experience / Education</span>
+      <span>7</span>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">
+      <div class="page-url">포트폴리오 풀버전 주소 : <a href="https://jaw-choi.github.io/">https://jaw-choi.github.io/</a></div>
+      <div class="page-number">Page 8 / 8</div>
+    </div>
+
+    <h2 class="section-title">기타 프로젝트 / 자격 / 링크 / 연락처</h2>
+    <div class="archive-grid compact">
+      <div class="archive-item compact">
+        <img src="assets/img/project/OneSurvival.png" alt="One Survival">
+        <div><h3>One Survival</h3><p>Unity 기반 2D 뱀서라이크 게임 프로토타입</p></div>
+      </div>
+      <div class="archive-item compact">
+        <img src="assets/img/project/curves.png" alt="Curve Project">
+        <div><h3>Curve Project</h3><p>곡선 생성 및 렌더링 실험 프로젝트</p></div>
+      </div>
+      <div class="archive-item compact">
+        <img src="assets/img/project/Dating.jpg" alt="Dating Application">
+        <div><h3>Dating Application</h3><p>React Native / Firebase 기반 기능 구현 경험</p></div>
+      </div>
+      <div class="archive-item compact">
+        <img src="assets/img/project/bitsaver.png" alt="BIT SAVER">
+        <div><h3>BIT SAVER</h3><p>커스텀 엔진 기반 리듬 액션 팀 프로젝트</p></div>
+      </div>
+      <div class="archive-item compact">
+        <img src="assets/img/project/paparazzi.png" alt="Paparazzi">
+        <div><h3>Paparazzi</h3><p>팀 프로젝트 내 게임플레이/UI 구현 경험</p></div>
+      </div>
+      <div class="archive-item compact">
+        <img src="assets/img/project/raytracing.png" alt="Ray Tracing">
+        <div><h3>Ray Tracing</h3><p>레이 트레이싱 기초 구현 및 출력 테스트</p></div>
+      </div>
+      <div class="archive-item compact">
+        <img src="assets/img/project/Treasure_Hunter.jpg" alt="Treasure Hunter">
+        <div><h3>Treasure Hunter</h3><p>액션 게임플레이 및 스테이지 상호작용 프로토타입</p></div>
+      </div>
+    </div>
+
+    <div class="mini-box-grid">
+      <div class="mini-box">
+        <h3>자격 / 어학</h3>
+        <ul class="bullet-list">
+          <li>OPic(영어) Intermediate High(IH)</li>
+          <li>정보처리기사</li>
+          <li>데이터분석 준전문가(ADsP)</li>
+        </ul>
+      </div>
+      <div class="mini-box">
+        <h3>대표 링크</h3>
+        <ul class="link-list">
+          <li>포트폴리오: <a href="https://jaw-choi.github.io/">https://jaw-choi.github.io/</a></li>
+          <li>GitHub: <a href="https://github.com/jaw-choi">https://github.com/jaw-choi</a></li>
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/jaw-choi">https://www.linkedin.com/in/jaw-choi</a></li>
+          <li>Blog: <a href="https://learn-forever.tistory.com/">https://learn-forever.tistory.com/</a></li>
+        </ul>
+      </div>
+      <div class="mini-box">
+        <h3>프로젝트 링크</h3>
+        <ul class="link-list">
+          <li>콘솔 뱀서라이크: <a href="https://github.com/jaw-choi/Wanted4_ShootingGame">Wanted4_ShootingGame</a></li>
+          <li>눈덩이를 굴려라: <a href="https://github.com/jaw-choi/RollSnow">RollSnow</a></li>
+          <li>Shading Demo: <a href="https://www.youtube.com/watch?v=DgqO1aJCEA0">YouTube</a></li>
+          <li>Google Play: <a href="https://play.google.com/store/apps/details?id=com.BeoMeoStudio.RollingSnow">Rolling Snow</a></li>
+        </ul>
+      </div>
+      <div class="mini-box">
+        <h3>연락처</h3>
+        <ul class="link-list">
+          <li>Email: wod6983@gmail.com</li>
+          <li>Phone: 010-2776-2295</li>
+          <li>Location: 서울특별시 광진구</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Archive / Links / Contact</span>
+      <span>8</span>
+    </div>
+  </section>
+</body>
+</html>
