@@ -45,43 +45,36 @@
 <script>
 
   function toggleLanguage(language) {
-
     const resumeLink = document.getElementById('resume-link');
-    let currentLanguage = resumeLink.getAttribute('data-current-lang');
-    const newLanguage = currentLanguage === 'ko' ? 'en' : 'ko'; // 언어 전환
-    let url;
-    
+    const resumeTitleLink = document.getElementById('resume-title-link');
+    const resumeUrl = language === 'ko'
+      ? resumeLink.getAttribute('data-lang-ko-href')
+      : resumeLink.getAttribute('data-lang-en-href');
 
+    localStorage.setItem('language', language);
+    document.documentElement.lang = language;
+    resumeLink.setAttribute('data-current-lang', language);
 
+    const elements = document.querySelectorAll('[data-lang-en]');
 
+    elements.forEach(element => {
+      if (language === 'ko') {
+        element.textContent = element.getAttribute('data-lang-ko');
+      } else if (language === 'en') {
+        element.textContent = element.getAttribute('data-lang-en');
+      }
+    });
 
-      // 현재 언어를 LocalStorage에 저장
-      localStorage.setItem('language', language);
-      document.documentElement.lang = language;
-      resumeLink.setAttribute('data-current-lang', language);
-
-      // 모든 요소를 선택
-      const elements = document.querySelectorAll('[data-lang-en]');
-
-      elements.forEach(element => {
-          // 선택한 언어에 따라 내용을 변경
-          if (language === 'ko') {
-              element.textContent = element.getAttribute('data-lang-ko');
-              currentLanguage = resumeLink.getAttribute('data-lang-ko');
-              url = 'https://drive.google.com/file/d/1TJyEb2MoL4r1Qr2yokt4U_bMBXyr9bfS/view?usp=sharing';
-          } else if (language === 'en') {
-              element.textContent = element.getAttribute('data-lang-en');
-              currentLanguage = resumeLink.getAttribute('data-lang-en');
-              url = 'https://drive.google.com/file/d/1TJyEb2MoL4r1Qr2yokt4U_bMBXyr9bfS/view?usp=sharing';
-          }
-      });
-      resumeLink.href = url;
-
+    resumeLink.href = resumeUrl;
+    if (resumeTitleLink) {
+      resumeTitleLink.href = resumeUrl;
+    }
   }
 
   // 페이지가 로드될 때 저장된 언어를 적용
   document.addEventListener('DOMContentLoaded', () => {
-      toggleLanguage('ko');
+      const savedLanguage = localStorage.getItem('language') || 'ko';
+      toggleLanguage(savedLanguage);
   });
 
   function openResume(language) {
@@ -89,7 +82,7 @@
     if (language === 'ko') {
         url = 'https://drive.google.com/file/d/1TJyEb2MoL4r1Qr2yokt4U_bMBXyr9bfS/view?usp=sharing';
     } else {
-        url = 'https://drive.google.com/file/d/1TJyEb2MoL4r1Qr2yokt4U_bMBXyr9bfS/view?usp=sharing';
+        url = 'https://drive.google.com/file/d/1esUs61xJ07IesAYQAhB7BhQodEYha9Dj/view?usp=sharing';
     }
     window.open(url, '_blank');
 }
@@ -781,8 +774,15 @@ IEnumerator Invincible(float duration)
       </div>
       <div class="row">
         <div class="col-md-3 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-          <a id="resume-link" href="https://drive.google.com/file/d/1TJyEb2MoL4r1Qr2yokt4U_bMBXyr9bfS/view?usp=sharing" target="_blank"><div class="icon"><i class="icofont-page"></i></div></a>
-          <h4 class="title"><a href="https://drive.google.com/file/d/1TJyEb2MoL4r1Qr2yokt4U_bMBXyr9bfS/view?usp=sharing" target="_blank">Resume</a></h4>
+          <a
+            id="resume-link"
+            href="https://drive.google.com/file/d/1TJyEb2MoL4r1Qr2yokt4U_bMBXyr9bfS/view?usp=sharing"
+            target="_blank"
+            data-current-lang="ko"
+            data-lang-ko-href="https://drive.google.com/file/d/1TJyEb2MoL4r1Qr2yokt4U_bMBXyr9bfS/view?usp=sharing"
+            data-lang-en-href="https://drive.google.com/file/d/1esUs61xJ07IesAYQAhB7BhQodEYha9Dj/view?usp=sharing"
+          ><div class="icon"><i class="icofont-page"></i></div></a>
+          <h4 class="title"><a id="resume-title-link" href="https://drive.google.com/file/d/1TJyEb2MoL4r1Qr2yokt4U_bMBXyr9bfS/view?usp=sharing" target="_blank">Resume</a></h4>
           <p class="description" style="color:#fff;">The link contains downloadable resume</p>
         </div>
         <!-- <div class="col-md-3 mt-4 mt-md-0 icon-box" data-aos="fade-up">
