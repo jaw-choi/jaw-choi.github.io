@@ -238,6 +238,97 @@
           <div class="col-lg-4">
             <div class="project-media">
               <iframe
+                src="https://www.youtube.com/embed/mCsVFs_O7lg"
+                title="World Of Monster gameplay"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                style="width: 100%; aspect-ratio: 16 / 9;">
+              </iframe>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="project-header">
+              <h3 data-lang-en="World Of Monster" data-lang-ko="월드 오브 몬스터">World Of Monster</h3>
+              <p class="project-meta">
+                <span data-lang-en="Duration" data-lang-ko="기간">기간</span>: <span data-lang-en="2026.04.30 ~ 2026.05.31" data-lang-ko="2026.04.30 ~ 2026.05.31">2026.04.30 ~ 2026.05.31</span>
+                <span class="meta-sep">|</span>
+                <span data-lang-en="Role" data-lang-ko="역할">역할</span>: <span data-lang-en="Enemy AI Programmer / 3-person team" data-lang-ko="적 AI 프로그래머 / 팀 프로젝트 (3인)">적 AI 프로그래머 / 팀 프로젝트 (3인)</span>
+              </p>
+            </div>
+            <ul class="project-narrative-list">
+              <li><strong data-lang-en="Technical Focus" data-lang-ko="기술 초점">기술 초점</strong>: <span data-lang-en="Behavior Tree-based AI design for 2 monster types" data-lang-ko="행동트리 기반 몬스터 2종 AI 설계">행동트리 기반 몬스터 2종 AI 설계</span></li>
+              <li><strong data-lang-en="Tech Stack" data-lang-ko="기술 스택">기술 스택</strong>: <span data-lang-en="Unreal Engine 5.6, C++, Behavior Tree, Blackboard, Niagara VFX" data-lang-ko="Unreal Engine 5.6, C++, 행동 트리, 블랙보드, Niagara VFX">Unreal Engine 5.6, C++, 행동 트리, 블랙보드, Niagara VFX</span></li>
+            </ul>
+            <details class="project-code">
+              <summary data-lang-en="AI Architecture" data-lang-ko="AI 아키텍처">AI 아키텍처</summary>
+              <div class="graphics-architecture">
+                <div class="graphics-arch-grid">
+                  <div class="graphics-arch-section">
+                    <div class="graphics-arch-title" data-lang-en="1. PERCEPTION" data-lang-ko="1. 감지 (PERCEPTION)">1. 감지 (PERCEPTION)</div>
+                    <div class="graphics-arch-box">
+                      <div class="graphics-arch-box-title">BTService_Detect</div>
+                      <div class="graphics-arch-box-desc" data-lang-en="Periodic player detection, updates Target blackboard key" data-lang-ko="주기적 플레이어 탐지 → Target 블랙보드 키 업데이트">주기적 플레이어 탐지 → Target 블랙보드 키 업데이트</div>
+                    </div>
+                    <div class="graphics-arch-arrow">▼</div>
+                    <div class="graphics-arch-box">
+                      <div class="graphics-arch-box-title">BTService_CheckHomeRange</div>
+                      <div class="graphics-arch-box-desc" data-lang-en="Drops target if distance from home exceeds MaxChaseRange" data-lang-ko="홈 위치 이탈 거리 초과 시 타겟 해제 및 귀환">홈 위치 이탈 거리 초과 시 타겟 해제 및 귀환</div>
+                    </div>
+                    <div class="graphics-arch-arrow">▼</div>
+                    <div class="graphics-arch-box">
+                      <div class="graphics-arch-box-title">BTTask_FindPatrolPos</div>
+                      <div class="graphics-arch-box-desc" data-lang-en="Selects random patrol position when no target" data-lang-ko="타겟 미탐지 시 랜덤 순찰 위치 선택">타겟 미탐지 시 랜덤 순찰 위치 선택</div>
+                    </div>
+                  </div>
+
+                  <div class="graphics-arch-section">
+                    <div class="graphics-arch-title" data-lang-en="2. DECISION" data-lang-ko="2. 판단 (DECISION)">2. 판단 (DECISION)</div>
+                    <div class="graphics-arch-box">
+                      <div class="graphics-arch-box-title">Blackboard</div>
+                      <div class="graphics-arch-box-desc" data-lang-en="Shared data: Target, ActionState, IsInAttackRange, IsStunned, IsDead" data-lang-ko="공유 데이터: Target, ActionState, IsInAttackRange, IsStunned, IsDead">공유 데이터: Target, ActionState, IsInAttackRange, IsStunned, IsDead</div>
+                    </div>
+                    <div class="graphics-arch-arrow">▼</div>
+                    <div class="graphics-arch-box">
+                      <div class="graphics-arch-box-title">BTDecorator_AttackInRange</div>
+                      <div class="graphics-arch-box-desc" data-lang-en="Guards attack branch; fires only when in range" data-lang-ko="공격 범위 조건 → 범위 내일 때만 공격 분기 허용">공격 범위 조건 → 범위 내일 때만 공격 분기 허용</div>
+                    </div>
+                    <div class="graphics-arch-arrow">▼</div>
+                    <div class="graphics-arch-box">
+                      <div class="graphics-arch-box-title">BTTask_TurnToTarget</div>
+                      <div class="graphics-arch-box-desc" data-lang-en="Rotates monster toward player before attacking" data-lang-ko="공격 전 목표 방향으로 회전">공격 전 목표 방향으로 회전</div>
+                    </div>
+                  </div>
+
+                  <div class="graphics-arch-section">
+                    <div class="graphics-arch-title" data-lang-en="3. REACTION" data-lang-ko="3. 반응 (REACTION)">3. 반응 (REACTION)</div>
+                    <div class="graphics-arch-box">
+                      <div class="graphics-arch-box-title">BTTask_PlayBeaten / HeavyFall</div>
+                      <div class="graphics-arch-box-desc" data-lang-en="Light or heavy hit montage based on hit intensity" data-lang-ko="피격 강도에 따라 경량/강한 피격 몽타주 재생">피격 강도에 따라 경량/강한 피격 몽타주 재생</div>
+                    </div>
+                    <div class="graphics-arch-arrow">▼</div>
+                    <div class="graphics-arch-box">
+                      <div class="graphics-arch-box-title">BTTask_PlayStun</div>
+                      <div class="graphics-arch-box-desc" data-lang-en="Stun montage; state via IsStunned blackboard key" data-lang-ko="스턴 몽타주 → IsStunned 키로 상태 제어">스턴 몽타주 → IsStunned 키로 상태 제어</div>
+                    </div>
+                    <div class="graphics-arch-arrow">▼</div>
+                    <div class="graphics-arch-box">
+                      <div class="graphics-arch-box-title">BTTask_PlayDeath + Dissolve</div>
+                      <div class="graphics-arch-box-desc" data-lang-en="Death montage then timed dissolve effect" data-lang-ko="사망 몽타주 후 시간 지연 소멸 이펙트 실행">사망 몽타주 후 시간 지연 소멸 이펙트 실행</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-story">
+        <div class="row align-items-start">
+          <div class="col-lg-4">
+            <div class="project-media">
+              <iframe
                 src="https://www.youtube.com/embed/AnUZnEjQzKU"
                 title="Console Vampire Survivors-like demo"
                 frameborder="0"
@@ -271,84 +362,15 @@
             <details class="project-code">
               <summary data-lang-en="Show notes" data-lang-ko="기록 보기">기록 보기 </summary>
               <div class="project-note">
-                <p><strong>1. 프로젝트 개요</strong></p>
+                <p><strong data-lang-en="Issues &amp; Solutions" data-lang-ko="문제 해결">문제 해결</strong></p>
                 <ul class="project-narrative-list">
-                  <li>콘솔 뱀서라이크 게임 데모</li>
-                  <li>자체 엔진 기반 Player/Enemy/Bullet, 스탯, 카메라, Object Pooling, Quadtree, 구현 과정 경험 및 문서화 목표</li>
+                  <li><strong>Object Pooling</strong>: <span data-lang-en="prewarm caused infinite memory growth → fixed by separating GameLevel hasBeginPlay to guarantee single initialization" data-lang-ko="prewarm 후 메모리 무한 증가 → GameLevel hasBeginPlay 분리로 초기화 1회 보장">prewarm 후 메모리 무한 증가 → GameLevel hasBeginPlay 분리로 초기화 1회 보장</span></li>
+                  <li><strong>Quadtree</strong>: <span data-lang-en="memory errors and missed collisions after switch → active object filtering + Query flow restructure" data-lang-ko="전환 후 메모리 에러/충돌 누락 → 활성 객체 필터링 + Query 흐름 재정리">전환 후 메모리 에러/충돌 누락 → 활성 객체 필터링 + Query 흐름 재정리</span></li>
                 </ul>
-
-                <p><strong>주요 기능</strong></p>
+                <p><strong data-lang-en="Lessons Learned" data-lang-ko="배운 점">배운 점</strong></p>
                 <ul class="project-narrative-list">
-                  <li>충돌 처리: Quadtree 공간 분할 후 AABB 적용</li>
-                  <li>오브젝트 풀링: Exp Gem/Enemy/Bullet 반복 할당 필요 메모리 공간 미리 할당</li>
-                  <li>카메라/월드 확장: 스크롤링 카메라, 잔디 타일링</li>
-                  <li>디버그 모드: 화면에 Quadtree 디버그 라인 표시</li>
-                  <li>문서화: Obsidian 기반 개발일지/체크리스트/이슈 로그</li>
-                  <li>Git 전략: 잦은 커밋으로 빠른 롤백, 솔로 프로젝트로 브랜치 미사용</li>
-                  <li>이슈 트래킹: 체크리스트 + 날짜별 로그 + 이슈 분류</li>
-                </ul>
-
-                <p><strong>2. 아키텍처 및 워크플로우</strong></p>
-                <p><strong>아키텍처 특징 및 설계 의도</strong></p>
-                <ul class="project-narrative-list">
-                  <li>게임 루프: GameLevel 중심 루프, Actor 리스트 순회 Tick/Render 수행</li>
-                  <li>스탯 공통화: IStatHolder 인터페이스 + Stat struct로 Player/Enemy 스탯 접근 통일</li>
-                  <li>확장성: Object Pooling으로 생성/삭제 비용 및 단편화 리스크 감소</li>
-                  <li>충돌 최적화: AABB 유지 + Quadtree 확장 구조로 단계적 최적화</li>
-                  <li>검증: 디버그 모드(좌표/쿼드트리 테스트)로 통합 과정 검증</li>
-                </ul>
-
-                <p><strong>3. 주요 작업</strong></p>
-                <ul class="project-narrative-list">
-                  <li>오브젝트 풀링: Enemy/Gem/Bullet 재사용 구조 구현, prewarm 적용 후 메모리 무한 증가 이슈 분석 및 수정</li>
-                  <li>충돌 처리 최적화: AABB 구현 후 Quadtree 도입, 디버그 함수화, 활성 객체 필터링 및 Query 사용 방식 정리</li>
-                </ul>
-
-                <p><strong>4. 문제 해결 및 기술적 도전</strong></p>
-                <ul class="project-narrative-list">
-                  <li><strong>이슈 1</strong>: 오브젝트 풀링 이후 메모리 무한 증가 → GameLevel hasBeginPlay 분리로 초기화 1회 보장</li>
-                  <li><strong>이슈 2</strong>: Quadtree 전환 후 메모리 에러/충돌 누락 → Actor 활성 필터링 + Query 흐름 재정리</li>
-                  <li>의사결정: A* 시도 후 방향벡터 추격으로 전환, swap-pop으로 O(1) 삭제, raw pointer 소유권 규칙 문서화 필요성 확인</li>
-                  <li>개선 아이디어: 타일맵/장애물 기반 A* 재적용, Enemy 간 충돌 Layer 적용, 소유권/해제 책임 명문화</li>
-                </ul>
-
-                <p><strong>5. 결과 및 회고</strong></p>
-                <ul class="project-narrative-list">
-                  <li>결과: 핵심 시스템 통합 완료(Player/Enemy/Bullet, HP/EXP/레벨업, Pause UI), Object Pooling/Quadtree/스크롤 월드 구현</li>
-                  <li>성과 지표: Stress Test에서 FPS 저하 체감 없음, vector 삭제 O(N) → swap-pop으로 O(1) 최적화, 메모리 무한 증가 버그 해결</li>
-                  <li>임팩트: 대량 객체 처리 + 충돌 최적화 + UI/pause + 스탯 시스템 하나의 루프 통합</li>
-                  <li>회고: 엔진 루프 관점 디버깅 역량 강화, 정규화/형변환/const/링킹 등 기본기 이슈 케이스 축적</li>
-                  <li>다시 한다면: FPS/메모리 측정 루틴 내장, Quadtree 소유권 문서화, 초기화 루틴 1회 보장 구조 고정</li>
-                </ul>
-
-                <p><strong>프로파일링</strong></p>
-                <ul class="project-narrative-list">
-                  <li>FPS 출력</li>
-                  <li>Quadtree 적용 전/후</li>
-                  <li>Stress Test 조건 화면</li>
-                  <li>Object Pooling 전/후 프로세스 메모리 변화 비교</li>
-                </ul>
-
-                <p><strong>프로젝트 회고</strong></p>
-                <p><strong>잘한 점</strong></p>
-                <ul class="project-narrative-list">
-                  <li>문서화와 커밋 전략 꾸준히 유지</li>
-                  <li>Quadtree 시각화</li>
-                  <li>프로파일링 진행</li>
-                  <li>스탯 구조 간소화 유지</li>
-                </ul>
-
-                <p><strong>부족한 점</strong></p>
-                <ul class="project-narrative-list">
-                  <li>기술 구현 집중으로 게임성 개선 시간 배분 미흡</li>
-                  <li>프로파일링 요소로 FPS만 고려해서 정확도 떨어짐</li>
-                </ul>
-
-                <p><strong>소감</strong></p>
-                <ul class="project-narrative-list">
-                  <li>엔진의 큰 그림 이해</li>
-                  <li>기록의 중요성 체감</li>
-                  <li>원하는 기능 직접 구현 경험</li>
+                  <li data-lang-en="Engine-loop-level debugging perspective" data-lang-ko="엔진 루프 관점 디버깅 역량 강화">엔진 루프 관점 디버깅 역량 강화</li>
+                  <li data-lang-en="Accumulated fundamental issue cases: normalization, casting, const, linking" data-lang-ko="정규화/형변환/const/링킹 등 기본기 이슈 케이스 축적">정규화/형변환/const/링킹 등 기본기 이슈 케이스 축적</li>
                 </ul>
               </div>
             </details>
@@ -669,6 +691,8 @@ IEnumerator Invincible(float duration)
           </div>
         </div>
       </article>
+
+
     </div>
 
     <div class="project-archive">
