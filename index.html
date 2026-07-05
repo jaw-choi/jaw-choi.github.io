@@ -246,6 +246,52 @@
       <article class="project-story">
         <div class="row align-items-start">
           <div class="col-lg-4">
+            <div class="project-media project-media-placeholder">
+              <span data-lang-en="In development — demo coming soon" data-lang-ko="개발 진행중 · 데모 준비중">개발 진행중 · 데모 준비중</span>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="project-header">
+              <h3 data-lang-en="LTF" data-lang-ko="LTF">LTF</h3>
+              <p class="project-meta">
+                <span data-lang-en="Duration" data-lang-ko="기간">기간</span>: <span data-lang-en="2026.06 ~ In Progress" data-lang-ko="2026.06 ~ 진행중">2026.06 ~ 진행중</span>
+                <span class="meta-sep">|</span>
+                <span data-lang-en="Role" data-lang-ko="역할">역할</span>: <span data-lang-en="Combat System / Gameplay Ability Programmer / 5-person team" data-lang-ko="전투 시스템 / Gameplay Ability 프로그래머 / 팀 프로젝트 (5인)">전투 시스템 / Gameplay Ability 프로그래머 / 팀 프로젝트 (5인)</span>
+              </p>
+            </div>
+            <ul class="project-narrative-list">
+              <li><strong data-lang-en="Technical Focus" data-lang-ko="기술 초점">기술 초점</strong>: <span data-lang-en="Designed the combat state machine and attack-resolution pipeline on Unreal's Gameplay Ability System (GAS); implemented 20+ champion skills as Gameplay Abilities" data-lang-ko="GAS(Gameplay Ability System) 기반 전투 상태머신 및 공격 판정 파이프라인 설계, 챔피언 스킬(Gameplay Ability) 20종 이상 구현">GAS(Gameplay Ability System) 기반 전투 상태머신 및 공격 판정 파이프라인 설계, 챔피언 스킬(Gameplay Ability) 20종 이상 구현</span></li>
+              <li>
+                <strong data-lang-en="Key Features" data-lang-ko="주요 기능">주요 기능</strong>
+                <ul style="list-style: disc; padding-left: 18px; margin-top: 6px;">
+                  <li><span data-lang-en="Melee/ranged branch via a two-stage GameplayEvent chain (GA_Attack → GA_AttackHitCheck)" data-lang-ko="GameplayEvent 2단 체인(GA_Attack → GA_AttackHitCheck)으로 근접/원거리 공격 분기">GameplayEvent 2단 체인(GA_Attack → GA_AttackHitCheck)으로 근접/원거리 공격 분기</span></li>
+                  <li><span data-lang-en="Projectile system for ranged champions" data-lang-ko="원거리 챔피언용 투사체 시스템">원거리 챔피언용 투사체 시스템</span></li>
+                  <li><span data-lang-en="Managed champion stat data via an Excel-driven DataTable pipeline, designed to flexibly extend as design stats change" data-lang-ko="엑셀 기반 챔피언 스탯 데이터를 DataTable로 관리하며 기획 스탯 변경에 유연하게 대응할 수 있는 데이터 구조를 설계·확장">엑셀 기반 챔피언 스탯 데이터를 DataTable로 관리하며 기획 스탯 변경에 유연하게 대응할 수 있는 데이터 구조를 설계·확장</span></li>
+                  <li><span data-lang-en="Auto-battler combat state machine (Searching → MovingToTarget → Attacking/CastingSkill → Dead/Celebrating)" data-lang-ko="오토배틀러 전투 상태머신(Searching → MovingToTarget → Attacking/CastingSkill → Dead/Celebrating)">오토배틀러 전투 상태머신(Searching → MovingToTarget → Attacking/CastingSkill → Dead/Celebrating)</span></li>
+                </ul>
+              </li>
+              <li><strong data-lang-en="Tech Stack" data-lang-ko="기술 스택">기술 스택</strong>: <span data-lang-en="Unreal Engine 5.6, C++, Gameplay Ability System (GAS), Blueprint" data-lang-ko="Unreal Engine 5.6, C++, Gameplay Ability System (GAS), Blueprint">Unreal Engine 5.6, C++, Gameplay Ability System (GAS), Blueprint</span></li>
+            </ul>
+            <details class="project-code">
+              <summary data-lang-en="Show notes" data-lang-ko="기록 보기">기록 보기</summary>
+              <div class="project-note">
+                <p><strong data-lang-en="Issues &amp; Solutions" data-lang-ko="문제 해결">문제 해결</strong></p>
+                <ul class="project-narrative-list">
+                  <li><strong>Attack Replication</strong>: <span data-lang-en="Basic attack damage applied multiple times per hit in multiplayer → caused by AnimNotify firing on every replicated client montage instance → fixed by gating the damage event with HasAuthority() so only the server sends it" data-lang-ko="멀티플레이어에서 평타 데미지가 여러 번 적용됨 → 복제된 몽타주가 재생되는 모든 클라이언트에서 AnimNotify가 같이 실행된 것이 원인 → HasAuthority() 체크로 서버 인스턴스에서만 데미지 이벤트를 보내도록 수정">멀티플레이어에서 평타 데미지가 여러 번 적용됨 → 복제된 몽타주가 재생되는 모든 클라이언트에서 AnimNotify가 같이 실행된 것이 원인 → HasAuthority() 체크로 서버 인스턴스에서만 데미지 이벤트를 보내도록 수정</span></li>
+                </ul>
+                <p><strong data-lang-en="Lessons Learned" data-lang-ko="배운 점">배운 점</strong></p>
+                <ul class="project-narrative-list">
+                  <li data-lang-en="Learned to separate cosmetic replication (montage playback) from authoritative gameplay logic (damage events) in Unreal networking" data-lang-ko="Unreal 네트워킹에서 연출용 복제(몽타주 재생)와 권한이 필요한 게임 로직(데미지 판정)을 분리해야 한다는 걸 체득">Unreal 네트워킹에서 연출용 복제(몽타주 재생)와 권한이 필요한 게임 로직(데미지 판정)을 분리해야 한다는 걸 체득</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-story">
+        <div class="row align-items-start">
+          <div class="col-lg-4">
             <div class="project-media">
               <iframe
                 src="https://www.youtube.com/embed/mCsVFs_O7lg"
