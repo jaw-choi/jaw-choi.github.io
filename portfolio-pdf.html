@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jaewoo Choi - Portfolio PDF</title>
+  <style>
+    :root {
+      --page-width: 210mm;
+      --page-height: 297mm;
+      --ink: #111827;
+      --muted: #4b5563;
+      --line: #d1d5db;
+      --soft: #f3f4f6;
+      --panel: #ffffff;
+      --accent: #0f766e;
+      --accent-soft: #dff4f1;
+      --accent-strong: #115e59;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #e5e7eb;
+      color: var(--ink);
+      font-family: "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      line-height: 1.42;
+    }
+
+    a {
+      color: var(--accent-strong);
+      text-decoration: none;
+    }
+
+    .screen-note {
+      max-width: var(--page-width);
+      margin: 12px auto 0;
+      padding: 10px 14px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .page {
+      width: var(--page-width);
+      min-height: var(--page-height);
+      margin: 10px auto 24px;
+      padding: 13mm 12mm 11mm;
+      background: var(--panel);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.14);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 118px;
+      gap: 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .name {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .title {
+      margin: 3px 0 8px;
+      color: var(--accent-strong);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .summary {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11.4px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 4px 14px;
+      margin-top: 10px;
+      font-size: 10.5px;
+    }
+
+    .contact-item strong {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .portrait {
+      width: 118px;
+      height: 118px;
+      border-radius: 18px;
+      object-fit: cover;
+      border: 1px solid var(--line);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: 15px;
+      margin-top: 12px;
+    }
+
+    .section + .section {
+      margin-top: 12px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 7px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      flex: 0 0 auto;
+    }
+
+    .skill-list,
+    .compact-list,
+    .link-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .skill-list li {
+      padding: 5px 9px;
+      background: var(--accent-soft);
+      border: 1px solid #b7e3dd;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--accent-strong);
+    }
+
+    .compact-list li {
+      position: relative;
+      padding-left: 10px;
+      margin-bottom: 5px;
+      color: var(--muted);
+      font-size: 10.5px;
+    }
+
+    .compact-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 4px;
+      height: 4px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .project-card {
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+    }
+
+    .project-card + .project-card {
+      margin-top: 8px;
+    }
+
+    .project-top {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 5px;
+    }
+
+    .project-name {
+      margin: 0;
+      font-size: 12.4px;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .project-meta {
+      color: var(--muted);
+      font-size: 9.5px;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .project-tags {
+      margin: 0 0 6px;
+      color: var(--accent-strong);
+      font-size: 9.5px;
+      font-weight: 700;
+    }
+
+    .project-desc {
+      margin: 0;
+      color: var(--muted);
+      font-size: 10.2px;
+    }
+
+    .link-list li {
+      margin-bottom: 4px;
+      color: var(--muted);
+      font-size: 9.3px;
+      word-break: break-all;
+    }
+
+    .link-label {
+      display: inline-block;
+      min-width: 68px;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .timeline-item {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .timeline-item:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .timeline-role {
+      margin: 0;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .timeline-org {
+      margin: 2px 0 3px;
+      color: var(--accent-strong);
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .timeline-meta {
+      margin: 0 0 4px;
+      color: var(--muted);
+      font-size: 9.5px;
+    }
+
+    .timeline-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .footer-box {
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 9.2px;
+    }
+
+    .footer-box strong {
+      color: var(--ink);
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    @media print {
+      html, body {
+        background: #ffffff;
+      }
+
+      .screen-note {
+        display: none;
+      }
+
+      .page {
+        margin: 0;
+        min-height: 0;
+        box-shadow: none;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="screen-note">브라우저에서 `인쇄` → `PDF로 저장`을 선택하면 됩니다. 배경 그래픽을 켜면 카드/포인트 색이 그대로 유지됩니다.</div>
+
+  <main class="page">
+    <header class="hero">
+      <div>
+        <h1 class="name">최재우</h1>
+        <p class="title">Game Programmer | Systems, Engine Logic, Graphics Fundamentals</p>
+        <p class="summary">
+          기존 기능을 단순히 활용하는 것보다 핵심 기술을 직접 구현하며 시스템을 이해하는 개발 방식을 지향합니다.
+          게임 개발 과정에서 엔진 구조, 알고리즘, 그래픽 표현 등을 직접 구현하며 기술 기반을 쌓아왔고,
+          아이디어를 실제 게임 애플리케이션으로 완성해 출시하는 경험을 통해 개발의 전 과정을 반복적으로 경험해왔습니다.
+        </p>
+        <div class="contact-grid">
+          <div class="contact-item"><strong>Phone</strong> 010-2776-2295</div>
+          <div class="contact-item"><strong>Email</strong> wod6983@gmail.com</div>
+          <div class="contact-item"><strong>Location</strong> 서울특별시 광진구</div>
+          <div class="contact-item"><strong>Links</strong> GitHub / LinkedIn / Blog</div>
+        </div>
+      </div>
+      <img class="portrait" src="assets/img/profile.jpg" alt="최재우 프로필 사진">
+    </header>
+
+    <div class="layout">
+      <section>
+        <section class="section">
+          <h2 class="section-title">Core Skills</h2>
+          <ul class="skill-list">
+            <li>C++</li>
+            <li>C</li>
+            <li>C#</li>
+            <li>OpenGL</li>
+            <li>GLSL</li>
+            <li>Unity</li>
+            <li>Unreal Engine</li>
+            <li>JavaScript</li>
+            <li>HTML/CSS</li>
+            <li>Firebase</li>
+            <li>Git</li>
+            <li>Android Studio</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Selected Projects</h2>
+
+          <article class="project-card">
+            <div class="project-top">
+              <h3 class="project-name">콘솔 뱀서라이크</h3>
+              <div class="project-meta">2026.02.05 - 2026.02.11 · 개인</div>
+            </div>
+            <p class="project-tags">C++ · Custom Engine Logic · AABB · Quadtree · Object Pooling</p>
+            <p class="project-desc">
+              1주 스프린트로 Player/Enemy/Bullet, 스탯, Pause UI를 통합한 콘솔 액션 데모를 구현했습니다.
+              대량 객체 처리 구조를 검증하면서 Quadtree 기반 충돌 최적화, 오브젝트 풀링, 디버그 시각화를 직접 설계했습니다.
+            </p>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <h3 class="project-name">눈덩이를 굴려라</h3>
+              <div class="project-meta">2025.12 - 현재 · 2인 팀</div>
+            </div>
+            <p class="project-tags">Unity · C# · Mobile Release · UI Workflow · AdMob</p>
+            <p class="project-desc">
+              게임 프로그래머로 참여해 기획부터 스토어 출시까지 전 과정을 수행했습니다.
+              Figma→Unity UI 반영 흐름, 릴리즈 체크리스트, 광고 호출 안정화, 콘솔 정책 대응을 정리하며 실제 배포 경험을 쌓았습니다.
+            </p>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <h3 class="project-name">Shading Project</h3>
+              <div class="project-meta">2024.01 - 2024.04</div>
+            </div>
+            <p class="project-tags">C++ · OpenGL · GLSL · Deferred Shading</p>
+            <p class="project-desc">
+              G-buffer, reflection vector, cubemap sampling을 직접 구현하며 렌더링 파이프라인을 학습했습니다.
+              시각 비교 샘플과 데모를 통해 그래픽스 프로그래밍 기본기를 결과물로 정리했습니다.
+            </p>
+          </article>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Project Links</h2>
+          <ul class="link-list">
+            <li><span class="link-label">Portfolio</span><a href="https://jaw-choi.github.io">https://jaw-choi.github.io</a></li>
+            <li><span class="link-label">Vampire GitHub</span><a href="https://github.com/jaw-choi/Wanted4_ShootingGame">github.com/jaw-choi/Wanted4_ShootingGame</a></li>
+            <li><span class="link-label">Vampire Log</span><a href="https://learn-forever.tistory.com/27">learn-forever.tistory.com/27</a></li>
+            <li><span class="link-label">Rolling Snow</span><a href="https://play.google.com/store/apps/details?id=com.BeoMeoStudio.RollingSnow">play.google.com/store/apps/details?id=com.BeoMeoStudio.RollingSnow</a></li>
+            <li><span class="link-label">Rolling GitHub</span><a href="https://github.com/jaw-choi/RollSnow">github.com/jaw-choi/RollSnow</a></li>
+            <li><span class="link-label">Shading Demo</span><a href="https://www.youtube.com/watch?v=DgqO1aJCEA0">youtube.com/watch?v=DgqO1aJCEA0</a></li>
+          </ul>
+        </section>
+      </section>
+
+      <section>
+        <section class="section">
+          <h2 class="section-title">Strengths</h2>
+          <ul class="compact-list">
+            <li>엔진 구조와 게임 루프를 직접 구현하며 시스템 단위로 문제를 이해합니다.</li>
+            <li>알고리즘 최적화와 디버그 문서화를 함께 가져가며 구현 근거를 남깁니다.</li>
+            <li>기획부터 출시, 운영 이슈 대응까지 제품 완성 과정 전체를 경험했습니다.</li>
+            <li>기술 구현과 실제 결과물을 연결하는 개발 방식을 지향합니다.</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Experience</h2>
+
+          <article class="timeline-item">
+            <h3 class="timeline-role">원티드 포텐업 게임 개발 트랙</h3>
+            <p class="timeline-org">교육 과정</p>
+            <p class="timeline-meta">2026.01 - 현재</p>
+            <p class="timeline-copy">CS 기초를 빠르게 보강하고, 다수의 개인 콘솔 프로젝트를 통해 엔진 로직 최적화와 데이터 중심 설계를 체득했습니다.</p>
+          </article>
+
+          <article class="timeline-item">
+            <h3 class="timeline-role">코딩테스트 알고리즘 스터디장</h3>
+            <p class="timeline-org">주 3회 스터디 운영</p>
+            <p class="timeline-meta">2026.01 - 현재</p>
+            <p class="timeline-copy">최적의 알고리즘 설계와 문제 해결 접근을 설명하며 학습 커리큘럼과 진행 흐름을 관리했습니다.</p>
+          </article>
+
+          <article class="timeline-item">
+            <h3 class="timeline-role">Software Engineer Intern</h3>
+            <p class="timeline-org">A Round Entertainment · Remote</p>
+            <p class="timeline-meta">2024.01 - 2024.04</p>
+            <p class="timeline-copy">Joopy 데이팅 앱의 프로필 편집, 이미지 업로드/정렬, Firebase 실시간 동기화 기능을 구현했습니다.</p>
+          </article>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Education</h2>
+
+          <article class="timeline-item">
+            <h3 class="timeline-role">디지펜 게임공학과</h3>
+            <p class="timeline-org">Bachelor's Degree in Computer Science in RTIS Simulation</p>
+            <p class="timeline-meta">2018.03 - 2024.08 · GPA 4.0 / 4.5</p>
+            <p class="timeline-copy">게임 엔진, 렌더링, 수학, 시스템 구현 중심의 학습과 프로젝트 경험을 축적했습니다.</p>
+          </article>
+
+          <article class="timeline-item">
+            <h3 class="timeline-role">DigiPen Institute of Technology</h3>
+            <p class="timeline-org">Bachelor's Degree in Computer Science in RTIS</p>
+            <p class="timeline-meta">2022.08 - 2024.04 · GPA 3.7 / 4.0</p>
+            <p class="timeline-copy">그래픽스와 엔진 프로그래밍 과목을 중심으로 실시간 인터랙티브 시스템 구현 역량을 강화했습니다.</p>
+          </article>
+        </section>
+
+        <section class="footer-box">
+          <strong>External Links</strong><br>
+          GitHub: <a href="https://github.com/jaw-choi">github.com/jaw-choi</a><br>
+          LinkedIn: <a href="https://www.linkedin.com/in/jaw-choi">linkedin.com/in/jaw-choi</a><br>
+          Blog: <a href="https://learn-forever.tistory.com/">learn-forever.tistory.com</a>
+        </section>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
