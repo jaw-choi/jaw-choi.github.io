@@ -261,34 +261,37 @@
             <div class="project-header">
               <h3 data-lang-en="LTF" data-lang-ko="LTF">LTF</h3>
               <p class="project-meta">
-                <span data-lang-en="Duration" data-lang-ko="기간">기간</span>: <span data-lang-en="2026.06 ~ In Progress" data-lang-ko="2026.06 ~ 진행중">2026.06 ~ 진행중</span>
+                <span data-lang-en="Duration" data-lang-ko="기간">기간</span>: <span data-lang-en="2026.06.10 ~ 2026.07.13" data-lang-ko="2026.06.10 ~ 2026.07.13">2026.06.10 ~ 2026.07.13</span>
                 <span class="meta-sep">|</span>
-                <span data-lang-en="Role" data-lang-ko="역할">역할</span>: <span data-lang-en="Combat System / Gameplay Ability Programmer / 5-person team" data-lang-ko="전투 시스템 / Gameplay Ability 프로그래머 / 팀 프로젝트 (5인)">전투 시스템 / Gameplay Ability 프로그래머 / 팀 프로젝트 (5인)</span>
+                <span data-lang-en="Role" data-lang-ko="역할">역할</span>: <span data-lang-en="Combat System / Gameplay Programmer / 5-person team" data-lang-ko="전투 시스템 / Gameplay 프로그래머 / 팀 프로젝트 (5인)">전투 시스템 / Gameplay 프로그래머 / 팀 프로젝트 (5인)</span>
               </p>
             </div>
             <ul class="project-narrative-list">
-              <li><strong data-lang-en="Technical Focus" data-lang-ko="기술 초점">기술 초점</strong>: <span data-lang-en="Designed the combat state machine and attack-resolution pipeline on Unreal's Gameplay Ability System (GAS); implemented 20+ champion skills as Gameplay Abilities" data-lang-ko="GAS(Gameplay Ability System) 기반 전투 상태머신 및 공격 판정 파이프라인 설계, 챔피언 스킬(Gameplay Ability) 20종 이상 구현">GAS(Gameplay Ability System) 기반 전투 상태머신 및 공격 판정 파이프라인 설계, 챔피언 스킬(Gameplay Ability) 20종 이상 구현</span></li>
+              <li><strong data-lang-en="Overview" data-lang-ko="프로젝트 소개">프로젝트 소개</strong>: <span data-lang-en="A 5-person TFT-like auto-battler built with Unreal Engine 5.6, Dedicated Server, and GAS; implemented the core loop from lobby, shared draft, shop, placement, combat, creep rounds, to final result" data-lang-ko="Unreal Engine 5.6, Dedicated Server, GAS 기반 5인 팀 TFT 모작 오토배틀러 프로젝트로 로비, 공동 선택, 상점, 배치, 전투, 크립 라운드, 최종 승패까지 핵심 루프 구현">Unreal Engine 5.6, Dedicated Server, GAS 기반 5인 팀 TFT 모작 오토배틀러 프로젝트로 로비, 공동 선택, 상점, 배치, 전투, 크립 라운드, 최종 승패까지 핵심 루프 구현</span></li>
+              <li><strong data-lang-en="Technical Focus" data-lang-ko="기술 초점">기술 초점</strong>: <span data-lang-en="Unit combat FSM, GAS-based champion skills, HexTile movement/pathfinding, creep round system" data-lang-ko="유닛 전투 FSM, GAS 기반 챔피언 스킬, HexTile 이동 및 경로 탐색, 크립 라운드 시스템 구현">유닛 전투 FSM, GAS 기반 챔피언 스킬, HexTile 이동 및 경로 탐색, 크립 라운드 시스템 구현</span></li>
               <li>
                 <strong data-lang-en="Key Features" data-lang-ko="주요 기능">주요 기능</strong>
                 <ul style="list-style: disc; padding-left: 18px; margin-top: 6px;">
-                  <li><span data-lang-en="Melee/ranged branch via a two-stage GameplayEvent chain (GA_Attack → GA_AttackHitCheck)" data-lang-ko="GameplayEvent 2단 체인(GA_Attack → GA_AttackHitCheck)으로 근접/원거리 공격 분기">GameplayEvent 2단 체인(GA_Attack → GA_AttackHitCheck)으로 근접/원거리 공격 분기</span></li>
-                  <li><span data-lang-en="Projectile system for ranged champions" data-lang-ko="원거리 챔피언용 투사체 시스템">원거리 챔피언용 투사체 시스템</span></li>
-                  <li><span data-lang-en="Managed champion stat data via an Excel-driven DataTable pipeline, designed to flexibly extend as design stats change" data-lang-ko="엑셀 기반 챔피언 스탯 데이터를 DataTable로 관리하며 기획 스탯 변경에 유연하게 대응할 수 있는 데이터 구조를 설계·확장">엑셀 기반 챔피언 스탯 데이터를 DataTable로 관리하며 기획 스탯 변경에 유연하게 대응할 수 있는 데이터 구조를 설계·확장</span></li>
-                  <li><span data-lang-en="Auto-battler combat state machine (Searching → MovingToTarget → Attacking/CastingSkill → Dead/Celebrating)" data-lang-ko="오토배틀러 전투 상태머신(Searching → MovingToTarget → Attacking/CastingSkill → Dead/Celebrating)">오토배틀러 전투 상태머신(Searching → MovingToTarget → Attacking/CastingSkill → Dead/Celebrating)</span></li>
+                  <li><span data-lang-en="FSM-based unit combat flow: search, target selection, range check, movement, attack, skill cast, and death" data-lang-ko="FSM 기반 유닛 전투 흐름 구현: 탐색, 타깃 선정, 사거리 판정, 이동, 공격, 스킬 사용, 사망">FSM 기반 유닛 전투 흐름 구현: 탐색, 타깃 선정, 사거리 판정, 이동, 공격, 스킬 사용, 사망</span></li>
+                  <li><span data-lang-en="GAS attack pipeline separated animation and hit validation through GA_Attack → GA_AttackHitCheck" data-lang-ko="GA_Attack → GA_AttackHitCheck 구조로 공격 연출과 실제 타격 판정을 분리한 GAS 공격 파이프라인 구현">GA_Attack → GA_AttackHitCheck 구조로 공격 연출과 실제 타격 판정을 분리한 GAS 공격 파이프라인 구현</span></li>
+                  <li><span data-lang-en="Implemented 20+ champion skills including projectiles, dash, teleport, airborne, stun, healing, shields, buffs, and multi-target attacks" data-lang-ko="투사체, 돌진, 순간이동, 에어본, 기절, 회복, 보호막, 버프, 다중 타깃 등 챔피언 스킬 20종 이상 구현">투사체, 돌진, 순간이동, 에어본, 기절, 회복, 보호막, 버프, 다중 타깃 등 챔피언 스킬 20종 이상 구현</span></li>
+                  <li><span data-lang-en="HexTile BFS/A* pathfinding with tile occupancy, move request arbitration, and repath handling" data-lang-ko="HexTile 기반 BFS/A* 경로 탐색, 타일 점유 처리, 이동 요청 중재 및 재경로 계산 구현">HexTile 기반 BFS/A* 경로 탐색, 타일 점유 처리, 이동 요청 중재 및 재경로 계산 구현</span></li>
                 </ul>
               </li>
-              <li><strong data-lang-en="Tech Stack" data-lang-ko="기술 스택">기술 스택</strong>: <span data-lang-en="Unreal Engine 5.6, C++, Gameplay Ability System (GAS), Blueprint" data-lang-ko="Unreal Engine 5.6, C++, Gameplay Ability System (GAS), Blueprint">Unreal Engine 5.6, C++, Gameplay Ability System (GAS), Blueprint</span></li>
+              <li><strong data-lang-en="Tech Stack" data-lang-ko="기술 스택">기술 스택</strong>: <span data-lang-en="Unreal Engine 5.6, C++, Blueprint, GAS, Dedicated Server, DataTable, Primary Data Asset, Gameplay Tag/Effect/Event, BFS/A*" data-lang-ko="Unreal Engine 5.6, C++, Blueprint, GAS, Dedicated Server, DataTable, Primary Data Asset, Gameplay Tag/Effect/Event, BFS/A*">Unreal Engine 5.6, C++, Blueprint, GAS, Dedicated Server, DataTable, Primary Data Asset, Gameplay Tag/Effect/Event, BFS/A*</span></li>
             </ul>
             <details class="project-code">
-              <summary data-lang-en="Show notes" data-lang-ko="기록 보기">기록 보기</summary>
+              <summary data-lang-en="Troubleshooting" data-lang-ko="트러블슈팅">트러블슈팅</summary>
               <div class="project-note">
                 <p><strong data-lang-en="Issues &amp; Solutions" data-lang-ko="문제 해결">문제 해결</strong></p>
                 <ul class="project-narrative-list">
-                  <li><strong>Attack Replication</strong>: <span data-lang-en="Basic attack damage applied multiple times per hit in multiplayer → caused by AnimNotify firing on every replicated client montage instance → fixed by gating the damage event with HasAuthority() so only the server sends it" data-lang-ko="멀티플레이어에서 평타 데미지가 여러 번 적용됨 → 복제된 몽타주가 재생되는 모든 클라이언트에서 AnimNotify가 같이 실행된 것이 원인 → HasAuthority() 체크로 서버 인스턴스에서만 데미지 이벤트를 보내도록 수정">멀티플레이어에서 평타 데미지가 여러 번 적용됨 → 복제된 몽타주가 재생되는 모든 클라이언트에서 AnimNotify가 같이 실행된 것이 원인 → HasAuthority() 체크로 서버 인스턴스에서만 데미지 이벤트를 보내도록 수정</span></li>
+                  <li><strong>Dedicated Server FX</strong>: <span data-lang-en="Separated server-authoritative hit processing from client-side visual effects with HasAuthority(), preventing duplicated attack effects" data-lang-ko="HasAuthority() 조건 분기로 서버의 공격 판정과 클라이언트의 시각 효과 실행을 분리해 공격 이펙트 중복 재생 문제 해결">HasAuthority() 조건 분기로 서버의 공격 판정과 클라이언트의 시각 효과 실행을 분리해 공격 이펙트 중복 재생 문제 해결</span></li>
+                  <li><strong>HexTile Lookup</strong>: <span data-lang-en="Replaced linear tile searches with a coordinate-to-index Map and cached tile distances, improving lookup complexity from O(N) to average O(1)" data-lang-ko="좌표 기반 타일 인덱스 Map과 거리 캐시를 도입해 타일 조회 구조를 O(N) 선형 탐색에서 평균 O(1) 해시 조회 방식으로 개선">좌표 기반 타일 인덱스 Map과 거리 캐시를 도입해 타일 조회 구조를 O(N) 선형 탐색에서 평균 O(1) 해시 조회 방식으로 개선</span></li>
+                  <li><strong>Tile Occupancy</strong>: <span data-lang-en="Centralized move requests in CombatManager and resolved conflicts by request order and movement speed, preventing multiple units from occupying the same tile" data-lang-ko="CombatManager가 이동 요청을 수집하고 요청 순서와 이동 속도 기준으로 승인, 대기, 재경로를 처리해 동일 타일 점유 충돌 해결">CombatManager가 이동 요청을 수집하고 요청 순서와 이동 속도 기준으로 승인, 대기, 재경로를 처리해 동일 타일 점유 충돌 해결</span></li>
                 </ul>
                 <p><strong data-lang-en="Lessons Learned" data-lang-ko="배운 점">배운 점</strong></p>
                 <ul class="project-narrative-list">
-                  <li data-lang-en="Learned to separate cosmetic replication (montage playback) from authoritative gameplay logic (damage events) in Unreal networking" data-lang-ko="Unreal 네트워킹에서 연출용 복제(몽타주 재생)와 권한이 필요한 게임 로직(데미지 판정)을 분리해야 한다는 걸 체득">Unreal 네트워킹에서 연출용 복제(몽타주 재생)와 권한이 필요한 게임 로직(데미지 판정)을 분리해야 한다는 걸 체득</li>
+                  <li data-lang-en="A combat system with many units acting at once needs clear responsibility boundaries and centralized coordination more than isolated feature logic" data-lang-ko="다수 유닛이 동시에 판단하고 이동하는 전투 시스템에서는 개별 기능보다 시스템 간 책임 분리와 중앙 관리 구조가 중요하다는 점">다수 유닛이 동시에 판단하고 이동하는 전투 시스템에서는 개별 기능보다 시스템 간 책임 분리와 중앙 관리 구조가 중요하다는 점</li>
                 </ul>
               </div>
             </details>
