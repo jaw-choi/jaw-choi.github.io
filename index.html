@@ -59,9 +59,9 @@
 
     elements.forEach(element => {
       if (language === 'ko') {
-        element.textContent = element.getAttribute('data-lang-ko');
+        element.innerHTML  = element.getAttribute('data-lang-ko');
       } else if (language === 'en') {
-        element.textContent = element.getAttribute('data-lang-en');
+        element.innerHTML  = element.getAttribute('data-lang-en');
       }
     });
 
@@ -180,7 +180,7 @@
             </div>
           </div>
           <p data-lang-en="I am a developer who believes in fundamentals. Consistently studying C++ and CS foundations has led me to diverse experiences across Unity, Unreal, custom engine development, and graphics programming. Documenting the process of every project, step by step, has accumulated into who I am today."
-             data-lang-ko="저는 기본기를 믿는 개발자입니다. C++과 CS 기초를 꾸준히 공부해온 것이 Unity, Unreal, 자체 엔진, 그래픽스까지 다양한 경험으로 이어졌고, 매 프로젝트마다 과정을 기록해온 것들이 차근차근 쌓여 지금의 저를 만들었습니다.">
+             data-lang-ko="저는 기본기를 믿는 개발자입니다. C++과 CS 기초를 꾸준히 공부해온 것이 Unity, Unreal, 자체 엔진,<br> 그래픽스까지 다양한 경험으로 이어졌고, 매 프로젝트마다 과정을 기록해온 것들이 차근차근 쌓여<br> 지금의 저를 만들었습니다.">
             I am a developer who believes in fundamentals. Consistently studying C++ and CS foundations has led me to diverse experiences across Unity, Unreal, custom engine development, and graphics programming. Documenting the process of every project, step by step, has accumulated into who I am today.
           </p>
 
@@ -267,7 +267,7 @@
               </p>
             </div>
             <ul class="project-narrative-list">
-              <li><strong data-lang-en="Overview" data-lang-ko="프로젝트 소개">프로젝트 소개</strong>: <span data-lang-en="1st-place winner in the final team project: a 5-person TFT-like auto-battler built with Unreal Engine 5.6, Dedicated Server, and GAS; implemented the core loop from lobby, shared draft, shop, placement, combat, creep rounds, to final result" data-lang-ko="최종 팀 프로젝트 1등 수상작<br>Unreal Engine 5.6, Dedicated Server, GAS 기반 5인 팀 TFT 모작 오토배틀러 프로젝트. 로비, 공동 선택, 상점, 배치, 전투, 크립 라운드, 최종 승패까지 핵심 루프 구현">최종 팀 프로젝트 1등 수상작<br>Unreal Engine 5.6, Dedicated Server, GAS 기반 5인 팀 TFT 모작 오토배틀러 프로젝트. 로비, 공동 선택, 상점, 배치, 전투, 크립 라운드, 최종 승패까지 핵심 루프 구현</span></li>
+              <li><strong data-lang-en="Overview" data-lang-ko="프로젝트 소개">프로젝트 소개</strong>: <span data-lang-en="1st-place winner in the final team project: a 5-person TFT-like auto-battler built with Unreal Engine 5.6, Dedicated Server, and GAS; implemented the core loop from lobby, shared draft, shop, placement, combat, creep rounds, to final result" data-lang-ko="최종 팀 프로젝트 1등 수상작<br>Unreal Engine 5.6, Dedicated Server, GAS 기반 5인 팀 TFT 모작 오토배틀러 프로젝트.<br> 로비, 공동 선택, 상점, 배치, 전투, 크립 라운드, 최종 승패까지 핵심 루프 구현">최종 팀 프로젝트 1등 수상작<br>Unreal Engine 5.6, Dedicated Server, GAS 기반 5인 팀 TFT 모작 오토배틀러 프로젝트. 로비, 공동 선택, 상점, 배치, 전투, 크립 라운드, 최종 승패까지 핵심 루프 구현</span></li>
               <li><strong data-lang-en="Technical Focus" data-lang-ko="기술 초점">기술 초점</strong>: <span data-lang-en="Unit combat FSM, GAS-based champion skills, HexTile movement/pathfinding, creep round system" data-lang-ko="유닛 전투 FSM, GAS 기반 챔피언 스킬, HexTile 이동 및 경로 탐색, 크립 라운드 시스템 구현">유닛 전투 FSM, GAS 기반 챔피언 스킬, HexTile 이동 및 경로 탐색, 크립 라운드 시스템 구현</span></li>
               <li>
                 <strong data-lang-en="Key Features" data-lang-ko="주요 기능">주요 기능</strong>
@@ -275,10 +275,10 @@
                   <li><span data-lang-en="FSM-based unit combat flow: search, target selection, range check, movement, attack, skill cast, and death" data-lang-ko="FSM 기반 유닛 전투 흐름 구현: 탐색, 타깃 선정, 사거리 판정, 이동, 공격, 스킬 사용, 사망">FSM 기반 유닛 전투 흐름 구현: 탐색, 타깃 선정, 사거리 판정, 이동, 공격, 스킬 사용, 사망</span></li>
                   <li><span data-lang-en="GAS attack pipeline separated animation and hit validation through GA_Attack → GA_AttackHitCheck" data-lang-ko="GA_Attack → GA_AttackHitCheck 구조로 공격 연출과 실제 타격 판정을 분리한 GAS 공격 파이프라인 구현">GA_Attack → GA_AttackHitCheck 구조로 공격 연출과 실제 타격 판정을 분리한 GAS 공격 파이프라인 구현</span></li>
                   <li><span data-lang-en="Implemented 20+ champion skills including projectiles, dash, teleport, airborne, stun, healing, shields, buffs, and multi-target attacks" data-lang-ko="투사체, 돌진, 순간이동, 에어본, 기절, 회복, 보호막, 버프, 다중 타깃 등 챔피언 스킬 20종 이상 구현">투사체, 돌진, 순간이동, 에어본, 기절, 회복, 보호막, 버프, 다중 타깃 등 챔피언 스킬 20종 이상 구현</span></li>
-                  <li><span data-lang-en="HexTile BFS/A* pathfinding with tile occupancy, move request arbitration, and repath handling" data-lang-ko="HexTile 기반 BFS/A* 경로 탐색, 타일 점유 처리, 이동 요청 중재 및 재경로 계산 구현">HexTile 기반 BFS/A* 경로 탐색, 타일 점유 처리, 이동 요청 중재 및 재경로 계산 구현</span></li>
+                  <li><span data-lang-en="HexTile BFS pathfinding with tile occupancy, move request arbitration, and repath handling" data-lang-ko="HexTile 기반 BFS 경로 탐색, 타일 점유 처리, 이동 요청 중재 및 재경로 계산 구현">HexTile 기반 BFS 경로 탐색, 타일 점유 처리, 이동 요청 중재 및 재경로 계산 구현</span></li>
                 </ul>
               </li>
-              <li><strong data-lang-en="Tech Stack" data-lang-ko="기술 스택">기술 스택</strong>: <span data-lang-en="Unreal Engine 5.6, C++, Blueprint, GAS, Dedicated Server, DataTable, Primary Data Asset, Gameplay Tag/Effect/Event, BFS/A*" data-lang-ko="Unreal Engine 5.6, C++, Blueprint, GAS, Dedicated Server, DataTable, Primary Data Asset, Gameplay Tag/Effect/Event, BFS/A*">Unreal Engine 5.6, C++, Blueprint, GAS, Dedicated Server, DataTable, Primary Data Asset, Gameplay Tag/Effect/Event, BFS/A*</span></li>
+              <li><strong data-lang-en="Tech Stack" data-lang-ko="기술 스택">기술 스택</strong>: <span data-lang-en="Unreal Engine 5.6, C++, Blueprint, GAS, Dedicated Server, DataTable, Primary Data Asset, Gameplay Tag/Effect/Event, BFS" data-lang-ko="Unreal Engine 5.6, C++, Blueprint, GAS, Dedicated Server, DataTable, Primary Data Asset, Gameplay Tag/Effect/Event, BFS">Unreal Engine 5.6, C++, Blueprint, GAS, Dedicated Server, DataTable, Primary Data Asset, Gameplay Tag/Effect/Event, BFS</span></li>
             </ul>
             <details class="project-code">
               <summary data-lang-en="Troubleshooting" data-lang-ko="트러블슈팅">트러블슈팅</summary>
