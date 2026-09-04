@@ -515,7 +515,11 @@ section .container {
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.04);
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18);
-  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .about-me .about-social-card:hover {
@@ -1079,7 +1083,7 @@ section .container {
 }
 
 .project-meta {
-  font-size: 14px;
+  font-size: 18px;
   color: #dee2e6;
   margin-bottom: 12px;
 }
@@ -1254,7 +1258,9 @@ section .container {
   padding: 12px;
   margin: 10px 0;
   text-align: center;
-  transition: transform 0.2s, border-color 0.2s;
+  transition:
+    transform 0.2s,
+    border-color 0.2s;
 }
 
 .architecture-box:hover {
@@ -1332,7 +1338,10 @@ section .container {
   padding: 12px;
   margin: 10px 0;
   text-align: center;
-  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .graphics-arch-box:hover {
