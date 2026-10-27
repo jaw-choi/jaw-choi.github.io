@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume (AI) - Jaewoo Choi</title>
+  <style>
+    @page { size: A4; margin: 0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "NanumGothic", "Nanum Gothic", "Malgun Gothic", "Noto Sans KR", sans-serif;
+      color: #111;
+      font-size: 8.8pt;
+      line-height: 1.33;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page { width: 210mm; padding: 8mm 11mm 5mm 11mm; }
+    header { display: flex; justify-content: space-between; align-items: flex-start; }
+    h1 { font-size: 24pt; font-weight: 700; letter-spacing: 0.5pt; line-height: 1.1; }
+    .position { font-weight: 700; font-size: 10.5pt; margin-top: 5pt; }
+    .contact { margin-top: 5pt; }
+    .contact span { margin-right: 14pt; }
+    h2 {
+      font-size: 11.5pt; font-weight: 700;
+      border-bottom: 1px solid #111;
+      padding-bottom: 3pt; margin: 11pt 0 5pt;
+    }
+    .label { font-weight: 700; }
+    .row { margin-bottom: 4pt; }
+    .cols { display: flex; gap: 8mm; }
+    .cols > div { flex: 1; }
+    .cols h2 { margin-top: 11pt; }
+    .entry { margin-bottom: 5pt; }
+    .entry p { margin-bottom: 1pt; }
+    .entry-title { font-weight: 700; }
+    .entry-head { display: flex; justify-content: space-between; }
+    .project { margin-bottom: 7pt; }
+    .project-title { font-weight: 700; margin: 2pt 0 4pt; }
+    ul { list-style: none; }
+    li { position: relative; padding-left: 12pt; margin-bottom: 3.5pt; }
+    li::before { content: "•"; position: absolute; left: 3pt; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>JAEWOO CHOI</h1>
+      <div class="position">AI APPLICATION DEVELOPER</div>
+    </header>
+    <div class="contact">
+      <span>010-2776-2295</span><span>wod6983@gmail.com</span><span>https://jaw-choi.github.io/</span><span>https://github.com/jaw-choi</span>
+    </div>
+    <div>서울특별시 광진구</div>
+
+    <h2>SKILLS</h2>
+    <div class="row"><span class="label">LANGUAGE:</span> Python, C++, C#, C</div>
+    <div class="row"><span class="label">AI / BACKEND:</span> OpenAI API (Tool Calling), FastAPI, WebSocket, Vosk, Google STT/TTS</div>
+    <div class="row"><span class="label">TOOLS:</span> Git, GitHub Actions, pytest, Unity, Unreal</div>
+
+    <div class="cols">
+      <div>
+        <h2>EDUCATION</h2>
+        <div class="entry">
+          <p class="entry-title">DigiPen Institute of Technology</p>
+          <p>Bachelor Science Computer Science in Real Time Interactive Simulation</p>
+          <p>2022.07 - 2024.04</p>
+          <p>GPA 3.7 / 4.0</p>
+        </div>
+        <div class="entry">
+          <p class="entry-title">계명대학교(학사) - 대구</p>
+          <p>디지펜 게임공학과(복수학위)</p>
+          <p>2018.03 - 2024.08</p>
+          <p>평점 4.0 / 4.5</p>
+        </div>
+      </div>
+      <div>
+        <h2>CERTIFICATIONS</h2>
+        <div class="entry">
+          <p class="entry-title">정보처리기사</p>
+          <p>취득일: 2025.06.13</p>
+        </div>
+        <div class="entry">
+          <p class="entry-title">ADsP(데이터분석준전문가)</p>
+          <p>취득일: 2025.06.13</p>
+        </div>
+        <div class="entry">
+          <p class="entry-title">OPIc (영어) - AL</p>
+          <p>취득일: 2026.09.23</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>PROJECTS</h2>
+    <div class="project">
+      <div class="entry-head"><span>AI Agent 개발 / 5인팀</span><span>2026.10</span></div>
+      <p class="project-title">JARVIS - 음성·채팅 기반 Windows AI 비서</p>
+      <ul>
+        <li>규칙 우선 + LLM Tool Calling 하이브리드 명령 라우터를 설계하여 LLM만 쓸 때 대비 정확도 88%→91%, 평균 응답 2.15초→0.85초, 토큰 사용량 약 60% 절감</li>
+        <li>7개 유형 69개 발화 평가 세트와 자동 채점을 구축해 품질을 수치화하고, 현실 발화에서 정확도가 77%로 떨어지는 문제와 '전부 삭제' 오실행 같은 위험 실패를 발견해 개선</li>
+        <li>오프라인 Vosk로 호출어만 PC에서 감지하고 이후 명령만 클라우드 STT로 보내는 음성 파이프라인을 구현해 비용과 음성 데이터 외부 전송 최소화</li>
+        <li>허용 목록 기반 도구 실행, 질문/실행 의도 분리, 승인 후 설치, CommandPlan/CommandResult 분리로 LLM 출력이 임의 OS 명령이 되지 않도록 설계 (CI 테스트 214개 통과)</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="entry-head"><span>Client Programmer / 5인팀</span><span>2026.06 - 2026.07</span></div>
+      <p class="project-title">TFT 스타일 오토배틀러</p>
+      <ul>
+        <li>Gameplay Ability System 기반 전투 상태머신과 공격 판정 파이프라인을 설계하고 챔피언 스킬 20종 이상을 구현</li>
+        <li>멀티플레이어 환경에서 몽타주 복제로 평타 데미지가 중복 적용되는 버그의 원인을 분석하고 HasAuthority 기반 서버 권한 검증으로 해결하여 전투 판정 안정성 확보</li>
+        <li>엑셀 기반 챔피언 스탯 데이터를 DataTable로 관리하며 기획 스탯 변경에 유연하게 대응할 수 있는 데이터 구조를 설계 확장</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="entry-head"><span>Game Programmer / 2인팀&nbsp;&nbsp;&nbsp;Google Play 출시</span><span>2025.12 - 2026.03</span></div>
+      <p class="project-title">눈덩이를 굴려라!</p>
+      <ul>
+        <li>반복되는 Unity 컴포넌트 코드 작성 패턴을 프롬프트 템플릿으로 정리하고 AI 코드 어시스턴트로 자동 생성하는 프로세스를 구축하여 UI 및 프로토타입 개발 속도 향상</li>
+        <li>Figma 플러그인을 도입하여 UI 반영 속도를 개선하고 네이밍 규칙 표준화로 협업 비용 최소화</li>
+        <li>릴리즈 체크리스트를 운영하여 배포 실수를 줄이고 버전명·코드 규칙을 정립해 패치 대응 및 유지보수 효율 향상</li>
+      </ul>
+    </div>
+
+    <h2>EMPLOYMENT</h2>
+    <div class="project">
+      <div class="entry-head"><span><span class="label">A ROUND ENTERTAINMENT</span>, Software Engineer, Jersey City, NJ 07310, US</span><span>2024.01 - 2024.04</span></div>
+      <p style="margin: 3pt 0 5pt;">기술 스택 : React Native, JavaScript, Expo, Android Studio, CSS, Firebase, Figma, Slack</p>
+      <ul>
+        <li>Joopy 데이팅 앱 개발 프로젝트에 인턴으로 참여해 UI/UX 팀과 협업하여 프로필 편집 화면 기능 개발에 참여</li>
+        <li>이미지 순서가 실시간 반영되지 않는 비동기 처리 문제를 async/await, Promise, Firebase 연동을 통해 해결</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
